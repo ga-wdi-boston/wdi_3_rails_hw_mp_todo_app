@@ -2,6 +2,6 @@
 
 <ul>
 <% @lists.each do |list| %>
-  <li><%= link_to list.name, project_list_path(:project_id, :id) %></li>
+  <li><%= link_to list.name, project_list_path(@project, list) %></li>
 <% end %>
 </ul>

@@ -2,6 +2,6 @@
 
 <ul>
 <% @tasks.each do |task| %>
-  <li><%= link_to task.name, task_path %></li>
+  <li><%= link_to task.name, project_list_task_path(:project, @list, task) %></li>
 <% end %>
 </ul>
