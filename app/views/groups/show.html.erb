@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @group.title %>
+</p>
+
+<p>
+  <strong>Due date:</strong>
+  <%= @group.due_date %>
+</p>
+
+<p>
+  <strong>Leads:</strong>
+  <%= @group.leads %>
+</p>
+
+<p>
+  <strong>Priority:</strong>
+  <%= @group.priority %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @group.status %>
+</p>
+
+<p>
+  <strong>Project Id:</strong>
+  <%= @group.project_id %>
+</p>
+
+<%= link_to 'Edit', edit_project_group_path(@project, @group) %>
+<%= link_to 'Back', project_groups_path %>
