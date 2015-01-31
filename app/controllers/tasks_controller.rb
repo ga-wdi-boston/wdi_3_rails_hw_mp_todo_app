@@ -4,6 +4,11 @@ class TasksController < ApplicationController
     @tasks = @list.tasks
   end
 
+  def show
+    @task = Task.find(params[:list_id])
+  end
+
+
   def new
     @list = List.find(params[:list_id])
     @tasks = @list.tasks
