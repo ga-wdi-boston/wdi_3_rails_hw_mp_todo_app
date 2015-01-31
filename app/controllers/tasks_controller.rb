@@ -19,7 +19,7 @@ class TasksController < ApplicationController
   def create
     @task = @list.tasks.build(task_params)
     if @task.save
-      redirect_to list_task_path(@list, @task), notice: 'Task was successfully created.'
+      redirect_to list_tasks_path(@list), notice: 'Task was successfully created.'
     else
       render :new
     end
