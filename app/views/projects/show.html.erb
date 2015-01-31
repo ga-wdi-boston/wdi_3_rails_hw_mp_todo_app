@@ -1,0 +1,14 @@
+<h3><%= link_to @project.title %></h3>
+
+ <p><%= @project.due_date %></p>
+
+ <p><%= @project.progress %></p>
+
+<h2>Lists</h2>
+<%= render @project.lists %>
+
+<h2>Add a list:</h2>
+<%= render "lists/form" %>
+
+<%= link_to "All Projects", root_path %> |
+<%= link_to 'Edit', edit_project_path(@project) %>

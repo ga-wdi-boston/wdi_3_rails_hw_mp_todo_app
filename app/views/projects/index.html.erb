@@ -1,0 +1,14 @@
+<ul>
+  <% @projects.each do |project| %>
+    <li>
+      <%= link_to project.title %>
+      <%= project.due_date %>
+      <%= project.progress %>
+      <%= link_to "Show", project_path(project) %>
+      <%= link_to "Edit", edit_project_path(project) %>
+      <%= link_to "Delete", project_path(project), method: :delete %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Create New Project", new_project_path %>
