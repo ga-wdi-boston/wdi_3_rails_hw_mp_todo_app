@@ -1,2 +1,8 @@
 <h1>Your lists of tasks</h1>
 
+<h3>List title</h3>
+<ol>
+  <% @lists.each do |list| %>
+    <li><%= list.title %></li>
+  <% end %>
+</ol>
