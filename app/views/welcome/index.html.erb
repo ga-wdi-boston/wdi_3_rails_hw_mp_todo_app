@@ -11,8 +11,11 @@
     <% @lists.each do |list| %>
       <tr>
         <td><%= list.title %></td>
-        <td><%#= link_to 'show', task %></td>
+        <td><%#= link_to 'show contents', task %></td>
         <td><%= link_to 'edit', edit_list_path(list)%></td>
+        <td><%= link_to 'Remove', list_path(list),
+                method: :delete,
+                data: {confirm: 'Are you sure?'} %></td>
       </tr>
     <% end %>
   </tbody>
