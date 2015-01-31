@@ -1,0 +1,9 @@
+<h3><%= @task.name %></h3>
+
+ <p><%= @task.progress %></p>
+
+<h2>Notes</h2>
+<%= render @task.notes %>
+
+<%= link_to "All Projects", root_path %> |
+<%= link_to 'Edit', edit_task_path(@task) %>
