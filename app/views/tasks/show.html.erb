@@ -5,5 +5,5 @@
 <h2>Notes</h2>
 <%= render @task.notes %>
 
-<%= link_to "All Projects", root_path %> |
+<%= link_to "All Projects", '../projects/project_path'(@project) %> |
 <%= link_to 'Edit', edit_task_path(@task) %>
