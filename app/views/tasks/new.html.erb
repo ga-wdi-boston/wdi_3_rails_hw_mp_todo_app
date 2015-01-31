@@ -1,7 +1,10 @@
 <h1>Tasks for <%= @list.name %></h1>
 
-<% @tasks.each do |task|  %>
-  <li>Name: <%= task.name %> Status: <%= task.status %></li>
-<% end %>
+<%= @tasks.count %>
+<ul>
+  <% @tasks.each do |task|  %>
+    <li>Name: <%= task.name %> Status: <%= task.status %></li>
+  <% end %>
+</ul>
 
 <%= render 'form' %>

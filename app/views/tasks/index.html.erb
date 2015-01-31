@@ -2,10 +2,8 @@
 <ul>
 
 <% @tasks.each do |task|  %>
-  <li>Name: <%= task.name %> Status: <%= task.status %><br>
-</li>
+  <li><%= link_to task.name, list_task_path(:list_id, :id)%> Status: <%= task.status %>
+  </li>
 <% end %>
 
 </ul>
-
-
