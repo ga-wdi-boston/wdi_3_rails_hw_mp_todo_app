@@ -1,0 +1,13 @@
+<p>
+  <strong>Task:</strong>
+  <%= task.name %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= task.completed %>
+</p>
+
+<p>
+  <%= link_to 'Destroy Comment', [task.list, task], method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
