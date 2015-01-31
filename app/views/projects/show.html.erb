@@ -10,7 +10,7 @@
 <h2>Add a list:</h2>
 <%= render "lists/form" %>
 
-<%= link_to "All Projects", project_path(@project) %> |
+<%= link_to "All Projects", index_project_path(@project) %> |
 <%= link_to "All Lists", '..lists/index_list_path'(@list) %>
 <%= link_to "All Tasks", '..tasks/index_task_path'(@task) %>
 <%= link_to "All Notes", '..notes/_note_note_path'(@note) %>
