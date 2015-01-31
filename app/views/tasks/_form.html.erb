@@ -4,12 +4,15 @@
     <%= f.text_field :name, autofocus: true %>
   </p>
 
+
   <p>
-    <%= radio_button_tag(:status, :false) %>
-    <%= label_tag(:status, "Incomplete") %>
-    <%= radio_button_tag(:status, :true) %>
-    <%= label_tag(:status, "Complete") %>
+    <%= f.label :status, "Incomplete", :value => false %>
+    <%= f.radio_button :status, false %>
+
+    <%= f.label :status, "Complete", :value => true %>
+    <%= f.radio_button :status, true %></div>
   </p>
+
   <%= f.submit %>
   | <%= link_to "Cancel", lists_path %>
   <% end %>
