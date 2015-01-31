@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :set_list
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -16,9 +17,9 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(task_params)
+    @task = @list.tasks.build(task_params)
     if @task.save
-      redirect_to @task, notice: 'Task was successfully created.'
+      redirect_to list_task_path(@list, @task), notice: 'Task was successfully created.'
     else
       render :new
     end
@@ -26,7 +27,7 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      redirect_to @task, notice: 'Task was successfully updated.'
+      redirect_to list_task_path(@list, @task), notice: 'Task was successfully updated.'
     else
       render :edit
     end
@@ -34,13 +35,17 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    redirect_to tasks_url, notice: 'Task was successfully destroyed.'
+    redirect_to list_tasks_url(@list), notice: 'Task was successfully destroyed.'
   end
 
   private
 
+    def set_list
+      @list = List.find(params[:list_id])
+    end
+
     def set_task
-      @task = Task.find(params[:id])
+      @task = @list.tasks.find(params[:id])
     end
 
     def task_params

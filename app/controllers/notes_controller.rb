@@ -1,4 +1,6 @@
 class NotesController < ApplicationController
+  before_action :set_list
+  before_action :set_task
   before_action :set_note, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -38,8 +40,17 @@ class NotesController < ApplicationController
   end
 
   private
+
+    def set_list
+      @list = List.find(params[:list_id])
+    end
+
+    def set_task
+      @task = Task.find(params[:task_id])
+    end
+
     def set_note
-      @note = Note.find(params[:id])
+      @note = Note.find(params[:note_id])
     end
 
     def note_params
