@@ -5,7 +5,9 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find(params[:list_id])
+    @list = List.find(params[:list_id])
+    @task = @list.tasks.find(params[:id])
+    # @task = Task.find(params[:list_id])
   end
 
 
