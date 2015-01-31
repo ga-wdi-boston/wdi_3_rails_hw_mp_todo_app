@@ -1,0 +1,15 @@
+<%= form_for [@list, @task] do |f| %>
+ <%= render 'shared/errors', object: @task %>
+    <p>
+      <%= f.label :name %>
+      <%= f.text_field :name, autofocus: true %>
+    </p>
+    <p>
+      <%= f.label :complete_by %>
+      <%= f.text_field :complete_by %>
+    </p>
+
+    <%= f.submit %>
+    | <%= link_to "Cancel", lists_path %>
+    <% end %>
+
