@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Project.delete_all
+
+Project.create!(title:"NASA SBIR", date:"2015-03-21", status:"in progress", leads:"I. Paul")
+Project.create!(title:"AF SBIR", date:"2016-12-31", status:"not started", leads:"J. Marx")
+Project.create!(title:"DOT SBIR", date:"2015-10-31", status:"in progress", leads:"C. Tolbot")
+
+
