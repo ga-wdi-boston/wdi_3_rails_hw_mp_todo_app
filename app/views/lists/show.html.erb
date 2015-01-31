@@ -1,0 +1,11 @@
+<h3><%= @list.name %></h3>
+
+ <p><%= @list.category %></p>
+ <p><%= @list.part_of_project %></p>
+ <p><%= @list.progress %></p>
+
+<h2>Tasks</h2>
+<%= render @list.tasks %>
+
+<%= link_to "All Projects", root_path %> |
+<%= link_to 'Edit', edit_list_path(@list) %>

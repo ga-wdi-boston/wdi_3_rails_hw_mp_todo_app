@@ -1,4 +1,4 @@
-<h3><%= link_to @project.title %></h3>
+<h3><%= @project.title %></h3>
 
  <p><%= @project.due_date %></p>
 
@@ -11,4 +11,5 @@
 <%= render "lists/form" %>
 
 <%= link_to "All Projects", root_path %> |
+<%= link_to "All Lists", index_list_path(@list) %>
 <%= link_to 'Edit', edit_project_path(@project) %>

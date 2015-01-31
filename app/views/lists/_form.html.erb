@@ -1,4 +1,5 @@
-<%= form_for @list do |f| %>
+<%= form_for([@project, @project.links.build]) do |f| %>
+
   <%= f.label :name %>
   <%= f.text_field :name %>
 

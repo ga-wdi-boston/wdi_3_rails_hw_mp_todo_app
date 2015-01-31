@@ -1,1 +1,16 @@
+<ul>
+  <% @lists.each do |list| %>
+    <li>
+      <%= list.name %>
+      <%= list.category %>
+      <%= list.part_of_project %>
+      <%= list.progress %>
+      <%= link_to "Show", list_path(list) %>
+      <%= link_to "Edit", edit_list_path(list) %>
+      <%= link_to "Delete", list_path(list), method: :delete %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Create New List", new_list_path %>
 

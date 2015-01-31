@@ -1,7 +1,7 @@
 <ul>
   <% @projects.each do |project| %>
     <li>
-      <%= link_to project.title %>
+      <%= project.title %>
       <%= project.due_date %>
       <%= project.progress %>
       <%= link_to "Show", project_path(project) %>
@@ -12,3 +12,7 @@
 </ul>
 
 <%= link_to "Create New Project", new_project_path %>
+<%= link_to "All Lists", '..lists/index_list_path' %>
+<%= link_to "All Taks", '..tasks/index_task_path' %>
+<%= link_to "All Lists", '..notes/_note_note_path' %>
+
