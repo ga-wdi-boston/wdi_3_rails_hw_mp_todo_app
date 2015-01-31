@@ -1,0 +1,7 @@
+<h2><%= @project.name %></h2>
+
+<ul>
+<% @lists.each do |list| %>
+  <li><%= link_to list.name, project_list_path(:project_id, :id) %></li>
+<% end %>
+</ul>
