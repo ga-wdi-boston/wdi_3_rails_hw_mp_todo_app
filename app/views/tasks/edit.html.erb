@@ -1,11 +1,16 @@
 <h1>Tasks for <%= @list.name %></h1>
 
-<%= @tasks.count %>
 
-<ul>
-  <% @tasks.each do |task|  %>
-    <li>Name: <%= task.name %> Status: <%= task.status %></li>
+<p>
+  <strong>Task:</strong>
+  <%= @task.name %><br>
+  <strong>Status:</strong>
+  <% if @task.status == true %>
+    Complete
+  <% else %>
+    Incomplete
   <% end %>
-</ul>
+</p>
+
 
 <%= render 'form' %>

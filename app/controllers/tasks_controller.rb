@@ -7,7 +7,6 @@ class TasksController < ApplicationController
   def show
     @list = List.find(params[:list_id])
     @task = @list.tasks.find(params[:id])
-    # @task = Task.find(params[:list_id])
   end
 
 
@@ -28,8 +27,29 @@ class TasksController < ApplicationController
     end
   end
 
-  def destroy
+  def edit
+    @list = List.find(params[:list_id])
+    @task = @list.tasks.find(params[:id])
+  end
+
+  def update
+    # @list = List.find(params[:list_id])
+    # @task = @list.tasks.find(params[:id])
     @task = Task.find(params[:list_id])
+
+    respond_to do |format|
+      if @task.update(tasks_params)
+        format.html { redirect_to tasks_url, notice: 'Task was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
+
+
+  def destroy
+    @list = List.find(params[:list_id])
+    @task = @list.tasks.find(params[:id])
     @task.destroy
     respond_to do |format|
       format.html { redirect_to tasks_url, notice: 'Task was successfully destroyed.' }
