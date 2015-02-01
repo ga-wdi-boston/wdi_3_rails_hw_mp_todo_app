@@ -1,11 +1,9 @@
 <%= form_for(@list) do |f| %>
-    <%= render 'shared/errors', object: @list %>
-
-  <div class="field">
-    <%= f.label :name %><br>
+  <%= render 'shared/errors', object: @list %>
+  <div class="list field">
     <%= f.text_field :name %>
   </div>
-  <div class="actions">
+  <div class="list actions">
     <%= f.submit %>
   </div>
 <% end %>
