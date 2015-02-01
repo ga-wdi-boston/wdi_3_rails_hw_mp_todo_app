@@ -8,7 +8,7 @@ class TasksController < ApplicationController
   def create
     @list = List.find(params[:list_id])
     @task = @list.tasks.create(task_params)
-    redirect_to project_list_path(@list, list)
+    redirect_to @list.project
   end
 
   private
