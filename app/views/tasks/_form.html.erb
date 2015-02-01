@@ -1,0 +1,11 @@
+<%= form_for @task do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :completion_status %>
+  <%= f.check_box :completion_status %>
+
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "Back to All Tasks", root_path %>
