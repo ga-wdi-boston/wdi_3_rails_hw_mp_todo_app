@@ -5,12 +5,13 @@ class GroupsController < ApplicationController
   # GET /groups.json
   def index
     @groups = Group.all
-    # @list = List.find(params[:list_id])
+    @list = List.find(params[:list_id])
   end
 
   # GET /groups/1
   # GET /groups/1.json
   def show
+    @group = Group.find(params[:id])
   end
 
   # GET /groups/new
