@@ -1,7 +1,6 @@
 FactoryGirl.define do
   factory :note do
-    body "MyText"
-task nil
+    task nil
   end
 
 end
