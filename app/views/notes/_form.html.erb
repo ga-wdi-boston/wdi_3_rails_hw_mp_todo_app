@@ -1,14 +1,6 @@
-<%= form_for(@note) do |f| %>
-  <% if @note.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@note.errors.count, "error") %> prohibited this note from being saved:</h2>
-
-      <ul>
-      <% @note.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+<%= form_for [@list, @task, @task.notes.build, *@note] do |f| %>
+  <% if @task %>
+    <%= render 'shared/errors', object: @task %>
   <% end %>
 
   <div class="field">

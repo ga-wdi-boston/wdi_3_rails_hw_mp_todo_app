@@ -5,5 +5,5 @@
   <%= @note.body %>
 </p>
 
-<%= link_to 'Edit', edit_note_path(@note) %> |
-<%= link_to 'Back', notes_path %>
+<%= link_to 'Edit', edit_list_task_note_path(@list, @task, @note) %> |
+<%= link_to 'Back', list_task_notes_path(@list, @task) %>

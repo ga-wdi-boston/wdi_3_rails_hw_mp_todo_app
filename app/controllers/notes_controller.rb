@@ -18,9 +18,9 @@ class NotesController < ApplicationController
   end
 
   def create
-    @note = Note.new(note_params)
+    @note = @task.notes.build(note_params)
     if @note.save
-      redirect_to @note, notice: 'Note was successfully created.'
+      redirect_to list_task_note_path(@list, @task, @note), notice: 'Note was successfully created.'
     else
       render :new
     end
@@ -28,7 +28,7 @@ class NotesController < ApplicationController
 
   def update
     if @note.update(note_params)
-      redirect_to @note, notice: 'Note was successfully updated.'
+      redirect_to list_task_note_path(@list, @task, @note), notice: 'Note was successfully updated.'
     else
       render :edit
     end
@@ -46,11 +46,11 @@ class NotesController < ApplicationController
     end
 
     def set_task
-      @task = Task.find(params[:task_id])
+      @task = @list.tasks.find(params[:task_id])
     end
 
     def set_note
-      @note = Note.find(params[:note_id])
+      @note = @task.notes.find(params[:id])
     end
 
     def note_params
