@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_list
+  before_action :set_list, except: :catalog
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -36,6 +36,10 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy
     redirect_to list_path(@list), notice: 'Task was successfully destroyed.'
+  end
+
+  def catalog
+    @tasks = Task.all
   end
 
   private

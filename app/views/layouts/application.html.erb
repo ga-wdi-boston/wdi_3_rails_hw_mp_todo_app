@@ -7,8 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class='navbar navbar-default navbar-static-top'>
+    <div class='container'>
+      <%= link_to "ToDo", root_path, class: 'navbar-brand'%>
+      <ul class='nav navbar-nav navbar-right'>
+        <li><%= link_to "Lists", root_path%></li>
+        <li><%= link_to "Tasks", tasks_path%></li>
+        <li><%= link_to "Notes", root_path%></li>
+      </ul>
+    </div>
+  </div>
   <div class='container'>
-    <%= link_to "ToDo", root_path, class: 'navbar-brand'%>
     <%= yield %>
   </div>
 </body>
