@@ -1,0 +1,10 @@
+<%= form_for [@task, @note] do |f| %>
+ <%= render 'shared/errors', object: @note %>
+    <p>
+      <%= f.label :body %>
+      <%= f.text_field :body, autofocus: true %>
+    </p>
+
+    <%= f.submit %>
+    | <%= link_to "Cancel", tasks_path %>
+    <% end %>

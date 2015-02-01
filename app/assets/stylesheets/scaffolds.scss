@@ -1,9 +1,35 @@
 body {
-  background-color: #fff;
-  color: #333;
+  text-align: center;
+  background-color: #F8F8F8;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  margin: 0px;
+}
+
+.headcolor{
+  height: 150px;
+  background-color: #F8F8F8;
+  margin-top: -12px;
+}
+
+.bar {
+  height: 20px;
+  background-color: #FFCC99;
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-size: 50px;
+  margin-top: 40px;
+}
+
+table {
+  margin: 0 auto 20px;
+  background-color: #5CD6FF;
+  padding: 35px;
+  text-align: left;
+  border-radius: 10px;
 }
 
 p, ol, ul, td {
@@ -17,6 +43,7 @@ pre {
   padding: 10px;
   font-size: 11px;
 }
+
 
 a {
   color: #000;

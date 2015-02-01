@@ -5,6 +5,12 @@ class TasksController < ApplicationController
     @tasks = @list.tasks
   end
 
+  def show
+    @list = List.find(params[:list_id])
+    @task = @list.task
+    @task.name
+  end
+
   def new
     @list = List.find(params[:list_id])
     @task = @list.tasks.new
@@ -19,6 +25,15 @@ class TasksController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
   end
 
   private

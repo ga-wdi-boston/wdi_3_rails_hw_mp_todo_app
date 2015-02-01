@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   resources :lists do
-    resources :tasks do
-      resources :notes do
-      end
-    end
+    resources :tasks
+    resources :notes
   end
 
   root 'welcome#index'
