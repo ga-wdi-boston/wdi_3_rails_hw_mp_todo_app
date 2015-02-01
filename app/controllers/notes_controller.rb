@@ -7,7 +7,7 @@ class NotesController < ApplicationController
 
   def destroy
     @task = Task.find(params[:task_id])
-    @note = @task.notes.find(params[:id])
+    @note = @task.notes.find(params[:task_id])
     @note.destroy
     redirect_to list_task_path(@task.list_id, @task)
   end
