@@ -1,14 +1,11 @@
 class NotesController < ApplicationController
   before_action :set_list, except: :catalog
   before_action :set_task, except: :catalog
-  before_action :set_note, only: [:show, :edit, :update, :destroy]
+  before_action :set_note, only: [:edit, :update, :destroy]
 
   def index
     @notes = @task.notes.all
     @note = Note.new
-  end
-
-  def show
   end
 
   def new

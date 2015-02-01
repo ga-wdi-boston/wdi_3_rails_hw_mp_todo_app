@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'notes', to: 'notes#catalog'
 
   resources :lists do
-    resources :tasks do
+    resources :tasks, except: [:index, :show] do
       resources :notes, except: :show
     end
   end

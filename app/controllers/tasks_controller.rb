@@ -1,14 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_list, except: :catalog
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
-
-  def index
-    @tasks = Task.all
-    @task = Task.new
-  end
-
-  def show
-  end
+  before_action :set_task, only: [:edit, :update, :destroy]
 
   def new
     @task = Task.new
