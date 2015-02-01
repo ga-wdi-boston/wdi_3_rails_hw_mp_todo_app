@@ -1,23 +1,15 @@
-<%= form_for(@task) do |f| %>
-  <% if @task.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
-
-      <ul>
-      <% @task.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+<%= form_for [@list, @task] do |f| %>
+  <% if @task %>
+    <%= render 'shared/errors', object: @task %>
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.label 'Task' %><br>
+    <%= f.text_field :name, :autofocus=>true%>
   </div>
-  <div class="field">
-    <%= f.label :completed? %><br>
-    <%= f.check_box :completed? %>
+  <div class="field check">
+    <%= f.label :completed %>
+    <%= f.check_box :completed %>
   </div>
   <div class="field">
     <%= f.collection_select(:list_id, List.all, :id, :name) %>

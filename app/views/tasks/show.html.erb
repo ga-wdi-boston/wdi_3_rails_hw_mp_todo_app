@@ -6,8 +6,8 @@
 </p>
 
 <p>
-  <strong>Completed?:</strong>
-  <%= @task.completed? %>
+  <strong>Completed:</strong>
+  <%= @task.completed %>
 </p>
 
 
@@ -17,7 +17,8 @@
   <% end %>
 </ul>
 
-<%= link_to 'New Task', new_task_path(@task)  %> |
-<%= link_to 'New Note', new_task_note_path(@task)  %> |
-<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Edit', edit_list_task_path(@list, @task) %> |
+<%= link_to 'New Task', new_list_task_path(@list, @task)  %> |
+<%= link_to 'New Note', new_list_task_note_path(@list, @task, @note)  %> |
+<%= link_to 'All Notes', list_task_notes_path(@list, @task, @note)  %> |
 <%= link_to 'Back', lists_path %>

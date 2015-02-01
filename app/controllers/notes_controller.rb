@@ -1,31 +1,64 @@
 class NotesController < ApplicationController
+  before_action :set_list, except: :catalog
+  before_action :set_task, except: :catalog
+  before_action :set_note, only: [:show, :edit, :update, :destroy]
 
   def index
-    @task = Task.find(params[:task_id])
-    @notes = @task.notes
+    @notes = @task.notes.all
+    @note = Note.new
+  end
+
+  def show
   end
 
   def new
-    @task = Task.find(params[:task_id])
-    @note = @task.notes.new
+    @note = Note.new
+  end
+
+  def edit
   end
 
   def create
-    @task = Task.find(params[:task_id])
-    @note = @task.notes.new(notes_params)
-
+    @note = @task.notes.build(note_params)
     if @note.save
-      redirect_to task_notes_path(@task), notice: "You've created a new note"
+      redirect_to list_task_notes_path(@list, @task), notice: 'Note was successfully created.'
     else
-      render :new
+      redirect_to list_task_notes_path(@list, @task), notice: 'Note cannot be blank.'
     end
+  end
 
+  def update
+    if @note.update(note_params)
+      redirect_to list_task_notes_path(@list, @task), notice: 'Note was successfully updated.'
+    else
+      redirect_to list_task_notes_path(@list, @task), notice: 'Note cannot be blank.'
+    end
+  end
+
+  def destroy
+    @note.destroy
+      redirect_to list_task_notes_path(@list, @task), notice: 'Note was successfully destroyed.'
+  end
+
+  def catalog
+    @notes = Note.all
   end
 
   private
 
-  def notes_params
-    params.require(:note).permit(:comment)
-  end
+    def set_list
+      @list = List.find(params[:list_id])
+    end
 
+    def set_task
+      @task = @list.tasks.find(params[:task_id])
+    end
+
+    def set_note
+      @note = @task.notes.find(params[:id])
+    end
+
+    def note_params
+      params.require(:note).permit(:comment)
+    end
 end
