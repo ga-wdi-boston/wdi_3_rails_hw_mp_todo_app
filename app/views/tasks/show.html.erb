@@ -10,5 +10,9 @@
   <%= @task.done? %>
 </p>
 
+<p>
+  <%= render "notes/index" %>
+</p>
+
 <%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<%= link_to 'Back', list_path(@task.list) %>
