@@ -18,10 +18,7 @@ ActiveRecord::Schema.define(version: 20150201013006) do
 
   create_table "groups", force: :cascade do |t|
     t.string   "title"
-    t.date     "due_date"
     t.string   "leads"
-    t.string   "priority"
-    t.string   "status"
     t.integer  "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -50,11 +47,10 @@ ActiveRecord::Schema.define(version: 20150201013006) do
 
   create_table "tasks", force: :cascade do |t|
     t.string   "subject"
-    t.string   "lead"
     t.text     "description"
     t.date     "due_date"
     t.string   "priority"
-    t.string   "status"
+    t.boolean  "status"
     t.integer  "group_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

@@ -6,11 +6,8 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Due date</th>
       <th>Leads</th>
-      <th>Priority</th>
       <th>Project</th>
-      <th>Status</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,11 +16,8 @@
     <% @groups.each do |group| %>
       <tr>
         <td><%= group.title %></td>
-        <td><%= group.due_date %></td>
         <td><%= group.leads %></td>
-        <td><%= group.priority %></td>
         <td><%= group.project.title %></td>
-        <td><%= group.status %></td>
         <td><%= link_to 'Tasks', group_tasks_path(group.id) %></td>
         <td><%= link_to 'Show', group_path( group) %></td>
         <td><%= link_to 'Edit', edit_group_path(group) %></td>
