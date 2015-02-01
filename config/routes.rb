@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :lists, shallow: true do
-    resources :tasks
-    resources :notes
+    resources :tasks do
+      resources :notes
+    end
   end
 
   root 'lists#index'
