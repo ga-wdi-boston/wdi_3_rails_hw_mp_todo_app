@@ -3,7 +3,7 @@ class NotesController < ApplicationController
   def create
     @task = Task.find(params[:task_id])
     @note = @task.notes.create(note_params)
-    redirect_to project_list_task_path(@list, list)
+    redirect_to project_list_task_path(params[:project_id], params[:list_id], @task, :task)
   end
 
   private

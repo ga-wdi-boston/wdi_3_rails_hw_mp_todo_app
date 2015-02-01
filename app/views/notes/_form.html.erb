@@ -1,4 +1,4 @@
-<%= form_for @task.notes.build, url: project_list_task_notes_path(params[:project_id], @task) do |f| %>
+<%= form_for @task.notes.build, url: project_list_task_notes_path(params[:project_id], params[:list_id], @task, :task) do |f| %>
 
   <p>
     <%= f.label :text %><br>
