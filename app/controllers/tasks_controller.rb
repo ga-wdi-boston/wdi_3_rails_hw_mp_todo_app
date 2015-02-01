@@ -22,7 +22,7 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to list_path(@list), notice: 'Task was successfully created.'
     else
-      render :new
+      redirect_to list_path(@list), notice: 'Task cannot be blank.'
     end
   end
 
