@@ -3,7 +3,6 @@
   clear: both;
   padding: 0px;
   margin: 0px;
-  background-color: rgba(6, 19, 132, 1);
 }
 
 /*  COLUMN SETUP  */
@@ -11,9 +10,6 @@
   display: block;
   float:left;
   margin: 1% 0 1% 1.6%;
-  text-align: center;
-  color: white;
-  font-family: papyrus;
 }
 .col:first-child { margin-left: 0; }
 
