@@ -1,17 +1,14 @@
 <p id="notice"><%= notice %></p>
-
 <div class='row'>
-  <div class='col-xs-4 col-xs-offset-4'>
-    <h1>To-Do Lists</h1>
+  <div class='col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 text-center well well-lg'>
+    <h1>Your Lists</h1>
+    <h2><%= link_to 'New List', new_list_path %></h2>
   </div>
 </div>
-
+<div class='row'>
 <% @lists.each do |list| %>
-    <div class='col-xs-4>'>
-      <%= list.name %>
+    <div class='col-sm-4 col-xs-6 list'>
+      <%= link_to list.name, list %>
     </div>
 <% end %>
-
-
-
-<%= link_to 'New List', new_list_path %>
+</div>

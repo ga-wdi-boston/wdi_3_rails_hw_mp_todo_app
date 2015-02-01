@@ -1,13 +1,13 @@
 <p>
+  <% if task.completed %>
+    <i class='glyphicon glyphicon-ok'></i>
+  <% else %>
+    <i class='glyphicon glyphicon-remove'></i>
+  <% end %>
   <strong>Task:</strong>
   <%= task.name %>
 </p>
 
 <p>
-  <strong>Completed:</strong>
-  <%= task.completed %>
-</p>
-
-<p>
-  <%= link_to 'Destroy Comment', [task.list, task], method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Remove', [task.list, task], method: :delete, data: { confirm: 'Are you sure?' } %>
 </p>

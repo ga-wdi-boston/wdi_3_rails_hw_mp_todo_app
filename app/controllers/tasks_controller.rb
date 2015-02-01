@@ -19,7 +19,7 @@ class TasksController < ApplicationController
   def create
     @task = @list.tasks.build(task_params)
     if @task.save
-      redirect_to list_tasks_path(@list), notice: 'Task was successfully created.'
+      redirect_to list_path(@list), notice: 'Task was successfully created.'
     else
       render :new
     end
@@ -35,7 +35,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    redirect_to list_tasks_url(@list), notice: 'Task was successfully destroyed.'
+    redirect_to list_path(@list), notice: 'Task was successfully destroyed.'
   end
 
   private
