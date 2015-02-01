@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :lists do
     resources :tasks do
-      resources :notes
+      resources :notes, except: :show
     end
   end
 
