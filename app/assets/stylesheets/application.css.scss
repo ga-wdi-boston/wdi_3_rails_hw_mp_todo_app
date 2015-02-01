@@ -145,6 +145,32 @@ p {
 
 }
 
+.field {
+  align-content: center;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.actions {
+  align-content: center;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.exclaim {
+  font-size: 2.3em;
+  color: red;
+  display: inline;
+  float: left;
+}
+
+.complete_star {
+  font-size: 2.2em;
+  color: blue;
+  display: inline;
+}
+
+
 /* footer */
 
 footer {

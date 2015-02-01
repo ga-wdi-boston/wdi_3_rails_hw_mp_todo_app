@@ -1,12 +1,10 @@
-<p>
-  <strong>Description:</strong>
-  <%= note.body %>
-</p>
 
-<p>
-  <strong>Important:</strong>
-  <%= note.important %>
-</p>
+  <div class="exclaim">
+    <%= "!" if note.important %>
+     </div>
+  <p><strong>Description:</strong>
+  <%= note.body %> </p>
+
 
 <p><%= link_to 'Destroy Note', note, method: :delete, data: { confirm: 'Are you sure?' } %></p>
 

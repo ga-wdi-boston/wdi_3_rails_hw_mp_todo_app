@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20150201013006) do
     t.text     "description"
     t.date     "due_date"
     t.string   "priority"
-    t.boolean  "status"
+    t.boolean  "complete"
     t.integer  "group_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
