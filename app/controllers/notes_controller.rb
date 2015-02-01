@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
-  before_action :set_list
-  before_action :set_task
+  before_action :set_list, except: :catalog
+  before_action :set_task, except: :catalog
   before_action :set_note, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -37,6 +37,10 @@ class NotesController < ApplicationController
   def destroy
     @note.destroy
       redirect_to notes_url, notice: 'Note was successfully destroyed.'
+  end
+
+  def catalog
+    @notes = Note.all
   end
 
   private
