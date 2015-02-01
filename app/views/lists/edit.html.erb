@@ -1,0 +1,25 @@
+<h2>Edit List</h2>
+
+<%= form_for([@list.project, @list]) do |f| %>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :completed %><br>
+    <%= f.text_area :completed %>
+  </p>
+
+  <p>
+    <%= f.label :project_id %>
+    <%= f.text_area :project_id %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
+

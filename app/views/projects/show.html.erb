@@ -2,7 +2,9 @@
 
 <ul>
 <% @lists.each do |list| %>
-  <li><%= link_to list.name, project_list_path(@project, list) %></li>
+  <li><%= link_to list.name, project_list_path(@project, list) %> | <%= link_to 'Edit', edit_project_list_path(@project, list) %> | <%= link_to 'Delete', project_list_path(@project, list),
+                     method: :delete,
+                     data: {confirm: 'Are you sure?'} %> </li>
 <% end %>
 </ul>
 
