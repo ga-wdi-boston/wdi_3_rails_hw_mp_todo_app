@@ -23,7 +23,7 @@ class NotesController < ApplicationController
     if @note.save
       redirect_to list_task_notes_path(@list, @task), notice: 'Note was successfully created.'
     else
-      render :new
+      redirect_to list_task_notes_path(@list, @task), notice: 'Note cannot be blank.'
     end
   end
 
@@ -31,7 +31,7 @@ class NotesController < ApplicationController
     if @note.update(note_params)
       redirect_to list_task_notes_path(@list, @task), notice: 'Note was successfully updated.'
     else
-      render :edit
+      redirect_to list_task_notes_path(@list, @task), notice: 'Note cannot be blank.'
     end
   end
 

@@ -1,23 +1,6 @@
-<h1>Listing All Tasks</h1>
+<h1 class='well well-lg col-xs-6 text-center'>Your Tasks</h1>
+<div class='col-xs-4 col-xs-offset-2'>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Completed</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<%= render @tasks.order(:name) %>
 
-  <tbody>
-    <% @tasks.each do |task| %>
-      <tr>
-        <td><%= task.name %></td>
-        <td><%= task.completed %></td>
-        <td><%= link_to 'Show', list_task_path(task.list, task) %></td>
-        <td><%= link_to 'Edit', edit_list_task_path(task.list, task) %></td>
-        <td><%= link_to 'Destroy', list_task_path(task.list, task), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+</div>

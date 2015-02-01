@@ -1,0 +1,8 @@
+<div class='panel'>
+  <%= note.body %>
+</div>
+<ul class='nav nav-pills'>
+  <li><%= link_to 'Edit', edit_list_task_note_path(note.task.list, note.task, note) %></li>
+  <li><%= link_to 'Destroy', list_task_note_path(note.task.list, note.task, note), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+</ul>
+

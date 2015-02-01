@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <div class='col-xs-6 well well-lg text-center'>
-  <h1>Your List:</h1>
-  <h2><%= @list.name %></h2>
+  <h1><%= @list.name %></h1>
+  <h2>Tasks</h2>
 
   <div>
     <%= link_to 'Edit', edit_list_path(@list) %> |
@@ -13,6 +13,6 @@
 </div>
 
 <div class='col-xs-4 col-xs-offset-2'>
-<%= render @list.tasks %>
+<%= render @list.tasks.order(:id) %>
 <%= render 'tasks/form' %>
 
