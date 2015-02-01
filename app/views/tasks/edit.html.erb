@@ -1,6 +1,6 @@
 <h1>Editing Task</h1>
 
-<%= form_for(@list, @task) do |f| %>
+<%= form_for [@list, @post] do |f| %>
     <%= render 'shared/errors', object: @task %>
 
   <div class="field">
