@@ -3,5 +3,19 @@
   <%= @list.title %>
 </p>
 
+<!-- <h2> Add a task:</h2>
+<%#= form_for ([@list, @list.tasks.build]) do |f| %>
+  <p>
+    <%#= f.check_box_tag(:done) %>
+    <%#= f.label_tag(:done, "Task complete") %>
+  </p>
+  <p>
+    <%#= f.label :title %>
+    <%#= f.text_field :title %>
+  </p>
+  <p>
+    <%#= f.submit %>
+  </p>
+  <%# end %> -->
 <%= link_to 'View your Lists', root_path %> |
 <%= link_to 'Edit your Lists', edit_list_path(@list) %>

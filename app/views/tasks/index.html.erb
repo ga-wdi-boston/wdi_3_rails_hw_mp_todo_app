@@ -1,0 +1,15 @@
+<h1>These are your tasks:</h1>
+
+<h3>Create a new task</h3>
+<%= link_to 'New task', new_list_task_path %>
+
+
+<h2><%= pluralize(@tasks.count, 'task') %></h2>
+<ul>
+  <% @tasks.each do |task| %>
+  <li><%= task.title %></li>
+
+  <% end %>
+</ul>
+
+<%= link_to 'Back to your lists', root_path %>
