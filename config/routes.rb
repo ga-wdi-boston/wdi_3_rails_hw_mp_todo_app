@@ -4,11 +4,15 @@ resources :projects  do
   resources :groups, only: [:index, :new, :create]
 end
 
-resources :groups, except: [:index, :new, :create] do
+resources :groups, only: [:show, :edit, :update, :destroy] do
   resources :tasks, only: [:index, :new, :create]
 end
 
-resources :tasks, only: [:show, :edit, :update, :destroy]
+resources :tasks, only: [:show, :edit, :update, :destroy] do
+  resources :notes, only: [:index, :new, :create]
+end
+
+resources :notes, only:[:show, :edit, :update, :destroy]
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
