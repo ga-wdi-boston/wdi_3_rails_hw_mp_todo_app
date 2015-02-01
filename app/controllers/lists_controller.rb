@@ -37,6 +37,8 @@ class ListsController < ApplicationController
     @list = @project.lists.find(params[:id])
 
     @list.destroy
+
+    redirect_to @list.project
   end
 
   private
