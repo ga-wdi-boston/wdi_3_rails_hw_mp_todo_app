@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'welcome/index'
-  root 'welcome#index'
+  root to: 'lists#index'
 
   resources :lists
-  resources :tasks
+  resources :tasks do
+    resources :notes
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
