@@ -1,4 +1,4 @@
-<%= form_for [@list, @list.tasks.build, *@task] do |f| %>
+<%= form_for [@list, @list.tasks.build] do |f| %>
   <% if @task %>
     <%= render 'shared/errors', object: @task %>
   <% end %>
