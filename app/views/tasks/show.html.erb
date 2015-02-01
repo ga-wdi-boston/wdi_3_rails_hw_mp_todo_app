@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @task.name %>
+</p>
+
+<p>
+  <strong>Completed?:</strong>
+  <%= @task.completed? %>
+</p>
+
+
+<ul>
+  <% @task.notes.each do |note| %>
+  <li><%= note.comment %> </li>
+  <% end %>
+</ul>
+
+<%= link_to 'New Task', new_task_path(@task)  %> |
+<%= link_to 'New Note', new_task_note_path(@task)  %> |
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', lists_path %>
