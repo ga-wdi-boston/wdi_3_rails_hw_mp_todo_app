@@ -1,3 +1,5 @@
+<h2>Tasks</h2>
+
 <h3><%= @task.name %></h3>
 
  <p><%= @task.completion_status %></p>
@@ -5,7 +7,7 @@
 <h2>Notes</h2>
 <%= render @task.notes %>
 
-<h2>Add notes:</h2>
+<p>Add notes:</p>
 <%= render 'notes/form' %>
 
 <%= link_to "All Tasks", root_path %> |
