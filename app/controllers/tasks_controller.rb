@@ -21,7 +21,7 @@ class TasksController < ApplicationController
     @task = @list.tasks.new(tasks_params)
 
     if @task.save
-      redirect_to list_tasks_path(@list)
+      redirect_to list_task_notes_path(@list)
     else
       render :new
     end
@@ -47,14 +47,15 @@ class TasksController < ApplicationController
   end
 
 
-  def destroy
-    @list = List.find(params[:list_id])
-    @task = @list.tasks.find(params[:id])
+def destroy
+    @task = Task.find(params[:id])
     @task.destroy
+
     respond_to do |format|
-      format.html { redirect_to tasks_url, notice: 'Task was successfully destroyed.' }
+        format.html { redirect_to list_tasks_path(@task) }
+        format.json { head :ok }
     end
-  end
+end
 
   private
 

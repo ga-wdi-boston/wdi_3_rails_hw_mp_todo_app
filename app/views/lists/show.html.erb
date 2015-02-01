@@ -1,6 +1,24 @@
-<p id="notice"><%= notice %></p>
+  <p>
+    <strong>List:</strong>
+    <%= @list.name %>
+  </p>
 
-<p>
-  <strong>List:</strong>
-  <%= @list.name %>
-</p>
+  <ul>
+    <% @list.tasks.each do |task|  %>
+      <li><%= link_to task.name, list_task_path(@list, task) %>
+      <% if task.status == true %>
+        <strong>Complete</strong>
+      <% else %>
+        <strong>Incomplete</strong>
+      <% end %>
+      <%= link_to "Delete", [@list, task], method: :delete, data: { confirm: 'Are you sure?' } %>
+ </li>
+    <% end %>
+  </ul>
+
+
+<h3>Create new task</h3>
+<%= link_to "Cancel", lists_path %>
+<%= link_to 'New Task', new_list_task_path(@list.id) %>
+
+
