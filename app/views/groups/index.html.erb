@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Groups</h1>
+<h1>Project Groups/Divisions</h1>
 
 <table>
   <thead>
@@ -8,7 +8,8 @@
       <th>Title</th>
       <th>Leads</th>
       <th>Project</th>
-      <th colspan="3"></th>
+      <th>Group Tasks</th>
+      <th colspan="3">Modify Group</th>
     </tr>
   </thead>
 
@@ -29,7 +30,7 @@
 
 <br>
 
-<ul>
+<ul class="page_link">
   <li><%= link_to 'New Group', new_project_group_path %></li>
   <li><%= link_to 'Back to Project Main', controller: 'projects' %></li>
 </ul>

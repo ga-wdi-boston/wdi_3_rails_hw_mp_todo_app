@@ -1,4 +1,4 @@
-<h1>Editing Note</h1>
+<h2>Editing Note</h2>
 
 <%= form_for([@task, @note]) do |f| %>
   <% if @note.errors.any? %>
@@ -27,6 +27,7 @@
   </div>
 <% end %>
 
-
-<%= link_to 'Show', @note %>
-<%= link_to 'Back', task_notes_path(@note.task_id) %>
+<ul class='page_link'>
+  <li><%= link_to 'Show', @note %></li>
+  <li><%= link_to 'Back', task_notes_path(@note.task_id) %></li>
+</ul>

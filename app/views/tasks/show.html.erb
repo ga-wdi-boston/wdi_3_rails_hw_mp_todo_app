@@ -34,8 +34,10 @@
   <h3>Post a Note:</h3>
   <%= render 'notes/form' %>
 
-  <%= link_to 'Edit', edit_task_path(@task) %>
-  <%= link_to 'Back', group_tasks_path(@task.group_id) %>
+  <ul class='page_link'>
+  <li><%= link_to 'Edit', edit_task_path(@task) %></li>
+  <li><%= link_to 'Back', group_tasks_path(@task.group_id) %></li>
+  </ul>
   </div>
 
 </section>

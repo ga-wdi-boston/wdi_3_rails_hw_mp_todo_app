@@ -1,5 +1,7 @@
-<h1>Editing Group</h1>
+<h2>Editing Group</h2>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', project_groups_path(@group.project_id) %>
+<ul class='page_link'>
+  <li><%= link_to 'Back', project_groups_path(@group.project_id) %></li>
+</ul>

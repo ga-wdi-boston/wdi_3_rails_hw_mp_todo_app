@@ -1,6 +1,7 @@
-<h1>Editing Task</h1>
+<h2>Editing Task</h2>
 
 <%= render 'form' %>
 
-
-<%= link_to 'Back', group_tasks_path(@task.group_id) %>
+<ul class='page_link'>
+<li><%= link_to 'Back', group_tasks_path(@task.group_id) %></li>
+</ul>

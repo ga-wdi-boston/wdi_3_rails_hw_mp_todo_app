@@ -20,5 +20,7 @@
   <%= @project.leads %>
 </p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<ul class='page_link'>
+  <li><%= link_to 'Edit', edit_project_path(@project) %></li>
+  <li><%= link_to 'Back', projects_path %></li>
+</ul>

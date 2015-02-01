@@ -16,5 +16,7 @@
   <%= @group.project.title %>
 </p>
 
-<%= link_to 'Edit', edit_group_path(@group) %>
-<%= link_to 'Back', project_groups_path(@group.project_id) %>
+<ul class='page_link'>
+<li><%= link_to 'Edit', edit_group_path(@group) %></li>
+<li><%= link_to 'Back', project_groups_path(@group.project_id) %></li>
+</ul>
