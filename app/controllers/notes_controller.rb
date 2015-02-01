@@ -24,17 +24,10 @@ class NotesController < ApplicationController
   # POST /notes
   # POST /notes.json
   def create
-    @note = Note.new(note_params)
-
-    respond_to do |format|
-      if @note.save
-        format.html { redirect_to @note, notice: 'Note was successfully created.' }
-        format.json { render :show, status: :created, location: @note }
-      else
-        format.html { render :new }
-        format.json { render json: @note.errors, status: :unprocessable_entity }
-      end
-    end
+    # @task = Task.find(params[:task_id])
+    @list = List.find(params[:task_id])
+    @note = @list.notes.create(note_params)
+    redirect_to task_path(@task)
   end
 
   # PATCH/PUT /notes/1
@@ -54,11 +47,10 @@ class NotesController < ApplicationController
   # DELETE /notes/1
   # DELETE /notes/1.json
   def destroy
-    @note.destroy
-    respond_to do |format|
-      format.html { redirect_to notes_url, notice: 'Note was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    @task = Task.find(params[:task_id])
+    @note = @task.notes.find(params[:id])
+    @task.destroy
+    redirect_to task_path(@task)
   end
 
   private
