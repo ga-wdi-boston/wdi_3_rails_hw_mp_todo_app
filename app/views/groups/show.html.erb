@@ -1,14 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Group name:</strong>
   <%= @group.name %>
 </p>
+<p>
+<ul>
+<% @group.tasks.each do |task| %>
+<li><%= task.name %></li>
+<% end %>
+</ul>
 
 <p>
-  <strong>List:</strong>
-  <%= @group.list %>
+  <strong>Belongs to:</strong>
+  <%= @group.list.name %>
 </p>
 
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+<%= link_to 'Edit', edit_group_path(@group) %> | <%= link_to 'back', lists_path %>
