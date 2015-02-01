@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
 
-    resources :projects do
-      resources :groups
-    end
+resources :projects  do
+  resources :groups, only: [:index, :new, :create]
+end
 
+resources :groups, except: [:index, :new, :create] do
+  resources :tasks, only: [:index, :new, :create]
+end
 
-
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
+resources :tasks, only: [:show, :edit, :update, :destroy]
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 

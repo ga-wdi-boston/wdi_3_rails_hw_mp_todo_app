@@ -26,9 +26,9 @@
 </p>
 
 <p>
-  <strong>Project Id:</strong>
-  <%= @group.project_id %>
+  <strong>Project Title:</strong>
+  <%= @group.project.title %>
 </p>
 
-<%= link_to 'Edit', edit_project_group_path(@project, @group) %>
-<%= link_to 'Back', project_groups_path %>
+<%= link_to 'Edit', edit_group_path(@group) %>
+<%= link_to 'Back', project_groups_path(@group.project_id) %>

@@ -24,9 +24,10 @@
         <td><%= group.priority %></td>
         <td><%= group.project.title %></td>
         <td><%= group.status %></td>
-        <td><%= link_to 'Show', project_group_path(@project, group) %></td>
-        <td><%= link_to 'Edit', edit_project_group_path(@project, group) %></td>
-        <td><%= link_to 'Destroy', [group.project, group], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Tasks', group_tasks_path(group.id) %></td>
+        <td><%= link_to 'Show', group_path( group) %></td>
+        <td><%= link_to 'Edit', edit_group_path(group) %></td>
+        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
