@@ -1,7 +1,7 @@
 <%= form_for(@list) do |f| %>
 
   <div class="list field">
-    <%= f.text_field :name, :autofocus=>true %>
+    <%= f.text_field :name, autofocus: true %>
   </div>
   <div class="list actions">
     <%= f.submit class: 'btn btn-success'%>
