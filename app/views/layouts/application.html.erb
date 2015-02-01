@@ -7,19 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="container">
-  <h1>Projects To-Do</h1>
-  <ul class="nav nav-tabs">
-    <li><%= link_to "Projects Main", projects_path %></li>
-    <li><%= link_to "Projects Main", projects_path %></li>
-    <li><%= link_to "Projects Main", projects_path %></li>
-    <li><%= link_to "Projects Main", projects_path %></li>
-  </ul>
 
+  <%= render 'layouts/header' %>
+
+  <div class="container">
       <%= yield %>
-
+      <%= render 'layouts/footer' %>
   </div>
-
 
 </body>
 </html>

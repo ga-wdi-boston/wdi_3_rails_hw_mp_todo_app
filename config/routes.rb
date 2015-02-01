@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+root 'welcome#index'
+
+resources :welcome, only: [:index]
 
 resources :projects  do
   resources :groups, only: [:index, :new, :create]
 end
+
+
 
 resources :groups, only: [:show, :edit, :update, :destroy] do
   resources :tasks, only: [:index, :new, :create]
@@ -13,11 +18,13 @@ resources :tasks, only: [:show, :edit, :update, :destroy] do
 end
 
 resources :notes, only:[:show, :edit, :update, :destroy]
+
+
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  #get 'groups/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

@@ -60,6 +60,7 @@ class TasksController < ApplicationController
       format.html { redirect_to group_tasks_path(@task.group_id), notice: 'Task was successfully destroyed.' }
       format.json { head :no_content }
     end
+
   end
 
 
