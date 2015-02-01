@@ -5,6 +5,7 @@ class GroupsController < ApplicationController
   # GET /groups.json
   def index
     @groups = Group.all
+    @list = List.find(params[:list_id])
   end
 
   # GET /groups/1

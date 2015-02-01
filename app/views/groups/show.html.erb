@@ -16,4 +16,4 @@
   <%= @group.list.name %>
 </p>
 
-<%= link_to 'Edit', edit_group_path(@group) %>
+<%= link_to 'edit', edit_group_path(@group) %> | <%= link_to 'back', list_groups_path(@group) %>

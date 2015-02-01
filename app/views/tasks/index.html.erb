@@ -17,7 +17,11 @@
       <tr>
         <td><%= task.name %></td>
         <td><%= task.completed? %></td>
-        <td><%= task.group %></td>
+            <% if task.group != nil %>
+        <td><%= task.group.name %></td>
+            <% else %>
+        <td></td>
+            <% end %>
         <td><%= link_to 'Show', task %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -28,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Task', new_task_path %>
+<%= link_to 'new task', new_list_task_path %> | <%= link_to 'back', list_groups_path %>
