@@ -1,9 +1,29 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Title:</strong>
+  <strong>List of Tasks for:</strong>
   <%= @list.title %>
 </p>
 
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
+<table>
+  <thead>
+    <tr>
+      <th>Tasks</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= link_to task.name, list_task_path(@list, task) %></td>
+          <td><%= "#{task.complete?}" %></td>
+        <td><%= link_to 'Edit', edit_list_task_path(@list, task) %></td>
+        <td><%= link_to 'Destroy', list_task_path(@list, task), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add New Task', new_list_task_path(@list) %> |
+<%= link_to 'Back to Lists', lists_path %>
