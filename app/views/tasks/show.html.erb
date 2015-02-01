@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Action</h1>
+
 <p>
   <strong>Action:</strong>
   <%= @task.action %>
@@ -10,9 +12,9 @@
   <%= @task.done? %>
 </p>
 
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', list_path(@task.list) %>
+
 <p>
   <%= render "notes/index" %>
 </p>
-
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', list_path(@task.list) %>
