@@ -1,14 +1,10 @@
 Rails.application.routes.draw do
 
 
-  resources :lists do
-  	resources :groups
-  	end
-
-  resources :groups do
-  	resources :tasks
-	end
-
+  resources :lists, shallow: true do
+    resources :groups
+    resources :tasks
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
