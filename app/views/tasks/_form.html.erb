@@ -1,10 +1,10 @@
-<%= form_for [@list, @list.tasks.build] do |f| %>
+<%= form_for [@list, @task] do |f| %>
   <% if @task %>
     <%= render 'shared/errors', object: @task %>
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label 'Task' %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field check">

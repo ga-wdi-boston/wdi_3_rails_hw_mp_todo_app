@@ -4,6 +4,7 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all
+    @task = Task.new
   end
 
   def show
@@ -27,7 +28,7 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      redirect_to list_task_path(@list, @task), notice: 'Task was successfully updated.'
+      redirect_to list_path(@list), notice: 'Task was successfully updated.'
     else
       render :edit
     end

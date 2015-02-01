@@ -4,7 +4,8 @@ class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
 
   def index
-    @notes = Note.all
+    @notes = @task.notes.all
+    @note = Note.new
   end
 
   def show
@@ -20,7 +21,7 @@ class NotesController < ApplicationController
   def create
     @note = @task.notes.build(note_params)
     if @note.save
-      redirect_to list_task_note_path(@list, @task, @note), notice: 'Note was successfully created.'
+      redirect_to list_task_notes_path(@list, @task), notice: 'Note was successfully created.'
     else
       render :new
     end
@@ -28,7 +29,7 @@ class NotesController < ApplicationController
 
   def update
     if @note.update(note_params)
-      redirect_to list_task_note_path(@list, @task, @note), notice: 'Note was successfully updated.'
+      redirect_to list_task_notes_path(@list, @task), notice: 'Note was successfully updated.'
     else
       render :edit
     end
@@ -36,7 +37,7 @@ class NotesController < ApplicationController
 
   def destroy
     @note.destroy
-      redirect_to notes_url, notice: 'Note was successfully destroyed.'
+      redirect_to list_task_notes_path(@list, @task), notice: 'Note was successfully destroyed.'
   end
 
   def catalog
