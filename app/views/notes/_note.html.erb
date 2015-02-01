@@ -1,0 +1,13 @@
+<p>
+  <strong>Description:</strong>
+  <%= note.body %>
+</p>
+
+<p>
+  <strong>Important:</strong>
+  <%= note.important %>
+</p>
+
+<p><%= link_to 'Destroy Note', note, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+
+

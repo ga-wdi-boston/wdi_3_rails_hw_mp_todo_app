@@ -1,34 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Subject:</strong>
-  <%= @task.subject %>
-</p>
+<h2>Task: <%=@task.subject %> </h2>
+<section class='show_task'>
+  <p>
+    <strong>Description:</strong>
+    <%= @task.description %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @task.description %>
-</p>
+  <p>
+    <strong>Due date:</strong>
+    <%= @task.due_date %>
+  </p>
 
-<p>
-  <strong>Due date:</strong>
-  <%= @task.due_date %>
-</p>
+  <p>
+    <strong>Priority:</strong>
+    <%= @task.priority %>
+  </p>
 
-<p>
-  <strong>Priority:</strong>
-  <%= @task.priority %>
-</p>
+  <p>
+    <strong>Status:</strong>
+    <%= @task.status %>
+  </p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @task.status %>
-</p>
+  <p>
+    <strong>Group:</strong>
+    <%= @task.group.title %>
+  </p>
 
-<p>
-  <strong>Group:</strong>
-  <%= @task.group.title %>
-</p>
+  <div class='notes'>
+  <h3>Task Notes:</h3>
+  <%= render @task.notes %>
 
-<%= link_to 'Edit', edit_task_path(@task) %>
-<%= link_to 'Back', group_tasks_path(@task.group_id) %>
+  <h3>Post a Note:</h3>
+  <%= render 'notes/form' %>
+
+  <%= link_to 'Edit', edit_task_path(@task) %>
+  <%= link_to 'Back', group_tasks_path(@task.group_id) %>
+  </div>
+
+</section>
