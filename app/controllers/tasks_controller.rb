@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:flop, :edit, :update, :destroy]
 
   def flop
-    @task.completed = !@task.completed # flop the status
+    @task.completed = !@task.completed
     @task.save
 
     redirect_to list_path(@list)
@@ -17,6 +17,7 @@ end
   end
 
   def create
+    task_params = task_params[completed: false]
     @task = @list.tasks.build(task_params)
     if @task.save
       redirect_to list_path(@list), notice: 'Task was successfully created.'
