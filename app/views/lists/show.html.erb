@@ -1,0 +1,21 @@
+<h1>This list</h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>List Name:</strong>
+  <%= @list.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @list.description %>
+</p>
+
+<h2>Task:</h2>
+<%= render @list.tasks %>
+
+<h2>Add a task:</h2>
+<%= render 'tasks/form' %>
+
+<%= link_to 'Edit', edit_list_path(@list) %> |
+<%= link_to 'Back', lists_path %>
