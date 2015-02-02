@@ -1,10 +1,32 @@
 <p id="notice"><%= notice %></p>
+<div class="headcolor">
+<br>
+  <h1><%= @task.name %></h1>
+</div>
+<br>
 
-<p>
-  <strong>Task:</strong>
-  <%= @task.name %>
+<h2>Notes</h2>
+<% @task.notes.each do |note| %>
+  <p>
+    <strong>Note:</strong>
+    <%= link_to note.body %>
+  </p>
+<% end %>
 </p>
 
+<h2>Add a Note:</h2>
+<%= form_for([@task, @task.notes.build]) do |f| %>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_field :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
 
+
+<br>
+<div class="button">
 <%= link_to 'Back', list_tasks_path(@list.id) %>
-
+</div>

@@ -1,11 +1,17 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<div class="headcolor">
+<br>
+<h1>
   <%= @list.name %>
-</p>
+</h1>
+</div>
+<div class="bar"></div>
 
+<br>
+<br>
+
+<div class="box">
 <%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
+<%= link_to 'Back', lists_path %> |
 <%= link_to 'Tasks', list_tasks_path(@list.id) %>
-
+</div>
