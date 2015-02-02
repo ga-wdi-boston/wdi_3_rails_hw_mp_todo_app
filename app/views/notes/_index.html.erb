@@ -11,7 +11,7 @@
   </thead>
 
   <tbody>
-    <% @task.notes.each do |note| %>
+    <% @notes.each do |note| %>
       <tr>
         <td><%= note.message %></td>
         <td><%= link_to 'Edit', edit_note_path(note) %></td>

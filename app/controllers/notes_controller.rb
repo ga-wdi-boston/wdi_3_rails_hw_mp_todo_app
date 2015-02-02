@@ -4,7 +4,8 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
-    @notes = Note.all
+    @task = Task.find(params[:id])
+    @notes = @task.notes
   end
 
   # GET /notes/1
