@@ -1,22 +1,8 @@
 class TasksController < ApplicationController
 
-  def index
-    @list = List.find(list_params)
-    @tasks = Task.all
-  end
-
   def create
-    # @list = List.find(params[:list_id])
-    # @task = @list.tasks.new(tasks_params)
-
-    # if @task.save
-    #   redirect_to list_tasks_path(@list)
-    # else
-    #   render :new
-    # end
-
     @list = List.find(params[:list_id])
-    @task = @list.tasks.create(tasks_params)
+    @task = @list.tasks.create!(tasks_params)
     redirect_to list_path(@list)
   end
 
@@ -35,7 +21,7 @@ class TasksController < ApplicationController
   private
 
   def tasks_params
-    params.require(:task).permit(:title, :due_date, :status)
+    params.require(:task).permit(:title, :due_date, :status) #why the fuck is :status not passing through?
   end
 
 end

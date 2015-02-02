@@ -1,16 +1,15 @@
 <%= form_for([@list, @list.tasks.build]) do |f| %>
 
   <p>
-    <%= f.label 'Title' %><br>
+    <%= f.label :title %><br>
     <%= f.text_field :title %>
   </p>
   <p>
-    <%= f.label 'Due Date' %><br>
+    <%= f.label :due_date %><br>
     <%= f.date_field :due_date %>
   </p>
   <p>
-    <%= f.label 'Status' %><br>
-
+    <%= f.label :status %><br>
     <%= select_tag(:status, options_for_select([['pending', 1],['completed', 2]])) %>
   </p>
   <p>
