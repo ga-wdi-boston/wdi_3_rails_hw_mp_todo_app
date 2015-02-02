@@ -1,9 +1,0 @@
-  <%= form_for [@list] do |f| %>
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field :name, autofocus: true %>
-  </p>
-
-  <%= f.submit %>
-  | <%= link_to "Cancel", lists_path %>
-  <% end %>
