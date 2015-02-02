@@ -1,40 +1,29 @@
+<div class="nav navbar">
+  <div class="container">
+    <ul class="nav nav-pills pull-left">
+      <li><%= link_to 'All Lists', lists_path %></li>
+    </ul>
+    <ul class="nav nav-pills pull-right">
+      <li><%= link_to 'Edit List', edit_list_path(@list) %></li>
+      <li><%= link_to 'New Task', new_list_task_path(@list) %></li>
+    </ul>
+  </div>
+</div>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Project:</strong>
-  <%= @list.project %>
-</p>
-
-<p>
-  <strong>Name:</strong>
+<h1>
   <%= @list.name %>
-</p>
+</h1>
 
-<h1>Tasks</h1>
+<h2>Tasks</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Is completed?</th>
-      <th>List</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @list.tasks.each do |task| %>
-      <tr>
-        <td><%= task.name %></td>
-        <td><%= task.is_completed? %></td>
-        <td><%= link_to 'Show', list_task_path(@list, task) %></td>
-        <td><%= link_to 'Edit', edit_list_task_path(@list, task) %></td>
-        <td><%= link_to 'Destroy', list_task_path(@list, task), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @list.tasks.each do |task| %>
+  <div class="panel col-xs-3 col-xs-offset-2">
+    <h3><%= link_to task.name, list_task_path(@list, task) %></h3>
+    <div class='btn btn-default'><%= link_to 'Delete', list_task_path(@list, task), method: :delete, data: { confirm: 'Are you sure?' } %></div>
+  </div>
+<% end %>
 
-<%= link_to 'New Task', new_list_task_path(@list) %> |
-<%= link_to 'Edit List Details', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
+
