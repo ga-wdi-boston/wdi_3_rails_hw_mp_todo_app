@@ -1,7 +1,12 @@
 <p>
   <strong><%= @list.name %></strong>
-  <%= render @list.tasks %>
 </p>
+
+  <% @list.tasks.each do |task|%>
+  <div>
+    <h3><%= link_to task.name, list_task_path(@list, task) %>
+  </div>
+  <%end%>
 
 <%= link_to 'New Task', new_list_task_path(@list) %> |
 <%= link_to 'Edit', edit_list_path(@list) %> |

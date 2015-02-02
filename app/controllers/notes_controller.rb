@@ -38,6 +38,7 @@ class NotesController < ApplicationController
   def destroy
     @note.destroy
       redirect_to list_task_path(@list, @task)
+  end
 
   def catalog
     @notes = Note.all
