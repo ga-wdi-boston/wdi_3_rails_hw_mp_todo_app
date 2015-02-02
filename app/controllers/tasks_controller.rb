@@ -5,14 +5,27 @@ class TasksController < ApplicationController
     @tasks = @list.tasks
   end
 
+  def show
+    @list = List.find(params[:list_id])
+    @task = @list.tasks.find(params[:id])
+
+  end
+
   def new
     @list = List.find(params[:list_id])
     @task = @list.tasks.new
   end
 
+  def edit
+    @list = List.find(params[:list_id])
+    @task = @list.tasks.find(params[:id])
+
+
+  end
+
   def create
     @list = List.find(params[:list_id])
-    @task = @list.tasks.new(tasks_params)
+    @task = @list.tasks.new(task_params)
 
     if @task.save
       redirect_to list_tasks_path(@list)
@@ -22,15 +35,27 @@ class TasksController < ApplicationController
   end
 
   def update
-    @task = Task.find(params[:id])
-    @task.update_attributes(params[:task])
-    redirect_to @task
+    @list = List.find(params[:list_id])
+    @task = @list.tasks.find(params[:id])
 
+    if @task.update(task_params)
+        redirect_to list_tasks_path(@list)
+    else
+    render :edit
+    end
+  end
+
+  def destroy
+    @list = List.find(params[:list_id])
+    @task = @list.tasks.find(params[:id])
+    @task.destroy
+
+    redirect_to list_tasks_path(@list)
   end
 
   private
 
-    def tasks_params
+    def task_params
       params.require(:task).permit(:title)
     end
 
