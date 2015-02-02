@@ -1,0 +1,22 @@
+<%= form_for @list.tasks.build, url: project_list_tasks_path(params[:project_id], @list) do |f| %>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.check_box :completed %><br>
+    <%= f.label :completed %>
+  </p>
+
+  <p>
+    <%= f.label :list_id %>
+    <%= f.text_area :list_id %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>

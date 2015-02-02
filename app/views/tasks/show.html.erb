@@ -1,0 +1,10 @@
+<h2><%= @task.name %></h2>
+
+<ul>
+<% @notes.each do |note| %>
+  <li><%= note.text %></li>
+<% end %>
+</ul>
+
+<h3>New note</h3>
+<%= render 'notes/form' %>

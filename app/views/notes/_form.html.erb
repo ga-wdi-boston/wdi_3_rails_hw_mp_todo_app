@@ -1,0 +1,17 @@
+<%= form_for @task.notes.build, url: project_list_task_notes_path(params[:project_id], params[:list_id], @task, :task) do |f| %>
+
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_field :text %>
+  </p>
+
+  <p>
+    <%= f.label :task_id %>
+    <%= f.text_area :task_id %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>

@@ -1,0 +1,22 @@
+<%= form_for([@project, @project.lists.build]) do |f| %>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.check_box :completed %><br>
+    <%= f.label :completed %>
+  </p>
+
+  <p>
+    <%= f.label :project_id %>
+    <%= f.text_area :project_id %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
