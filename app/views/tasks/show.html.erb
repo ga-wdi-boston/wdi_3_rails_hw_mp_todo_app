@@ -10,8 +10,6 @@
     <h3><%= note.note %></h3>
   <% end %>
   <%= render 'notes/form' %>
-<%= link_to 'Edit', edit_task_path(@task) %>
 <%= link_to 'Back', list_path(@task.list_id) %>
 <%= link_to 'Destroy', @task, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to 'New Task, Chief?', new_task_note_path(@task.id) %>
 </div>

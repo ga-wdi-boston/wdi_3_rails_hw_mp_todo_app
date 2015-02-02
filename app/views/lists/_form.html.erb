@@ -9,5 +9,5 @@
       <%= f.text_field :description %>
     </p>
     <%= f.submit %>
-    <%= link_to "Cancel", projects_path %>
+    <%= link_to "Cancel", project_path(@list.project_id) %>
     <% end %>

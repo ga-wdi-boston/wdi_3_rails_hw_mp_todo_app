@@ -6,16 +6,19 @@
 <% @list.tasks.each do |task| %>
   <table>
     <tr>
-      <td><h3><%= task.name %></h3></td>
+      <td><h3><%= link_to task.name, task %></h3></td>
       <%= form_for [task] do |f| %>
       <td><p><%= f.check_box( "completed", {}, "true", "false") %></p></td>
       <td><%= f.submit %></td>
     </tr>
   </table>
   <% end %>
-  <p><%= link_to 'Check out the Task', task %></p>
+  <% task.notes.each do |note| %>
+    <p><%= note.note %></p>
+    <% end %>
+
 <% end %>
 <%= link_to 'Edit', edit_list_path(@list) %>
-<%= link_to 'Back', projects_path %>
+<%= link_to 'Back', project_path(@list.project_id) %>
 <%= link_to 'New Task, Chief?', new_list_task_path(@list.id) %>
 </div>
