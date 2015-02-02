@@ -5,7 +5,7 @@
 
 
 <h2> Add a note:</h2>
-<%= form_for([@task, @task.notes.build]) do |f| %>
+<%= form_for([@list, @task, @task.notes.build, *@note]) do |f| %>
 
 <p>
   <%= f.label :body %>

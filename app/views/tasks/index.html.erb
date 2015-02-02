@@ -16,7 +16,9 @@
   <tbody>
     <% @tasks.each do |task| %>
     <tr>
-    <td><%= task.title %></td>
+    <td><%= check_box_tag(:complete) %>
+        <%#= label_tag(:complete, 'task.title') %><%= task.title %>
+    </td>
     <td><%= link_to 'show task',list_task_path(params[:list_id],task.id)%></td>
     <td><%= link_to 'edit', edit_list_task_path(params[:list_id],task.id)%> </td>
     <td><%= link_to 'Remove', list_task_path(params[:list_id],task.id),
@@ -31,3 +33,4 @@
 
 
 <%= link_to 'Back to your lists', root_path %>
+
