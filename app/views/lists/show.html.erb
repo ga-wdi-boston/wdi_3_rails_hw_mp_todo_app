@@ -4,7 +4,15 @@
 <h1><%= @list.name %></h1>
 <p><%= @list.description %></p>
 <% @list.tasks.each do |task| %>
-  <h3><%= task.name %></h3>
+  <table>
+    <tr>
+      <td><h3><%= task.name %></h3></td>
+      <%= form_for [task] do |f| %>
+      <td><p><%= f.check_box( "completed", {}, "true", "false") %></p></td>
+      <td><%= f.submit %></td>
+    </tr>
+  </table>
+  <% end %>
   <p><%= link_to 'Check out the Task', task %></p>
 <% end %>
 <%= link_to 'Edit', edit_list_path(@list) %>
