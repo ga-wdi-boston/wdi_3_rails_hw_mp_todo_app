@@ -1,16 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Projects</h1>
+<h1>Projects</h1>
 
 <table class="project_table">
   <thead>
     <tr>
       <th>Title</th>
-      <th>Due Date</th>
       <th>Status</th>
+      <th>Due Date</th>
       <th>Leads</th>
       <th>Groups/Divisions Tasks</th>
-      <th colspan="3">Modify Project</th>
+      <th>Add Group</th>
+      <th>Edit Project</th>
+      <th>Delete Project</th>
     </tr>
   </thead>
 
@@ -18,15 +20,20 @@
     <% @projects.each do |project| %>
       <tr>
         <td><%= project.title %></td>
-        <td><%= project.due_date %></td>
         <td><%= project.status %></td>
+        <td><%= project.due_date %></td>
         <td><%= project.leads %></td>
         <td><ul><%project.groups.each do |group| %>
           <li><%= link_to group.title, group_tasks_path(group.id) %>, </li>
           <%end%>
-        <li><%= link_to 'All Groups', project_groups_path(project.id)%></li></ul>
-        </td>
-        <td><%= link_to 'Show', project %></td>
+            <li><% if project.groups.empty? %>
+                No Groups Assigned
+                <% else %>
+                <%=link_to 'All Groups', project_groups_path(project.id)%>
+              <% end %>
+              </li>
+            </ul>
+        <td><%= link_to 'Add', new_project_group_path(project.id) %></td>
         <td><%= link_to 'Edit', edit_project_path(project) %></td>
         <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

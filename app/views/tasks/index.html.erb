@@ -1,17 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Tasks</h1>
+<h1><%= @group.title %> Group Tasks</h1>
 
 <table class="task_table">
   <thead>
     <tr>
       <th>Subject</th>
       <th>Description</th>
+      <th>Complete</th>
       <th>Due date</th>
       <th>Priority</th>
-      <th>Complete</th>
-      <th>Group</th>
-      <th colspan="3"></th>
+      <th>Show Details</th>
+      <th>Edit Task</th>
+      <th>Delete Task</th>
     </tr>
   </thead>
 
@@ -20,12 +21,11 @@
       <tr>
         <td><%= task.subject %></td>
         <td><%= task.description %></td>
-        <td><%= task.due_date %></td>
-        <td><%= task.priority %></td>
         <td><div class="complete_star">
     <%= "*" if task.complete %></div></td>
-        <td><%= task.group.title %></td>
-        <td><%= link_to 'Show Notes', task_path(task) %></td>
+        <td><%= task.due_date %></td>
+        <td><%= task.priority %></td>
+        <td><%= link_to 'Notes', task_path(task) %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -34,9 +34,9 @@
 </table>
 
 <br>
-<ul>
+<ul class='page_link'>
   <li><%= link_to 'New Task', new_group_task_path %></li>
-  <li><%= link_to 'Back to Project Main', projects_path %></li>
   <li><%= link_to 'Back to Group Main', project_groups_path(@group.project_id) %></li>
+  <li><%= link_to 'Back to Project Main', projects_path %></li>
 </ul>
 

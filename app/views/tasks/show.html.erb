@@ -8,6 +8,11 @@
   </p>
 
   <p>
+    <strong>Complete:</strong>
+    <%= @task.complete %>
+  </p>
+
+  <p>
     <strong>Due date:</strong>
     <%= @task.due_date %>
   </p>
@@ -15,16 +20,6 @@
   <p>
     <strong>Priority:</strong>
     <%= @task.priority %>
-  </p>
-
-  <p>
-    <strong>Complete:</strong>
-    <%= @task.complete %>
-  </p>
-
-  <p>
-    <strong>Group:</strong>
-    <%= @task.group.title %>
   </p>
 
   <div class='notes'>

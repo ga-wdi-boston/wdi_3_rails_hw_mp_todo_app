@@ -19,10 +19,16 @@
     <%= f.label :due_date %><br>
     <%= f.date_select :due_date %>
   </div>
+
   <div class="field">
     <%= f.label :status %><br>
-    <%= f.text_field :status %>
+    <%= f.select (:status) do %>
+      <%['Not-Started','In-Process','Completed'].each do |c|%>
+      <%= content_tag(:option, c, value: c) %>
+      <%end%>
+    <%end%>
   </div>
+
   <div class="field">
     <%= f.label :leads %><br>
     <%= f.text_field :leads %>

@@ -19,6 +19,12 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
+
+  <div class="field">
+    <%= f.label :complete %><br>
+    <%= f.check_box :complete %>
+  </div>
+
   <div class="field">
     <%= f.label :due_date %><br>
     <%= f.date_select :due_date %>
@@ -26,10 +32,6 @@
   <div class="field">
     <%= f.label :priority %><br>
     <%= f.text_field :priority %>
-  </div>
-  <div class="field">
-    <%= f.label :complete %><br>
-    <%= f.check_box :complete %>
   </div>
 
   <div class="actions">

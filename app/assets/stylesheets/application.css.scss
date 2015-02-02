@@ -146,7 +146,7 @@ h3 {
 
 .page_link li {
   display: inline;
-  padding-right: 10px;
+  padding-right: 20px;
 }
 
 p {
@@ -160,12 +160,14 @@ p {
   align-content: left;
   text-align: left;
   padding-bottom: 15px;
+  padding-left: 20px;
 }
 
 .actions {
   align-content: left;
   text-align: left;
   padding-top: 10px;
+  padding-left: 20px
 }
 
 .exclaim {
@@ -192,16 +194,8 @@ footer {
   border: none;
 }
 
-footer a {
-  color: #555;
-}
-
-footer a:hover {
-  color: #222;
-}
-
 footer small {
-  float: left;
+  float: right;
 }
 
 footer ul {
@@ -210,6 +204,5 @@ footer ul {
 }
 
 footer ul li {
-  float: left;
-  margin-left: 15px;
+  float: right;
 }
