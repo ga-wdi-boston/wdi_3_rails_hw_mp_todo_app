@@ -1,2 +1,10 @@
-<h1>Tasks#show</h1>
-<p>Find me in app/views/tasks/show.html.erb</p>
+<h1><%= @task.name %></h1>
+<p><%= @task.completed? %></p>
+
+<%= render @task.notes %>
+<%= render 'notes/form' %>
+
+<%= link_to 'Edit', edit_task_path(@task) %>
+<%= link_to 'Destroy', @task, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Back', list_path(@task.list_id) %>
+
