@@ -59,6 +59,6 @@ class NotesController < ApplicationController
     end
 
     def note_params
-      params.require(:note).permit(:note, :task_id)
+      params.require(:note).permit(:body, :task_id)
     end
 end
