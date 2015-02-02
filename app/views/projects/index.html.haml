@@ -1,0 +1,31 @@
+.container
+  -if @projects.empty?
+    %span.text-warning There are no projects!
+  -else
+    %table.table.table-hover.table-bordered
+      %tr
+        %th Project Name
+        %th Category
+        %th Lists
+        %th Edit
+        %th Destroy
+      %tbody
+        -@projects.each do |project|
+          %tr
+            %td
+              = project.name
+            %td
+              = project.category
+            %td
+              = link_to 'Lists', project
+            %td
+              = link_to 'Edit', edit_project_path(project)
+            %td
+              = link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }
+
+
+.text-center
+  = link_to 'New Project', new_project_path, class: 'btn btn-primary'
+
+
+

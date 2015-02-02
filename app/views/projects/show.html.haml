@@ -1,0 +1,17 @@
+.text-center
+  %p#notice= notice
+  %p
+    %strong Name:
+    = @project.name
+  %p
+    %strong Category:
+    = @project.category
+  = link_to 'Edit', edit_project_path(@project)
+  |
+  \#{link_to 'Back', projects_path}
+  %br
+  %br
+  %p
+    %strong Lists of Tasks
+    = render @project.lists
+    = render 'lists/form'

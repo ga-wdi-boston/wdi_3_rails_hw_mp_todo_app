@@ -1,0 +1,6 @@
+<%= simple_form_for([@list, @list.tasks.build]) do |f| %>
+  <%= f.label :name %>
+  <%= f.input_field :name %>
+  <%= f.input :done, as: :boolean, checked_value: true, unchecked_value: false %>
+  <%= f.button :submit %>
+<% end %>

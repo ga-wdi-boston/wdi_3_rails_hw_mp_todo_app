@@ -1,0 +1,6 @@
+%p
+  = form_for([@project, @project.lists.build]) do |f|
+    %p
+      = f.label :name
+      = f.text_field :name, autofocus: true
+    = f.submit 'Save', class: 'btn btn-primary' 

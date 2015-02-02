@@ -1,0 +1,14 @@
+.inline
+  %strong Task Name:
+  = task.name
+  |
+  - if task.done 
+    Completed
+  -else
+    Not Done!
+  |
+  |
+  = link_to 'Destroy Task', [task.list, task], |
+    method: :delete,                           |
+    data: { confirm: 'Are you sure?' }         |
+%br

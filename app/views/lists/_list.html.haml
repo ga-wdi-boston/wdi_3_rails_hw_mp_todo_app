@@ -1,0 +1,10 @@
+.inline
+  %strong List Name:
+  = link_to list.name, project_list_path(@project, list)
+  |
+  = link_to 'Edit', edit_list_path(list)
+  |
+  = link_to 'Destroy List', [list.project, list], |
+    method: :delete,                              |
+    data: { confirm: 'Are you sure?' }            |
+%br
