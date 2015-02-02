@@ -6,7 +6,7 @@ class TasksController < ApplicationController
     @task.completed = !@task.completed
     @task.save
 
-    redirect_to list_path(@list)
+    redirect_to :back
 end
 
   def new
