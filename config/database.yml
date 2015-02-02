@@ -23,13 +23,21 @@ default: &default
 
 development:
   <<: *default
+<<<<<<< HEAD
   database: todo_app_development
+=======
+  database: wdi_3_rails_hw_mp_todo_app_development
+>>>>>>> upstream/master
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
+<<<<<<< HEAD
   #username: todo_app
+=======
+  #username: wdi_3_rails_hw_mp_todo_app
+>>>>>>> upstream/master
 
   # The password associated with the postgres role (username).
   #password:
@@ -57,7 +65,11 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+<<<<<<< HEAD
   database: todo_app_test
+=======
+  database: wdi_3_rails_hw_mp_todo_app_test
+>>>>>>> upstream/master
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +92,12 @@ test:
 #
 production:
   <<: *default
+<<<<<<< HEAD
   database: todo_app_production
   username: todo_app
   password: <%= ENV['TODO_APP_DATABASE_PASSWORD'] %>
+=======
+  database: wdi_3_rails_hw_mp_todo_app_production
+  username: wdi_3_rails_hw_mp_todo_app
+  password: <%= ENV['WDI_3_RAILS_HW_MP_TODO_APP_DATABASE_PASSWORD'] %>
+>>>>>>> upstream/master

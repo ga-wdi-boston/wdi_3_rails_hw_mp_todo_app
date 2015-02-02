@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+<<<<<<< HEAD
 
 # List.delete_all
 
@@ -30,3 +31,5 @@ emails.notes.create!(name: "Mary")
 emails.notes.create!(name: "Joe")
 phone_calls.notes.create!(name: "my favorite vendor")
 phone_calls.notes.create!(name: "interview candidate")
+=======
+>>>>>>> upstream/master

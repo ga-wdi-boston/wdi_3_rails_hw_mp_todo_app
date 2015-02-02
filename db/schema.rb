@@ -11,11 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150131031710) do
+=======
+ActiveRecord::Schema.define(version: 0) do
+>>>>>>> upstream/master
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "lists", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -43,4 +48,6 @@ ActiveRecord::Schema.define(version: 20150131031710) do
 
   add_foreign_key "notes", "tasks"
   add_foreign_key "tasks", "lists"
+=======
+>>>>>>> upstream/master
 end
