@@ -4,7 +4,7 @@
     <h2><%= link_to 'New List', new_list_path %></h2>
   </div>
 <div class='col-xs-4 col-xs-offset-2'>
-<% @lists.order(:name).each do |list| %>
+<% @lists.order(:created_at).each do |list| %>
     <div class='panel'>
       <%= link_to list.name, list %>
     </div>

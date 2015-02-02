@@ -17,7 +17,7 @@ end
   end
 
   def create
-    task_params = task_params[completed: false]
+    task_params[:completed] = true
     @task = @list.tasks.build(task_params)
     if @task.save
       redirect_to list_path(@list), notice: 'Task was successfully created.'
@@ -54,6 +54,6 @@ end
     end
 
     def task_params
-      params.require(:task).permit(:name, :completed)
+      params.require(:task).permit(:name)
     end
 end
