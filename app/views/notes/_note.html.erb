@@ -1,11 +1,12 @@
 <p>
-
   <strong>Notes:</strong>
   <%= note.comment %>
+  <%= note.task_id %>
+  <%= note.id %>
 </p>
 
 <p>
-  <%= link_to 'Destroy Comment', task_note_path(@task.list_id, @task),
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
+ <%= link_to 'Delete Comment', task_note_path(task_id: note.task.id, id:  note.id), method: :delete, data: { confirm: 'Are you sure?' } %>
 </p>
+
+
