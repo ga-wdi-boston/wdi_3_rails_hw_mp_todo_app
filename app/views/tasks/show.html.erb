@@ -1,16 +1,15 @@
 <p>
-  <strong>Task:</strong>
-  <%= @task.name %><br>
-  <strong>Status:</strong>
+  <h1><%= @task.name %><h1>
+  <h3>Status:
   <% if @task.status == true %>
     Complete
   <% else %>
     Incomplete
-  <% end %>
+  <% end %></h3>
 </p>
 
 
-<h1>Notes for <%= @task.name %></h1>
+<h3>Notes:</h3>
 <ul>
 
   <% @task.notes.each do |note|  %>
@@ -33,5 +32,5 @@
   <%= f.submit %>
   <% end %>
 
-
-
+<hr>
+<h4><%= link_to 'Back to List', list_path %></h4>

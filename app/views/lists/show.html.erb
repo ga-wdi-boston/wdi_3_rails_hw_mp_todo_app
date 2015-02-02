@@ -1,6 +1,6 @@
   <p>
-    <strong>List:</strong>
-    <%= @list.name %>
+    <h1>List:
+    <%= @list.name %></h1>
   </p>
 
   <ul>
@@ -16,11 +16,7 @@
     <% end %>
   </ul>
 
-
-<%= link_to "Cancel", lists_path %>
-<%= link_to 'New Task', new_list_task_path(@list.id) %>
-
-
+<p>
 <%= form_for @list.tasks.build, url: list_tasks_path(@list.id) do |f| %>
   <p>
     <%= f.label 'Task' %>
@@ -36,5 +32,8 @@
   </p>
 
   <%= f.submit %>
-  | <%= link_to "Cancel", lists_path %>
   <% end %>
+
+</p>
+<hr>
+<h4><%= link_to "Back to Lists", lists_path %></h4>
