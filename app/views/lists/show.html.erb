@@ -1,0 +1,14 @@
+<div class="col-lg-9 col-centered">
+
+<p id="notice"><%= notice %></p>
+<h1><%= @list.name %></h1>
+<p><%= @list.description %></p>
+<% @list.tasks.each do |task| %>
+  <h3><%= task.name %></h3>
+  <h3><%= check_box, task, :completed, {}, true, false %></h3>
+
+<% end %>
+<%= link_to 'Edit', edit_list_path(@list) %>
+<%= link_to 'Back', projects_path %>
+<%= link_to 'New Task, Chief?', new_list_task_path(@list.id) %>
+</div>

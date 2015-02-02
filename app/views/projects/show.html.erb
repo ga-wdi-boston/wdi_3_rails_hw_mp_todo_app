@@ -1,9 +1,15 @@
+<div class="col-lg-9 col-centered">
+
 <p id="notice"><%= notice %></p>
 <h1><%= @project.name %></h1>
 <p><%= @project.description %></p>
 <% @project.lists.each do |list| %>
   <h3><%= list.name %></h3>
   <p><%= list.description %></p>
+  <p><%= link_to 'Check out the Tasks', list %></p>
 <% end %>
 <%= link_to 'Edit', edit_project_path(@project) %>
 <%= link_to 'Back', projects_path %>
+<%= link_to 'New List, Chief?', new_project_list_path(@project.id) %>
+
+</div>

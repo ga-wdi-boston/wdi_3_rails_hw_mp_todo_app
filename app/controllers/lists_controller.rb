@@ -1,6 +1,6 @@
 class ListsController < ApplicationController
   def index
-    @project = Project.find(params[:project_id])
+    @projects = Project.find(params[:project_id])
     @lists = @projects.lists
   end
 

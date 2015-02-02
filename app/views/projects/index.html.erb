@@ -1,20 +1,17 @@
+<div class="col-lg-9 col-centered">
+
 <p id="notice"><%= notice %></p>
 
 <h1>What's on the Agenda?</h1>
-
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.name %></td>
-        <td><%= project.description %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
+<% @projects.each do |project| %>
+  <h3><%= project.name %></h3>
+  <p><%= project.description %></p>
+  <p><%= link_to 'Show', project %></p>
+  <p><%= link_to 'Edit', edit_project_path(project) %></p>
+  <p><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<% end %>
 <%= link_to 'New Project, Chief?', new_project_path %>
+
+</div>
+
+
