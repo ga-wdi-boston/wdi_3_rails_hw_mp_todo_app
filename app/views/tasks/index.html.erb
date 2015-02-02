@@ -1,15 +1,21 @@
-<h2>Tasks</h2>
-<ul>
-  <% @tasks.each do |task| %>
-    <li>
-      <%= task.name %>
-      <%= task.completion_status %>
-      <%= link_to "Show", task_path(task) %>
-      <%= link_to "Edit", edit_task_path(task) %>
-      <%= link_to "Delete", task_path(task), method: :delete %>
-    </li>
-  <% end %>
-</ul>
+<div class="tasks_style">
+  <h2>Tasks</h2>
+    <ul class="unstyled">
+      <% @tasks.each do |task| %>
+      <li>
+        <i class="fa fa-check"></i>
+        <%= task.name %>
+        <%= link_to "Show", task_path(task) %>
+        <%= link_to "Edit", edit_task_path(task) %>
+          <div class="trash">
+            <%= link_to task_path(task), method: :delete do %>
+            <i class="fa fa-trash"></i>
+            <% end %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
 
 <%= link_to "Create New Task", new_task_path %>
 
+</div>
