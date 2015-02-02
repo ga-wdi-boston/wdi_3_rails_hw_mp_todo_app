@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
 
 body {
   text-align: center;
@@ -26,6 +30,35 @@ body {
   font-weight: 200;
 }
 
+.fade-in {
+  opacity:0;
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+
+.fade-in.one {
+-webkit-animation-delay: 0.7s;
+-moz-animation-delay: 0.7s;
+animation-delay: 0.7s;
+}
+.fade-in.two {
+-webkit-animation-delay: 1.2s;
+-moz-animation-delay:1.2s;
+animation-delay: 1.2s;
+}
+.fade-in.three {
+-webkit-animation-delay: 1.6s;
+-moz-animation-delay: 1.6s;
+animation-delay: 1.6s;
+}
+
 .title{
   padding-top: 100px;
   font-weight: 400;
@@ -36,7 +69,21 @@ body {
   background-color: #CEA3FF;
   height: 300px;
   margin-top: -14px;
+}
 
+.home_button {
+  height: 200px;
+  background-color: #A2EDC5;
+}
+
+.third_fade {
+  height: 300px;
+  background-color: #287D7D;
+}
+
+#home_text {
+  font-size: 50px;
+  color: white;
 }
 
 .headcolor{
