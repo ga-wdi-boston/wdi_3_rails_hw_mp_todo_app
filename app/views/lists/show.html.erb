@@ -1,0 +1,39 @@
+  <p>
+    <h1>List:
+    <%= @list.name %></h1>
+  </p>
+
+  <ul>
+    <% @list.tasks.each do |task|  %>
+      <li><%= link_to task.name, list_task_path(@list, task) %>
+      <% if task.status == true %>
+        <strong>Complete</strong>
+      <% else %>
+        <strong>Incomplete</strong>
+      <% end %>
+      <%= link_to "Delete", [@list, task], method: :delete, data: { confirm: 'Are you sure?' } %>
+ </li>
+    <% end %>
+  </ul>
+
+<p>
+<%= form_for @list.tasks.build, url: list_tasks_path(@list.id) do |f| %>
+  <p>
+    <%= f.label 'Task' %>
+    <%= f.text_field :name, autofocus: true %>
+  </p>
+
+  <p>
+    <%= f.label :status, "Incomplete", :value => false %>
+    <%= f.radio_button :status, false %>
+
+    <%= f.label :status, "Complete", :value => true %>
+    <%= f.radio_button :status, true %></div>
+  </p>
+
+  <%= f.submit %>
+  <% end %>
+
+</p>
+<hr>
+<h4><%= link_to "Back to Lists", lists_path %></h4>

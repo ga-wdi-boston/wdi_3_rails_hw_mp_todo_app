@@ -1,0 +1,26 @@
+<h1>Notes for <%= @task.name %></h1>
+
+<%= @notes.count  %>
+
+  <ul>
+    <% @notes.each do |note|  %>
+      <li>Name: <%= note.name %></li>
+    <% end %>
+  </ul>
+
+
+
+
+
+<%= form_for @task.notes.build, url: list_task_notes_path(params[:list_id], @task) do |f| %>
+
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name, autofocus: true %>
+  </p>
+
+  <%= f.submit %>
+  <% end %>
+
+
+

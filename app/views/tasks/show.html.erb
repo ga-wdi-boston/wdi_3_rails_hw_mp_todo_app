@@ -1,0 +1,36 @@
+<p>
+  <h1><%= @task.name %><h1>
+  <h3>Status:
+  <% if @task.status == true %>
+    Complete
+  <% else %>
+    Incomplete
+  <% end %></h3>
+</p>
+
+
+<h3>Notes:</h3>
+<ul>
+
+  <% @task.notes.each do |note|  %>
+    <li><%= link_to note.name, list_task_note_path(@task.list_id, note.task_id, note) %>
+    <%= link_to 'Destroy', list_task_note_path(@task.list_id, note.task_id, note), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    </li>
+  <% end %>
+
+</ul>
+
+
+
+<%= form_for @task.notes.build, url: list_task_notes_path(params[:list_id], @task) do |f| %>
+
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name, autofocus: true %>
+  </p>
+
+  <%= f.submit %>
+  <% end %>
+
+<hr>
+<h4><%= link_to 'Back to List', list_path %></h4>

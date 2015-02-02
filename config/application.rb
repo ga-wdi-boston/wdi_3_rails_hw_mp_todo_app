@@ -1,5 +1,8 @@
 require File.expand_path('../boot', __FILE__)
 
+<<<<<<< HEAD
+require 'rails/all'
+=======
 # Pick the frameworks you want:
 require "active_model/railtie"
 require "active_job/railtie"
@@ -9,12 +12,17 @@ require "action_mailer/railtie"
 require "action_view/railtie"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
+>>>>>>> upstream/master
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+<<<<<<< HEAD
+module TodoApp
+=======
 module Wdi3RailsHwMpTodoApp
+>>>>>>> upstream/master
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

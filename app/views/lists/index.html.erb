@@ -1,0 +1,15 @@
+<h1>Lists</h1>
+
+<ul>
+
+<% @lists.each do |list|  %>
+  <li>
+  <%= link_to list.name, list %> -
+  <%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+<% end %>
+
+</ul>
+<hr>
+<p>
+<h4><%= link_to 'Create A New List', new_list_path %></h4>
+</p>
