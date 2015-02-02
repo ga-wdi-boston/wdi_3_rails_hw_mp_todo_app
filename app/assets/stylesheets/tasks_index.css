@@ -1,12 +1,8 @@
 /*  SECTIONS  */
-body {
-  background-color: rgba(136, 148, 232, 0.4)
-}
 .section {
   clear: both;
   padding: 0px;
   margin: 0px;
-  background-color: rgba(6, 19, 132, 1);
 }
 
 /*  COLUMN SETUP  */
@@ -14,9 +10,6 @@ body {
   display: block;
   float:left;
   margin: 1% 0 1% 1.6%;
-  text-align: center;
-  color: white;
-  font-family: papyrus;
 }
 .col:first-child { margin-left: 0; }
 
@@ -35,27 +28,3 @@ body {
   .col {  margin: 1% 0 1% 0%; }
   .span_3_of_3, .span_2_of_3, .span_1_of_3 { width: 100%; }
 }
-
-.tasks_style {
-  border: solid 6px rgba(6, 19, 132, 0.7);
-  margin-left: 25%;
-  margin-right: 25%;
-  margin-top: 8%;
-  background-color: white;
-  padding: 15px;
-  text-align: center;
-}
-
-h2 .tasks_style {
-  font-weight: bold;
-  font-size: 16px;
-}
-
-.unstyled {
-  list-style: none;
-}
-
-li .task_style {
-  list-style: inline;
-}
-
