@@ -28,7 +28,7 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      redirect_to list_path(@list), notice: 'Task was successfully updated.'
+      redirect_to list_task_path(@list, @task), notice: 'Task was successfully updated.'
     else
       render :edit
     end
@@ -38,6 +38,7 @@ class TasksController < ApplicationController
     @task.destroy
     redirect_to list_path(@list), notice: 'Task was successfully destroyed.'
   end
+
 
 
   private
@@ -53,6 +54,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :is_completed?, :list_id)
+      params.require(:task).permit(:name, :is_completed, :list_id)
     end
 end

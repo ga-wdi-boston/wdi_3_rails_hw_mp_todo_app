@@ -33,10 +33,10 @@ ActiveRecord::Schema.define(version: 20150202170419) do
 
   create_table "tasks", force: :cascade do |t|
     t.string   "name"
-    t.boolean  "is_completed?"
+    t.boolean  "is_completed"
     t.integer  "list_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   add_index "tasks", ["list_id"], name: "index_tasks_on_list_id", using: :btree

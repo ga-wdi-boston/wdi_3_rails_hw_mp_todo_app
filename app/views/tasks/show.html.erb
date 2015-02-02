@@ -15,18 +15,13 @@
 <h1>
   <%= @task.name.upcase %>
 </h1>
+<div id="check"> <%= render 'check' %> <div>
 <h2>
   List:
   <%= List.find(@task.list_id).name %>
 </h2>
 
-<div>
-  <% if @task.is_completed? %>
-    <i class='glyphicon glyphicon-check'></i>
-  <% else %>
-    <i class='glyphicon glyphicon-unchecked'></i>
-  <% end %>
-</div>
+
 
 
 
