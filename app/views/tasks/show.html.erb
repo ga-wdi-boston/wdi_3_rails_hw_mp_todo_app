@@ -1,9 +1,11 @@
 <p>
   <strong>Task:</strong>
-  <% if @task.complete? %>
-  *
-  <% end %>
   <%= @task.name %> |
+  <% if @task.complete %>
+  <%= "Status: Completed" %>
+  <% else %>
+  <%= "Status: Not Completed" %>
+  <% end %>
 </p>
 
 
