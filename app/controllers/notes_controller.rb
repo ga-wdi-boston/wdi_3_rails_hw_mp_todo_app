@@ -1,9 +1,8 @@
 class NotesController < ApplicationController
-  before_action :set_list, except: :catalog
-  before_action :set_task, except: :catalog
   before_action :set_note, only: [:edit, :update, :destroy]
 
   def index
+    @task = Task.find(params[:task_id])
     @notes = @task.notes.all
     @note = Note.new
   end
@@ -16,11 +15,12 @@ class NotesController < ApplicationController
   end
 
   def create
+    @task = Task.find(params[:task_id])
     @note = @task.notes.build(note_params)
     if @note.save
-      redirect_to list_task_notes_path(@list, @task), notice: 'Note was successfully created.'
+      redirect_to task_notes_path(@task), notice: 'Note was successfully created.'
     else
-      redirect_to list_task_notes_path(@list, @task), notice: 'Note cannot be blank.'
+      redirect_to task_notes_path(@task), notice: 'Note cannot be blank.'
     end
   end
 
@@ -33,8 +33,9 @@ class NotesController < ApplicationController
   end
 
   def destroy
+    @task = Task.find(params[:task_id])
     @note.destroy
-      redirect_to list_task_notes_path(@list, @task), notice: 'Note was successfully destroyed.'
+      redirect_to task_notes_path(@task), notice: 'Note was successfully destroyed.'
   end
 
   def catalog
@@ -42,17 +43,8 @@ class NotesController < ApplicationController
   end
 
   private
-
-    def set_list
-      @list = List.find(params[:list_id])
-    end
-
-    def set_task
-      @task = @list.tasks.find(params[:task_id])
-    end
-
     def set_note
-      @note = @task.notes.find(params[:id])
+      @note = Note.find(params[:id])
     end
 
     def note_params

@@ -8,10 +8,15 @@ Rails.application.routes.draw do
       member do
         get :flop
       end
-      resources :notes, except: :show
     end
   end
 
-  get '*path', to: 'lists#index'
+  resources :tasks, except: [:index, :show] do
+    resources :notes, except: :show
+  end
+
+  resources :notes, except: :show
+
+  # get '*path', to: 'lists#index'
 
 end

@@ -1,5 +1,4 @@
 class TasksController < ApplicationController
-  before_action :set_list, only: [:edit, :create, :update]
   before_action :set_task, only: [:flop, :edit, :update, :destroy]
 
   def flop
@@ -17,12 +16,13 @@ end
   end
 
   def create
+    @list = List.find(params[:list_id])
     task_params[:completed] = true
     @task = @list.tasks.build(task_params)
     if @task.save
-      redirect_to list_tasks_path(@list), notice: 'Task was successfully created.'
+      redirect_to list_path(@task.list.id), notice: 'Task was successfully created.'
     else
-      redirect_to lists_tasks_path(@list), notice: 'Task cannot be blank.'
+      redirect_to lists_path(@task.list.id), notice: 'Task cannot be blank.'
     end
   end
 
@@ -44,10 +44,6 @@ end
   end
 
   private
-
-    def set_list
-      @list = List.find(params[:list_id])
-    end
 
     def set_task
       @task = Task.find(params[:id])
