@@ -1,6 +1,13 @@
 class TasksController < ApplicationController
   before_action :set_list, except: :catalog
-  before_action :set_task, only: [:edit, :update, :destroy]
+  before_action :set_task, only: [:flop, :edit, :update, :destroy]
+
+  def flop
+    @task.completed = !@task.completed # flop the status
+    @task.save
+
+    redirect_to list_path(@list)
+end
 
   def new
     @task = Task.new

@@ -13,3 +13,4 @@
   <li><%= link_to 'Notes', list_task_notes_path(task.list, task) %></li>
   <li><%= link_to 'Remove', [task.list, task], method: :delete, data: { confirm: 'Are you sure?' } %></li>
 </ul>
+<%= link_to (task.completed ? 'true' : 'false'), flop_list_task_path(@list, task) %>

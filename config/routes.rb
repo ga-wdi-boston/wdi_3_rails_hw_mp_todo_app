@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   resources :lists do
     resources :tasks, except: [:index, :show] do
+      member do
+        get :flop
+      end
       resources :notes, except: :show
     end
   end
