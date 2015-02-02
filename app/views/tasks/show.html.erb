@@ -8,3 +8,30 @@
     Incomplete
   <% end %>
 </p>
+
+
+<h1>Notes for <%= @task.name %></h1>
+<ul>
+
+  <% @task.notes.each do |note|  %>
+    <li><%= link_to note.name, list_task_note_path(@task.list_id, note.task_id, note) %>
+    <%= link_to 'Destroy', list_task_note_path(@task.list_id, note.task_id, note), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    </li>
+  <% end %>
+
+</ul>
+
+
+
+<%= form_for @task.notes.build, url: list_task_notes_path(params[:list_id], @task) do |f| %>
+
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name, autofocus: true %>
+  </p>
+
+  <%= f.submit %>
+  <% end %>
+
+
+

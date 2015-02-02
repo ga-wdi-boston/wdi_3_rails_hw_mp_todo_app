@@ -17,8 +17,24 @@
   </ul>
 
 
-<h3>Create new task</h3>
 <%= link_to "Cancel", lists_path %>
 <%= link_to 'New Task', new_list_task_path(@list.id) %>
 
 
+<%= form_for @list.tasks.build, url: list_tasks_path(@list.id) do |f| %>
+  <p>
+    <%= f.label 'Task' %>
+    <%= f.text_field :name, autofocus: true %>
+  </p>
+
+  <p>
+    <%= f.label :status, "Incomplete", :value => false %>
+    <%= f.radio_button :status, false %>
+
+    <%= f.label :status, "Complete", :value => true %>
+    <%= f.radio_button :status, true %></div>
+  </p>
+
+  <%= f.submit %>
+  | <%= link_to "Cancel", lists_path %>
+  <% end %>

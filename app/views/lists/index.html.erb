@@ -3,8 +3,8 @@
 <ul>
 
 <% @lists.each do |list|  %>
-  <li><%= list.name %>
-  <%= link_to 'Show', list %>
+  <li>
+  <%= link_to list.name, list %> -
   <%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></li>
 <% end %>
 

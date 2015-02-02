@@ -21,7 +21,7 @@ class TasksController < ApplicationController
     @task = @list.tasks.new(tasks_params)
 
     if @task.save
-      redirect_to list_task_notes_path(@list)
+      redirect_to list_path(@list)
     else
       render :new
     end
@@ -52,10 +52,12 @@ def destroy
     @task.destroy
 
     respond_to do |format|
-        format.html { redirect_to list_tasks_path(@task) }
+        format.html { redirect_to list_path(@task.list_id) }
         format.json { head :ok }
     end
 end
+
+
 
   private
 

@@ -21,7 +21,7 @@ class NotesController < ApplicationController
     @note = @task.notes.new(notes_params)
 
     if @note.save
-      redirect_to list_task_notes_path(params[:list_id], @task)
+      redirect_to list_tasks_path(@task)
     else
       render :new
     end
@@ -52,7 +52,7 @@ def destroy
     @note.destroy
 
     respond_to do |format|
-        format.html { redirect_to list_task_notes_path }
+        format.html { redirect_to list_tasks_path(@note.task_id) }
         format.json { head :ok }
     end
 end
