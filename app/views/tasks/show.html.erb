@@ -28,11 +28,14 @@
 
   <h3>Post a Note:</h3>
   <%= render 'notes/form' %>
-
-  <ul class='page_link'>
-  <li><%= link_to 'Edit', edit_task_path(@task) %></li>
-  <li><%= link_to 'Back', group_tasks_path(@task.group_id) %></li>
-  </ul>
   </div>
+
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', root_path %></li>
+  <li><%= link_to 'Projects', projects_path %></li>
+  <li><%= link_to 'Groups', project_groups_path(@group.project_id) %></li>
+  <li><%= link_to 'Tasks', group_tasks_path(@group) %></li>
+  <li><%= link_to 'Create New Task', new_group_task_path(@group) %></li>
+</ol>
 
 </section>

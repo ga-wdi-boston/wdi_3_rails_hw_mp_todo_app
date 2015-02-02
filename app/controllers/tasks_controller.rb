@@ -11,6 +11,7 @@ class TasksController < ApplicationController
   # GET /tasks/1
   # GET /tasks/1.json
   def show
+    @group = Group.find(set_task.group_id)
   end
 
   # GET /tasks/new
@@ -70,13 +71,12 @@ class TasksController < ApplicationController
     #   @project = Project.find(params[:project_id])
     # end
 
-    def set_group
-      @group = Group.find(params[:group_id])
-      # @group = Group.find(params[:group_id])
-    end
-
     def set_task
       @task = Task.find(params[:id])
+    end
+
+     def set_group
+      @group = Group.find(params[:group_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

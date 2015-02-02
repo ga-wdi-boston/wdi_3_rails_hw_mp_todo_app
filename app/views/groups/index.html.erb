@@ -30,7 +30,9 @@
 
 <br>
 
-<ul class="page_link">
-  <li><%= link_to 'New Group', new_project_group_path %></li>
-  <li><%= link_to 'Back to Project Main', controller: 'projects' %></li>
-</ul>
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', root_path %></li>
+  <li><%= link_to 'Projects', projects_path %></li>
+  <li><%= link_to 'Groups', project_groups_path %></li>
+  <li><%= link_to 'Create New Group', new_project_group_path %></li>
+</ol>
