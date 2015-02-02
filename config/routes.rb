@@ -17,7 +17,7 @@ resources :tasks, only: [:show, :edit, :update, :destroy] do
   resources :notes, only: [:index, :new, :create]
 end
 
-resources :notes, only:[:show, :edit, :update, :destroy]
+resources :notes, only:[ :edit, :update, :destroy]
 
 
   # You can have the root of your site routed with "root"

@@ -1,16 +1,11 @@
 class NotesController < ApplicationController
-  before_action :set_note, only: [:show, :edit, :update, :destroy]
+  before_action :set_note, only: [:edit, :update, :destroy]
   before_action :set_task, only: [:index, :create, :new]
 
   # GET /notes
   # GET /notes.json
   def index
     @notes = @task.notes
-  end
-
-  # GET /notes/1
-  # GET /notes/1.json
-  def show
   end
 
   # GET /notes/new
@@ -29,7 +24,7 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       if @note.save
-        format.html { redirect_to @note, notice: 'Note was successfully created.' }
+        format.html { redirect_to @task, notice: 'Note was successfully created.' }
         format.json { render :show, status: :created, location: @note }
       else
         format.html { render :new }
