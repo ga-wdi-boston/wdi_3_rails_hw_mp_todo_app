@@ -3,6 +3,22 @@
     <%= @task.title %>
 </p>
 
+<table>
+  <thead>
+    <tr>
+      <th>Notes' name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @task.notes.each do |note| %>
+      <tr>
+        <td><%= note.body %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 
 <h2> Add a note:</h2>
 <%= form_for([@task.list, @task, @task.notes.build]) do |f| %>
@@ -17,3 +33,12 @@
 </p>
 
 <% end %>
+
+
+
+   <!-- <td><%#= link_to 'show task',list_task_path(params[:list_id],task.id)%></td>
+        <td><%#= link_to 'edit', edit_list_task_path(params[:list_id],task.id)%> </td>
+        <td><%#= link_to 'Remove', list_task_path(params[:list_id],task.id),
+                    method: :delete,
+                    data: {confirm: 'Are you sure?'} %></td>
+ -->
