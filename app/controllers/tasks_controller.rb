@@ -30,9 +30,18 @@ class TasksController < ApplicationController
   end
 
   def update
+    @list = List.find(params[:list_id])
+      if @task.update(tasks_params)
+        redirect_to list_tasks_path(@list), notice: 'Task was successfully updated.'
+      else
+        render :edit
+      end
   end
 
   def destroy
+    @list = List.find(params[:list_id])
+    @list.tasks.destroy
+    redirect_to list_tasks_path(@list), notice: 'Task deleted.'
   end
 
   private

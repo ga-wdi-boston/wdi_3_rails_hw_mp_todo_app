@@ -18,7 +18,10 @@
       <tr>
         <td><%= task.name %></td>
         <td><%= task.complete_by %></td>
-        <td> </td>
+        <td><%= task.notes.length%> </td>
+        <td><%= link_to "Task", list_task_path(task.list_id, task.id)%></td>
+        <td><%= link_to 'Edit', edit_list_task_path(@list, task) %></td>
+       <td><%= link_to 'Destroy', list_task_path(@list, task), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -27,6 +30,8 @@
 <br>
 
 
-<div class= "button">
-<%= link_to 'New Task', new_list_task_path(@list.id) %>
+<div class= "box">
+<%= link_to 'Lists', list_path(@list) %> |
+<%= link_to 'New Task', new_list_task_path(@list.id) %> |
+<%= link_to 'Back', :back %>
 </div>

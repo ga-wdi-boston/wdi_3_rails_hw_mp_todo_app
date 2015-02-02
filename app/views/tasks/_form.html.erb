@@ -1,16 +1,20 @@
-<link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
 <%= form_for [@list, @task] do |f| %>
- <%= render 'shared/errors', object: @task %>
-    <p>
-      <%= f.label :name %>
-      <%= f.text_field :name, autofocus: true %>
-    </p>
-    <p>
-      <%= f.label :complete_by %>
-      <%= f.text_field :complete_by %>
-    </p>
+  <% if @task %>
+    <%= render 'shared/errors', object: @task %>
+  <% end %>
 
+  <div class="field">
+    <%= f.label 'Task' %><br>
+    <%= f.text_field :name, :autofocus=>true%>
+  </div>
+  <div class="complete_date">
+    <%= f.label :complete_by %>
+    <%= f.text_field :complete_by%>
+  </div>
+  <div class="field">
+    <%= f.collection_select(:list_id, List.all, :id, :name) %>
+  </div>
+  <div class="actions">
     <%= f.submit %>
-    | <%= link_to "Cancel", lists_path %>
-    <% end %>
-
+  </div>
+<% end %>
