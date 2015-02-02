@@ -10,6 +10,7 @@ class ListsController < ApplicationController
   # GET /lists/1
   # GET /lists/1.json
   def show
+    @task = @list.tasks.new
   end
 
   # GET /lists/new
