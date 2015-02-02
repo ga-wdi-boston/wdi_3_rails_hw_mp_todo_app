@@ -1,23 +1,56 @@
 class TasksController < ApplicationController
+  before_action :set_list
+  before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def index
-    @list = List.find(params[:list_id])
-    @tasks = @list.tasks
+    @tasks = Task.all
+    @task = Task.new
+  end
+
+  def show
   end
 
   def new
-    @list = List.find(params[:list_id])
-    @task = @list.tasks.new
+    @task = Task.new
+  end
+
+  def edit
   end
 
   def create
-    @list = List.find(params[:list_id])
-    @task = @list.tasks.create(task_params)
-    redirect_to list_tasks_path(@list)
+    @task = @list.tasks.build(task_params)
+    if @task.save
+      redirect_to list_path(@list)
+    else
+      redirect_to list_path(@list)
+    end
   end
 
+  def update
+    if @task.update(task_params)
+      redirect_to list_task_path(@list, @task)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @task.destroy
+    redirect_to list_path(@list)
+  end
+
+
   private
+
+  def set_list
+    @list = List.find(params[:list_id])
+  end
+
+  def set_task
+    @task = @list.tasks.find(params[:id])
+  end
+
     def task_params
-      params.require(:task).permit(:name)
+      params.require(:task).permit(:name, :is_completed, :list_id)
     end
 end

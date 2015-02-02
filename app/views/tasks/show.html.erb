@@ -1,11 +1,11 @@
 
 <h2>
-  <strong><%= @task.name %></strong>
+  <strong><%= @task %></strong>
 </h2>
 
-<h2>notes</h2>
-<%= @notes.each do |note| %>
-<%= note.body %>
-<%end%>
+
+
 <h3>Add a note</h3>
-<%= render 'notes/form' %>
+
+<!-- render list of notes partial here -->
+<%= render 'notes/index' %>
