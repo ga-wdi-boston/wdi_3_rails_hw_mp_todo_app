@@ -24,11 +24,11 @@ class NotesController < ApplicationController
   # POST /notes
   # POST /notes.json
   def create
-    @note = Note.new(note_params)
+    @note = Task.find(params[:task_id]).notes.new(note_params)
 
     respond_to do |format|
       if @note.save
-        format.html { redirect_to notes_url, notice: 'Note was successfully created.' }
+        format.html { redirect_to task_url(@note.task_id), notice: 'Note was successfully created.' }
         format.json { render :show, status: :created, location: @note }
       else
         format.html { render :new }
