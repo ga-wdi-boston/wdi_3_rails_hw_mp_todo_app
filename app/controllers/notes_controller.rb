@@ -26,9 +26,9 @@ class NotesController < ApplicationController
 
   def update
     if @note.update(note_params)
-      redirect_to list_task_notes_path(@list, @task), notice: 'Note was successfully updated.'
+      redirect_to task_notes_path(@note.task), notice: 'Note was successfully updated.'
     else
-      redirect_to list_task_notes_path(@list, @task), notice: 'Note cannot be blank.'
+      redirect_to task_notes_path(@note.task), notice: 'Note cannot be blank.'
     end
   end
 
