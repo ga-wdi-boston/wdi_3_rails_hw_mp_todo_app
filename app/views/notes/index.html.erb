@@ -2,14 +2,14 @@
 <div class='well well-lg col-xs-6 text-center'>
   <h1>
     <% if @task.completed %>
-    <%= link_to flop_list_task_path(@task.list, @task) do%>
-      <i class='glyphicon glyphicon-check'></i>
-    <% end %>
-  <% else %>
-    <%= link_to flop_list_task_path(@task.list, @task) do%>
-      <i class='glyphicon glyphicon-unchecked'></i>
-    <% end %>
+  <%= link_to flop_list_task_path(@task.list, @task) do%>
+    <i class='glyphicon glyphicon-check'></i>
   <% end %>
+<% else %>
+  <%= link_to flop_list_task_path(@task.list, @task) do%>
+    <i class='glyphicon glyphicon-unchecked'></i>
+  <% end %>
+<% end %>
     <%= link_to @task.name, list_path(@task.list) %>
   </h1>
   <h2>Notes</h2>
