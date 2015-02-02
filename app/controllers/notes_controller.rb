@@ -6,6 +6,11 @@ class NotesController < ApplicationController
     redirect_to task_path(@task)
   end
 
+  def new
+    @task = Task.find(params[:task_id])
+    @note = @task.notes.new(note_params)
+  end
+
   def destroy
     @task = task.find(params[:task_id])
     @note = @article.notes.find(params[:id])
