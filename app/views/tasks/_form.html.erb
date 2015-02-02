@@ -8,6 +8,10 @@
       <%= f.label :completed %>
       <%= f.check_box :completed %>
     </p>
+    <p>
+      <%= f.label :completed %>
+      <%= check_box_tag "task[completed]", "true", @task.completed%>
+    <p>
     <%= f.submit %>
     <%= link_to "Cancel", lists_path %>
     <% end %>

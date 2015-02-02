@@ -1,2 +1,12 @@
 <div class="col-lg-9 col-centered">
+  <p id="notice"><%= notice %></p>
+  <h1><%= @task.name %></h1>
+  <p><%= @task.completed %></p>
+  <% @task.notes.each do |note| %>
+    <h3><%= note.name %></h3>
+
+  <% end %>
+<%= link_to 'Edit', edit_task_path(@task) %>
+<%= link_to 'Back', project_lists_path %>
+<%= link_to 'New Task, Chief?', new_task_note_path(@task.id) %>
 </div>
