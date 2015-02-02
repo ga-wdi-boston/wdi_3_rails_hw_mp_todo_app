@@ -1,15 +1,15 @@
 <div class="col-lg-9 col-centered">
   <p id="notice"><%= notice %></p>
   <h1><%= @task.name %></h1>
-  <p><%= @task.completed %></p>
-  <% @task.notes.each do |note| %>
-    <h3><%= note.name %></h3>
-    <p>
+  <%= form_for [@task] do |f| %>
       <%= f.label :completed %>
       <%= f.check_box( "completed", {}, "true", "false") %>
-    </p>
-
+      <%= f.submit %>
   <% end %>
+  <% @task.notes.each do |note| %>
+    <h3><%= note.note %></h3>
+  <% end %>
+  <%= render 'notes/form' %>
 <%= link_to 'Edit', edit_task_path(@task) %>
 <%= link_to 'Back', list_path(@task.list_id) %>
 <%= link_to 'Destroy', @task, method: :delete, data: { confirm: 'Are you sure?' } %>
