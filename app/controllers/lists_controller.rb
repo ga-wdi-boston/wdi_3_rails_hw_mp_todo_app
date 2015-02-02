@@ -1,9 +1,6 @@
 class ListsController < ApplicationController
-
-  def index
-    @project = Project.find(params[:project_id])
-    @lists = @project.lists
-  end
+  before_action :find_project, only: [:edit, :create, :update, :destroy]
+  before_action :find_project_list, only: [:edit, :update, :destroy]
 
   def show
     @list = List.find(params[:id])
@@ -11,20 +8,14 @@ class ListsController < ApplicationController
   end
 
   def edit
-    @project = Project.find(params[:project_id])
-    @list = @project.lists.find(params[:id])
   end
 
   def create
-    @project = Project.find(params[:project_id])
     @list = @project.lists.create(list_params)
-    redirect_to project_path(@project)
+    redirect_to :back
   end
 
   def update
-    @project = Project.find(params[:project_id])
-    @list = @project.lists.find(params[:id])
-
     if @list.update(list_params)
       redirect_to @list.project
     else
@@ -33,15 +24,20 @@ class ListsController < ApplicationController
   end
 
   def destroy
-    @project = Project.find(params[:project_id])
-    @list = @project.lists.find(params[:id])
-
     @list.destroy
 
     redirect_to @list.project
   end
 
   private
+
+    def find_project
+      @project = Project.find(params[:project_id])
+    end
+
+    def find_project_list
+      @list = @project.lists.find(params[:id])
+    end
 
     def list_params
       params.require(:list).permit(:name, :completed, :project_id)
