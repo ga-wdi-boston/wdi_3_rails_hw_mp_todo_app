@@ -15,10 +15,9 @@
     <% @notes.each do |note| %>
       <tr>
         <td><%= note.note %></td>
-        <td><%= note.task %></td>
-        <td><%= link_to 'Show', note %></td>
-        <td><%= link_to 'Edit', edit_note_path(params[:task_id]) %></td>
-        <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= note.task.name %></td>
+        <td><%= link_to 'Edit', edit_list_task_note_path(note.task.list, note.task, note) %></td>
+        <td><%= link_to 'Destroy', list_task_note_path(note.task.list, note.task, note), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +25,4 @@
 
 <br>
 
-<%= link_to 'New Note', new_task_note_path(@task) %>
+<%= link_to 'New Note', new_list_task_note_path(@list, @task) %>
