@@ -1,10 +1,10 @@
 <div class='panel'>
   <% if task.completed %>
-    <%= link_to flop_list_task_path(@list, task) do%>
+    <%= link_to flop_list_task_path(task.list, task) do%>
       <i class='glyphicon glyphicon-check'></i>
     <% end %>
   <% else %>
-    <%= link_to flop_list_task_path(@list, task) do%>
+    <%= link_to flop_list_task_path(task.list, task) do%>
       <i class='glyphicon glyphicon-unchecked'></i>
     <% end %>
   <% end %>

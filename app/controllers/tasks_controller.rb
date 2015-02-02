@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_list, except: :catalog
+  before_action :set_list, only: [:edit, :create, :update]
   before_action :set_task, only: [:flop, :edit, :update, :destroy]
 
   def flop
@@ -20,15 +20,15 @@ end
     task_params[:completed] = true
     @task = @list.tasks.build(task_params)
     if @task.save
-      redirect_to list_path(@list), notice: 'Task was successfully created.'
+      redirect_to list_tasks_path(@list), notice: 'Task was successfully created.'
     else
-      redirect_to list_path(@list), notice: 'Task cannot be blank.'
+      redirect_to lists_tasks_path(@list), notice: 'Task cannot be blank.'
     end
   end
 
   def update
     if @task.update(task_params)
-      redirect_to list_path(@list), notice: 'Task was successfully updated.'
+      redirect_to list_path(@task.list), notice: 'Task was successfully updated.'
     else
       render :edit
     end
@@ -36,7 +36,7 @@ end
 
   def destroy
     @task.destroy
-    redirect_to list_path(@list), notice: 'Task was successfully destroyed.'
+    redirect_to list_path(@task.list), notice: 'Task was successfully destroyed.'
   end
 
   def catalog
@@ -50,7 +50,7 @@ end
     end
 
     def set_task
-      @task = @list.tasks.find(params[:id])
+      @task = Task.find(params[:id])
     end
 
     def task_params
