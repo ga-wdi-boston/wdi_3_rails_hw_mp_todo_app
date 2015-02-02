@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>To Do Lists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lists.each do |list| %>
+      <tr>
+        <td><%= link_to list.name.upcase, list %></td>
+        <td><%= link_to 'Delete List', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div> <%= link_to 'New List', new_list_path %>
+</div>
+

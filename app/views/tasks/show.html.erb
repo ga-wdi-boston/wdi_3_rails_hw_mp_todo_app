@@ -1,0 +1,11 @@
+<!-- render list of notes partial here -->
+  <%= link_to 'Edit Task', edit_list_task_path(@list, @task) %>
+  <%= link_to 'New Note', new_list_task_note_path(@list, @task) %>
+<% @task.notes.each do |note| %>
+
+      <h2><%= @task.name %></h2>
+            <p><%= note.body %></p>
+       <%= link_to 'Edit', edit_list_task_note_path(note.task.list, note.task, note) %>
+
+      <%= link_to 'Destroy', list_task_note_path(note.task.list, note.task, note), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
