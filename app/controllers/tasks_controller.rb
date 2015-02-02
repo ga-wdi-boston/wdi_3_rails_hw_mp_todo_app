@@ -1,7 +1,6 @@
 class TasksController < ApplicationController
+  before_action :find_task, only: [:show, :edit, :update, :destroy]
   def show
-    @list = List.find(params[:list_id])
-    @task = @list.tasks.find(params[:id])
     @note = @task.notes.new
   end
 
@@ -25,13 +24,9 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @list = List.find(params[:list_id])
-    @task = @list.tasks.find(params[:id])
   end
 
   def update
-    @list = List.find(params[:list_id])
-    @task = @list.tasks.find(params[:id])
     respond_to do |format|
       if @task.update_attributes(tasks_params)
         format.html { redirect_to list_path(@list), notice: 'Task was successfully updated.' }
@@ -44,8 +39,6 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @list = List.find(params[:list_id])
-    @task = @list.tasks.find(params[:id])
     @task.destroy
     respond_to do |format|
       format.html { redirect_to list_path(@list), notice: 'List was successfully destroyed.' }
@@ -53,8 +46,13 @@ class TasksController < ApplicationController
     end
   end
 
+  def find_task
+    @list = List.find(params[:list_id])
+    @task = @list.tasks.find(params[:id])
+  end
+
   def tasks_params
       params.require(:task).permit(:name, :complete)
-    end
+  end
 
 end
