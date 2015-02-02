@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :lists do
     resources :tasks
+      resources :notes
 
   end
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,9 +1,19 @@
-
-
 <p>
   <strong>Title:</strong>
     <%= @task.title %>
 </p>
 
 
+<h2> Add a note:</h2>
+<%= form_for([@task, @task.notes.build]) do |f| %>
 
+<p>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+</p>
+
+<p>
+  <%= f.submit %>
+</p>
+
+<% end %>
