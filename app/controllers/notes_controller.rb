@@ -21,9 +21,9 @@ class NotesController < ApplicationController
   def create
     @note = @task.notes.build(note_params)
     if @note.save
-      redirect_to list_task_notes_path(@list, @task), notice: 'Note was successfully created.'
+      redirect_to list_task_path(@list, @task), notice: 'Note was successfully created.'
     else
-      redirect_to list_task_notes_path(@list, @task), notice: 'Note cannot be blank.'
+      redirect_to list_task_path(@list, @task), notice: 'Note cannot be blank.'
     end
   end
 
@@ -37,7 +37,7 @@ class NotesController < ApplicationController
 
   def destroy
     @note.destroy
-      redirect_to list_task_notes_path(@list, @task), notice: 'Note was successfully destroyed.'
+      redirect_to list_task_path(@list, @task), notice: 'Note was successfully destroyed.'
   end
 
   def catalog

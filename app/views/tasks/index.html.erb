@@ -1,32 +1,19 @@
-<h1>Listing Tasks</h1>
+<div class="navbar">
+  <ul class ="nav nav-pills">
+    <li><%= link_to 'Back to Lists', lists_path %></li>
+    <li><%= link_to 'New Task', new_list_task_path(@list, @task)%></li>
+  </ul>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Completed?</th>
-      <th>List</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h3>Listing All Tasks</h3>
 
-  <tbody>
-    <% @tasks.each do |task| %>
-      <tr>
-        <td><%= task.name %></td>
-        <td><%= task.completed? %></td>
-        <td><%= task.list.name %></td>
 
-        <td><%= link_to 'Show', list_task_path(@list, task) %></td>
-        <td><%= link_to 'Edit', edit_list_task_path(@list, task) %></td>
-        <td><%= link_to 'Destroy', list_task_path(@list, task), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Task', new_list_task_path %> |
-<%= link_to 'New List', new_list_path %> |
-<%= link_to 'Back to Lists', lists_path %>
+<% @tasks.each do |task| %>
+  <tr>
+    <td><%= link_to task.name, list_task_path(@list, task) %></td>
+    <td><%= task.completed? %></td>
+    <td><%= task.list.name %></td>
+    <td><%= link_to 'Edit', edit_list_task_path(@list, task) %></td>
+    <td><%= link_to 'Destroy', list_task_path(@list, task), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>

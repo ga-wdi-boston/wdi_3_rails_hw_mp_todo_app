@@ -1,0 +1,32 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+h1 {
+}
+
+body {
+  margin-left: 10px;
+  background-color: #B9E2FF;
+  color: #5C717F;
+}
+
+.navbar {
+  margin-left: -10px;
+  margin-top: -10px;
+  background-color: #1F577F;
+  height: 60px;
+}
+
+.header {
+  text-align: center;
+}
+
+.panel {
+  display: inline-block;
+  min-height: 100px;
+  min-width: 200px;
+  border-radius: 50px;
+  text-align: center;
+  word-wrap: break-word;
+}
+

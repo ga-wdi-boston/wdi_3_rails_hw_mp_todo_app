@@ -44,3 +44,6 @@ group :production do
   gem 'rails_stdout_logging'
   gem 'rails_serve_static_assets'
 end
+
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
