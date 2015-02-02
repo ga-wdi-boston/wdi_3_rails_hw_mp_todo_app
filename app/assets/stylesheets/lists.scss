@@ -1,3 +1,59 @@
 // Place all the styles related to the Lists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  font-size: 18px;
+}
+
+h1 {
+  text-align: center;
+}
+
+tr th {
+  text-decoration: none;
+  text-align: center;
+  padding-bottom: 10px;
+  font-size: 22px;
+}
+
+td a {
+  // padding: 10px 10px 10px 10px;
+  margin-left: 10px;
+  text-transform: lowercase;
+
+}
+
+tr td {
+  font-size: 18px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+body a {
+  text-size: 22px;
+  // text-align: center;
+  // margin-left: 10px;
+  text-transform: lowercase;
+}
+
+form {
+  margin-left: 10px;
+}
+
+label {
+  font-size: 22px;
+}
+
+ul {
+  font-size: 18px;
+}
+
+li {
+  font-size: 18px;
+}
+
+input {
+
+}
+
