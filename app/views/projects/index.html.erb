@@ -10,7 +10,7 @@
       <th>Status</th>
       <th>Groups</th>
       <th>All Group Details</th>
-      <th colspan=2></th>
+      <th colspan=3></th>
 
     </tr>
   </thead>
@@ -28,6 +28,7 @@
             <li><% "No Groups Assigned" if project.groups.empty? %></li>
             </ul></td>
         <td><div class='btn btn-default btn-xs'><%= link_to 'View All Groups', project_groups_path(project.id) %></td></td>
+         <td><div class='btn btn-primary btn-xs'><%= link_to 'Add Group',new_project_group_path(project.id) %></td></td>
         <td><div class='btn btn-info btn-xs'><%= link_to 'Edit Project', edit_project_path(project) %></div></td>
         <td><div class='btn btn-warning btn-xs'><%= link_to 'Erase Project', project, method: :delete, data: { confirm: 'Are you sure?' } %></div></td>
       </tr>
