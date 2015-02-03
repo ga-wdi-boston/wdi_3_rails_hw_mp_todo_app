@@ -3,19 +3,24 @@
     <h1><%= @list.name %></h1>
     <p><%= @list.description %></p>
     <% @list.tasks.each do |task| %>
-      <table>
-        <tr>
-          <td><h3><%= link_to task.name, task %></h3></td>
-          <%= form_for [task] do |f| %>
-            <td><p><%= f.check_box( "completed", {}, "true", "false") %></p></td>
-            <td><%= f.submit %></td>
-          <% end %>
-        </tr>
-      </table>
+      <div class="button_slider">
+        <h2><%= link_to task.name, task %></h2>
+      </div>
+      <ul>
       <% task.notes.each do |note| %>
-        <p><%= note.note %></p>
+        <li><%= note.note %></li>
       <% end %>
+      </ul>
+      <%= bootstrap_form_for [task] do |f| %>
+      <div class="button_slider">
+        <%= f.check_box( "completed", {}, "true", "false") %>
+      </div>
+      <div class="button_slider">
+        <%= f.submit class: "btn btn-warning" %>
+          <% end %>
+      </div>
     <% end %>
+    <br>
     <div class="button_slider">
       <%= button_to projects_url, class: "btn btn-primary", method: :get do %>
         <i class="fa fa-home fa-lg"></i> Home

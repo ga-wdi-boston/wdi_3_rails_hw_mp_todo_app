@@ -13,13 +13,13 @@
       <% end %>
     </div>
     <div class="button_slider">
-    <%= button_to :back, method: :get, class: "btn btn-info" do %>
+    <%= button_to projects_url, method: :get, class: "btn btn-info" do %>
       <i class="fa fa-step-backward fa-lg"></i> Back
     <% end %>
     </div>
     <div class="button_slider">
       <%= button_to edit_project_path(@project), class: "btn btn-warning", method: :get do %>
-        <i class="fa fa-pencil-square-o fa-lg"></i> Edit List
+        <i class="fa fa-pencil-square-o fa-lg"></i> Edit Project
       <% end %>
     </div>
     <div class="button_slider">

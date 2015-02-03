@@ -18,7 +18,7 @@ class ListsController < ApplicationController
 
   def create
     @project = Project.find(params[:project_id])
-    @list = @project.lists.new(lists_params)
+    @list = @project.lists.new(list_params)
 
     if @list.save
       redirect_to project_lists_path(@project)
@@ -29,7 +29,7 @@ class ListsController < ApplicationController
 
   def update
     @list.update!(list_params)
-    redirect_to project_url
+    redirect_to list_path(@list.id)
   end
 
   def destroy
@@ -47,7 +47,7 @@ class ListsController < ApplicationController
       @list = List.find(params[:id])
     end
 
-  def lists_params
+  def list_params
     params.require(:list).permit(:name, :description)
   end
 

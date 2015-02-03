@@ -9,7 +9,7 @@ class NotesController < ApplicationController
     @note = @task.notes.new(note_params)
 
     if @note.save
-      redirect_to :back
+      redirect_to list_path(@task.list_id)
     else
       render :new
     end

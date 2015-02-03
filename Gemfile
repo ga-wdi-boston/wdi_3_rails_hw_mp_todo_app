@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rb-readline'
 gem 'font-awesome-sass', '~> 4.3.0'
+gem 'bootstrap_form'
 
 
 group :development, :test do
