@@ -16,10 +16,6 @@
     <%= f.text_area :name %>
   </div>
   <div class="field">
-    <%= f.label :completed? %><br>
-    <%= f.check_box :completed? %>
-  </div>
-  <div class="field">
     <%= f.label :group_id %><br>
     <%= f.select :group_id, options_from_collection_for_select(Group.all, 'id', 'name') %>
   </div>

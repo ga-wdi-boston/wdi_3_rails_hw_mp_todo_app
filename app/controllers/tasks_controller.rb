@@ -20,10 +20,13 @@ class TasksController < ApplicationController
     @task = Task.new
     # @list = List.find(params[:list_id])
     @group = Group.find(params[:group_id])
+
   end
 
   # GET /tasks/1/edit
   def edit
+    @task = Task.find(params[:id])
+    @group = @task.groups
   end
 
   # POST /tasks
