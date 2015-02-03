@@ -37,8 +37,8 @@
   <li><%= link_to 'Home', root_path %></li>
   <li><%= link_to 'Projects', projects_path %></li>
   <li><%= link_to 'Groups', project_groups_path(@group.project_id) %></li>
-  <li><%= link_to 'Tasks', group_tasks_path %></li>
-  <li><%= link_to 'Create New Task', new_group_task_path %></li>
+  <li>Tasks</li>
+  <li><div class='btn btn-primary btn-xs'><%= link_to 'Create New Task', new_group_task_path %></div></li>
 </ol>
 
 

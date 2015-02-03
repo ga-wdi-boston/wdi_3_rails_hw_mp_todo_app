@@ -10,30 +10,29 @@
       </ul>
     </div>
   <% end %>
+<ul class='project_form'>
+  <li class="field">
+  <%= f.label :title %>
+    <%= f.text_field :title, placeholder: :title %>
+  </li>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :due_date %><br>
+  <li class="field">
+  <%= f.label :leads %>
+    <%= f.text_field :leads, placeholder: :leads %>
+  </li>
+
+    <li class="field">
+    <%= f.label :status %>
+    <%= f.select :status, %w{ Not-Started In-Process Completed}, :prompt=>'Select Status'%>
+  </li>
+
+
+  <li class="field">
+    <%= f.label :due_date %>
     <%= f.date_select :due_date %>
-  </div>
-
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.select (:status) do %>
-      <%['Not-Started','In-Process','Completed'].each do |c|%>
-      <%= content_tag(:option, c, value: c) %>
-      <%end%>
-    <%end%>
-  </div>
-
-  <div class="field">
-    <%= f.label :leads %><br>
-    <%= f.text_field :leads %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  </li>
+  <li class="actions_p">
+    <%= f.submit class: 'btn btn-primary btn-sm' %>
+  </li>
+  </ul>
 <% end %>

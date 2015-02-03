@@ -34,13 +34,19 @@ table {
   text-align: center;
 }
 
-table th{
+table th {
   background-color: rgba(155,194,207,0.1);
   padding: 5px;
   text-align: center;
+  margin: 0 0 10px 0;
 }
 
-table ul{
+table td {
+    padding: 10px 0 0 0;
+    margin: 10px 0 0 0;
+}
+
+table ul {
   list-style: none;
 }
 
@@ -94,7 +100,25 @@ table ul li {
   padding: 5px;
 }
 
+.project_form {
+  list-style:none;
+  margin-top: 20px;
+}
 
+.field_p, .actions_p {
+margin: 10px 0 10px 0;
+}
+
+ .btn {
+  padding: 1px 2px 1px 2px;
+}
+
+ol .btn {
+  margin-top: 3px;
+}
+ .btn a{
+  color: white;
+}
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
