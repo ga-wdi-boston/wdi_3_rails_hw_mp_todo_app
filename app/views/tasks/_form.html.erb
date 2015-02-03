@@ -1,4 +1,19 @@
+<div class="byline">
+<div class="button_slider">
+  <%= button_to projects_url, class: "btn btn-primary", method: :get do %>
+    <i class="fa fa-home fa-lg"></i> Home
+  <% end %>
+</div>
+<div class="button_slider">
+  <%= button_to list_path(@task.list_id), method: :get, class: "btn btn-info" do %>
+    <i class="fa fa-step-backward fa-lg"></i> Back
+  <% end %>
+</div>
+
+
+</div>
 <%= bootstrap_form_for [@list, @task] do |f| %>
+
     <%= render 'shared/errors', object: @task %>
     <p>
       <%= f.text_field :name, autofocus: true, label: "Task Name" %>
@@ -10,14 +25,5 @@
         <%= f.submit class: "btn btn-success"%>
     </div>
 <% end %>
-<div class="button_slider">
-  <%= button_to list_path(@task.list_id), method: :get, class: "btn btn-info" do %>
-    <i class="fa fa-step-backward fa-lg"></i> Back
-  <% end %>
-</div>
+<br>
 
-<div class="button_slider">
-  <%= button_to projects_url, class: "btn btn-primary", method: :get do %>
-    <i class="fa fa-home fa-lg"></i> Home
-  <% end %>
-</div>

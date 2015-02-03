@@ -21,6 +21,7 @@
 
 @import "rails_bootstrap_forms";
 
+
 .col-centered {
 float: none;
 margin: 0 auto;
@@ -30,7 +31,8 @@ p {
 font-weight: bold;
 }
 
-a {color:#333;
+a {
+  color:#333;
 }
 
 h1 {
@@ -43,6 +45,21 @@ font-weight: bold;
 
 h3 {
 font-weight: bold;
+}
+
+h4 {
+font-weight: bold;
+margin-bottom: 15px;
+}
+
+.byline {
+margin-bottom: 100px;
+
+}
+.check_slider {
+display: inline-block;
+margin-right: 15px;
+margin-bottom: 10px;
 }
 
 .button_slider {
@@ -65,3 +82,11 @@ font-size: 50px;
 background-color: black;
 color: white;
 }
+
+.btn-default {
+background-color: #333;
+color: white;
+border-color:white;
+font-weight: bold;
+}
+

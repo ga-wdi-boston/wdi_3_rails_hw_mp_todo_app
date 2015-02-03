@@ -1,19 +1,16 @@
 <%= render 'shared/lid' %>
 <p id="notice"><%= notice %></p>
 
-<h1>What's on the Agenda?</h1>
+<h1 class="byline">What's on the Agenda?</h1>
 <% @projects.each do |project| %>
-  <h3><%= link_to project.name, project %></h3>
+  <h2><%= link_to project.name, project %></h2>
   <p><%= project.description %></p>
 <% end %>
-<div class="button_slider">
-      <%= button_to projects_url, class: "btn btn-primary", method: :get do %>
-        <i class="fa fa-home fa-lg"></i> Home
-      <% end %>
-    </div>
+<br>
+
     <div class="button_slider">
       <%= button_to new_project_path, class: "btn btn-success", method: :get do %>
-        <i class="fa fa-pencil fa-lg"></i> Create New
+        <i class="fa fa-pencil fa-lg"></i> Create New Project
       <% end %>
     </div>
 <%= render 'shared/floor' %>

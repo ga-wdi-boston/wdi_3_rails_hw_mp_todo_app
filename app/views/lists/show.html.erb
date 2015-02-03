@@ -1,33 +1,15 @@
 <%= render 'shared/lid' %>
     <p id="notice"><%= notice %></p>
     <h1><%= @list.name %></h1>
-    <p><%= @list.description %></p>
-    <% @list.tasks.each do |task| %>
-      <div class="button_slider">
-        <h2><%= link_to task.name, task %></h2>
-      </div>
-      <ul>
-      <% task.notes.each do |note| %>
-        <li><%= note.note %></li>
-      <% end %>
-      </ul>
-      <%= bootstrap_form_for [task] do |f| %>
-      <div class="button_slider">
-        <%= f.check_box( "completed", {}, "true", "false") %>
-      </div>
-      <div class="button_slider">
-        <%= f.submit class: "btn btn-warning" %>
-          <% end %>
-      </div>
-    <% end %>
-    <br>
+    <h4 ><%= @list.description %></h4>
+    <div class="byline">
     <div class="button_slider">
       <%= button_to projects_url, class: "btn btn-primary", method: :get do %>
         <i class="fa fa-home fa-lg"></i> Home
       <% end %>
     </div>
     <div class="button_slider">
-    <%= button_to :back, method: :get, class: "btn btn-info" do %>
+    <%= button_to project_url(@list.project_id), method: :get, class: "btn btn-info" do %>
       <i class="fa fa-step-backward fa-lg"></i> Back
     <% end %>
     </div>
@@ -43,8 +25,34 @@
     </div>
     <div class="button_slider">
       <%= button_to new_list_task_path(@list.id), class: "btn btn-success", method: :get do %>
-        <i class="fa fa-pencil fa-lg"></i> Create New
+        <i class="fa fa-pencil fa-lg"></i> Create New Task
       <% end %>
     </div>
+    </div>
+    <% @list.tasks.each do |task| %>
+    <h2><%= link_to task.name, task %></h2>
+
+    <%= bootstrap_form_for [task] do |f| %>
+
+      <div class="check_slider">
+        <%= f.check_box( "completed", {}, "true", "false") %>
+      </div>
+      <div class="check_slider">
+        <%= f.submit "F***CKING DONE", class: "btn btn-default" %>
+      </div>
+      <ul>
+        <% task.notes.each do |note| %>
+          <span style="font-weight:bold;"><li><%= note.note %></li></span>
+        <% end %>
+      </ul>
+
+
+
+    <% end %>
+
+
+    <% end %>
+    <br>
+
 <%= render 'shared/floor' %>
 

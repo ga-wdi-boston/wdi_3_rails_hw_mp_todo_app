@@ -1,19 +1,8 @@
 <%= render 'shared/lid' %>
   <p id="notice"><%= notice %></p>
   <h1><%= @task.name %></h1>
-  <ul>
-    <% @task.notes.each do |note| %>
-    <li><%= note.note %></li>
-    <% end %>
-  </ul>
-  <%= form_for [@task] do |f| %>
-      <%= f.label :completed %>
-      <%= f.check_box( "completed", {}, "true", "false") %>
-      <%= f.submit class: "btn btn-warning" %>
-  <% end %>
-
-  <%= render 'notes/form' %>
-<div class="button_slider">
+  <div class="byline">
+    <div class="button_slider">
       <%= button_to projects_url, class: "btn btn-primary", method: :get do %>
         <i class="fa fa-home fa-lg"></i> Home
       <% end %>
@@ -28,4 +17,19 @@
         <i class="fa fa-trash-o fa-lg"></i> Delete
       <% end %>
     </div>
+  </div>
+  <ul>
+    <% @task.notes.each do |note| %>
+    <li><%= note.note %></li>
+    <% end %>
+  </ul>
+  <%= form_for [@task] do |f| %>
+      <%= f.label :completed %>
+      <%= f.check_box( "completed", {}, "true", "false") %>
+      <%= f.submit "F**KING DONE", class: "btn btn-default" %>
+  <% end %>
+
+  <%= render 'notes/form' %>
+<br>
+
 <%= render 'shared/floor' %>

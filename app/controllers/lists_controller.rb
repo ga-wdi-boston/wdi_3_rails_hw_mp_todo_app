@@ -21,7 +21,7 @@ class ListsController < ApplicationController
     @list = @project.lists.new(list_params)
 
     if @list.save
-      redirect_to project_lists_path(@project)
+      redirect_to project_path(@project)
     else
       render :new
     end
