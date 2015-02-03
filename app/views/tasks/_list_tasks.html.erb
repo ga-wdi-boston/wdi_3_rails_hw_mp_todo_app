@@ -12,7 +12,7 @@
   </thead>
 
   <tbody>
-    <% @tasks.each do |task| %>
+    <% @list.tasks.each do |task| %>
       <tr>
         <td><%= link_to task.action, task %></td>
         <td><%= task.done? %></td>
@@ -25,5 +25,5 @@
 
 <br>
 
-<%= link_to 'Add a New Task', new_list_task_path %>|
+<%= link_to 'Add a New Task', new_list_task_path(@list.id) %>|
 <%= link_to 'Home', lists_path %>
