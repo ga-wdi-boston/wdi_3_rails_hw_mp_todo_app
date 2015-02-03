@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<div class='well well-lg col-xs-6 text-center'>
+<div class='col-sm-6 col-xs-8 col-xs-offset-2 col-sm-offset-0 well well-lg text-center'>
   <h1>
     <% if @task.completed %>
   <%= link_to flop_list_task_path(@task.list, @task) do%>
@@ -14,7 +14,7 @@
   </h1>
   <h2>Notes</h2>
 </div>
-<div class='col-xs-4 col-xs-offset-2'>
+<div class='col-sm-4 col-xs-8 col-xs-offset-2'>
 
 <%= render @notes.order(:id) %>
 <%= render 'form' %>

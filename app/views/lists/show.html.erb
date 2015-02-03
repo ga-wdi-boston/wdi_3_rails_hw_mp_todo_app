@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div class='col-xs-6 well well-lg text-center'>
+<div class='col-sm-6 col-xs-8 col-xs-offset-2 col-sm-offset-0 well well-lg text-center'>
   <h1><%= @list.name %></h1>
   <h2>Tasks</h2>
 
@@ -12,7 +12,7 @@
 
 </div>
 
-<div class='col-xs-4 col-xs-offset-2'>
+<div class='col-sm-4 col-xs-8 col-xs-offset-2'>
 <%= render @list.tasks.order(:id) %>
 <%= render 'tasks/form' %>
 

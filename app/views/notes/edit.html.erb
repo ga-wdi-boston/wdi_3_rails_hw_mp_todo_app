@@ -1,6 +1,6 @@
-<h1>Editing Note</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', task_note_path(@note.task, @note) %> |
-<%= link_to 'Back', task_notes_path(@note.task) %>
+<div class='col-sm-6 col-xs-offset-2'>
+  <h1>Edit Note</h1>
+  <%= render 'form' %>
+  <%= link_to 'Show', task_note_path(@note.task, @note) %> |
+  <%= link_to 'Back', task_notes_path(@note.task) %>
+</div>
