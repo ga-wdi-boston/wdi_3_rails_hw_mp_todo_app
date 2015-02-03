@@ -3,7 +3,7 @@ root 'welcome#index'
 
 resources :welcome, only: [:index]
 
-resources :projects  do
+resources :projects, except: [:show] do
   resources :groups, only: [:index, :new, :create]
 end
 
