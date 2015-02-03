@@ -1,0 +1,70 @@
+/*
+Error: Invalid CSS after "...orm-group::not(": expected pseudo_expr, was ":first-child)"
+        on line 312 of /home/ian/wdi/wdi_3_rails_hw_mp_todo_app/todo_app/sass/print.scss
+
+307:   -webkit-transition: top 0.3s ease,opacity 0.3s ease;
+308:   -moz-transition: top 0.3s ease,opacity 0.3s ease;
+309:   -ms-transition: top 0.3s ease,opacity 0.3s ease;
+310:   transition: top 0.3s ease,opacity 0.3s ease;
+311: }
+312: .floating-label-form-group::not(:first-child) {
+313:   padding-left: 14px;
+314:   border-left: 1px solid #eeeeee;
+315: }
+316: .floating-label-form-group-with-value label {
+317:   top: 0;
+
+Backtrace:
+/home/ian/wdi/wdi_3_rails_hw_mp_todo_app/todo_app/sass/print.scss:312
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:1165:in `expected'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:1101:in `expected'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:1081:in `expr!'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/scss/static_parser.rb:295:in `pseudo_args'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:1079:in `expr!'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/scss/static_parser.rb:286:in `pseudo'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/scss/static_parser.rb:160:in `simple_selector_sequence'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/scss/static_parser.rb:112:in `selector'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/scss/static_parser.rb:86:in `selector_comma_sequence'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/scss/parser.rb:1079:in `expr!'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/scss/static_parser.rb:20:in `parse_selector'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:424:in `visit_rule'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/stack.rb:79:in `block in with_base'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/stack.rb:115:in `with_frame'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/stack.rb:79:in `with_base'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/tree/visitors/base.rb:52:in `map'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/tree/visitors/base.rb:36:in `visit'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/tree/root_node.rb:36:in `css_tree'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/tree/root_node.rb:20:in `render'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/engine.rb:268:in `render'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:17:in `block in render'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:29:in `with_import_scope'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:16:in `render'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:209:in `each'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.11/lib/sass/plugin/compiler.rb:328:in `block in watch'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:282:in `call'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:282:in `_process_changes'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:246:in `block in _wait_for_changes'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:229:in `loop'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:229:in `_wait_for_changes'
+/home/ian/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:318:in `block in _start_wait_thread'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...orm-group::not(\": expected pseudo_expr, was \":first-child)\"\A         on line 312 of /home/ian/wdi/wdi_3_rails_hw_mp_todo_app/todo_app/sass/print.scss\A \A 307:   -webkit-transition: top 0.3s ease,opacity 0.3s ease;\A 308:   -moz-transition: top 0.3s ease,opacity 0.3s ease;\A 309:   -ms-transition: top 0.3s ease,opacity 0.3s ease;\A 310:   transition: top 0.3s ease,opacity 0.3s ease;\A 311: }\A 312: .floating-label-form-group::not(:first-child) {\A 313:   padding-left: 14px;\A 314:   border-left: 1px solid #eeeeee;\A 315: }\A 316: .floating-label-form-group-with-value label {\A 317:   top: 0;"; }

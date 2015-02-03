@@ -1,18 +1,40 @@
-<p id="notice"><%= notice %></p>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+<%= link_to 'Projects', lists_path, :class => "navbar-brand" %>
+    </div>
 
-  <strong>List Name:</strong>
-
-  <li><%= @list.name %></li>
-
-  <% @list.groups.each do |group| %>
-    <ul><strong>List groups:</strong>
-      <li><%= group.name %></li>
-      <ul>Group Tasks:
-        <% group.tasks.each do |task| %>
-        <li><%= task.name %></li>
-        <% end %>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">list <span class="sr-only">(current)</span></a></li>
       </ul>
-    </ul>
+      <ul class="nav navbar-nav navbar-right">
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <p><strong>List Name: <%= @list.name %></strong></p>
+
+    <% @list.groups.each do |group| %>
+
+<table class="table">
+<tr>
+        <% group.tasks.each do |task| %>
+        <td><%= task.name %></td>
+        <td><%= task.completed? %></td>
+        <td><%= link_to task.group.name, group_tasks_path(task.group.id) %></td>
+        </tr>
+        <% end %>
+    </table>
     <% end %>
 
-<%= link_to 'edit list name', edit_list_path(@list) %> | <%= link_to 'show all groups', list_groups_path(@list.id) %> | <%= link_to 'show all tasks', list_tasks_path(@list.id) %>
+<%= link_to 'edit list name', edit_list_path(@list) %>
