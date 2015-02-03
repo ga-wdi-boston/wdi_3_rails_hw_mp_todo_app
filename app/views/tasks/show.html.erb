@@ -3,7 +3,7 @@
     <%= @task.title %>
 </p>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Your Note</th>
@@ -39,5 +39,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Back to your task', list_tasks_path %>
+<%= link_to 'Back to your task', list_tasks_path, class: 'btn btn-link' %>
 
