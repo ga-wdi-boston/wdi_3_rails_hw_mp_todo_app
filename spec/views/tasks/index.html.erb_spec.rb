@@ -5,11 +5,11 @@ RSpec.describe "tasks/index", :type => :view do
     assign(:tasks, [
       Task.create!(
         :action => "Action",
-        :done? => false
+        :done => false
       ),
       Task.create!(
         :action => "Action",
-        :done? => false
+        :done => false
       )
     ])
   end

@@ -4,7 +4,7 @@ RSpec.describe "tasks/show", :type => :view do
   before(:each) do
     @task = assign(:task, Task.create!(
       :action => "Action",
-      :done? => false
+      :done => false
     ))
   end
 

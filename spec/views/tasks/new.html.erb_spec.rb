@@ -4,7 +4,7 @@ RSpec.describe "tasks/new", :type => :view do
   before(:each) do
     assign(:task, Task.new(
       :action => "MyString",
-      :done? => false
+      :done => false
     ))
   end
 
