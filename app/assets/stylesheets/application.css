@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background: image-url("logo.png") 0 0 no-repeat;
+  background-image: url('http://www.sistersinwonderland.eu/WebRoot/StoreLNL/Shops/62597275/5231/F057/738F/8A7D/DB9B/C0A8/29B9/BC2E/wandrolsneeuwflok.jpg');
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
