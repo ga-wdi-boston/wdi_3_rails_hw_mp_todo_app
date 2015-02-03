@@ -10,6 +10,19 @@
     <h3><%= note.note %></h3>
   <% end %>
   <%= render 'notes/form' %>
-<%= link_to 'Back', list_path(@task.list_id) %>
-<%= link_to 'Destroy', @task, method: :delete, data: { confirm: 'Are you sure?' } %>
+<div class="button_slider">
+      <%= button_to projects_url, class: "btn btn-primary", method: :get do %>
+        <i class="fa fa-home fa-lg"></i> Home
+      <% end %>
+    </div>
+    <div class="button_slider">
+    <%= button_to :back, method: :get, class: "btn btn-info" do %>
+      <i class="fa fa-step-backward fa-lg"></i> Back
+    <% end %>
+    </div>
+    <div class="button_slider">
+      <%= button_to @task, class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="fa fa-trash-o fa-lg"></i> Delete
+      <% end %>
+    </div>
 <%= render 'shared/floor' %>
