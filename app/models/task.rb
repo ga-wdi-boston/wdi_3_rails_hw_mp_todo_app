@@ -4,4 +4,7 @@ class Task < ActiveRecord::Base
 
   validates :subject, presence: true,
                    length: { minimum: 3}
+
+  validates_date :due_date
+
 end
