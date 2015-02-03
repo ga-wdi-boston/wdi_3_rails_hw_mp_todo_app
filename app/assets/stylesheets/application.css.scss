@@ -137,10 +137,6 @@ h3 {
   padding-top: 0px;
 }
 
-.show_task.notes {
-  padding-left: 15px;
-}
-
 .page_link {
   width: 100%;
   padding-top: 20px;
@@ -160,11 +156,25 @@ p {
 
 }
 
+.field_checkbox {
+  width: 30px;
+  height: auto;
+}
+
 .field {
   align-content: left;
   text-align: left;
   padding-bottom: 15px;
   padding-left: 20px;
+  font-size:1.5em;
+}
+
+.field_note {
+  margin: 40px 0 10px 0;
+}
+
+.field_exclaim {
+  color:red;
 }
 
 .actions {
@@ -174,11 +184,75 @@ p {
   padding-left: 20px
 }
 
+#paper {
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -ms-box-sizing:border-box;
+  -o-box-sizing:border-box;
+  box-sizing:border-box;
+  width:960px;
+  height:500px;
+  background-image: linear-gradient(to bottom,white 29px,#00b0d7 1px);
+  margin:50px auto;
+  background-size: 100% 30px;
+  position:relative;
+  padding-top:150px;
+  padding-left:160px;
+  padding-right:20px;
+  overflow:hidden;
+  border-radius:5px;
+  -webkit-box-shadow:3px 3px 3px rgba(0,0,0,.2),0px 0px 6px rgba(0,0,0,.2);
+  -moz-box-shadow:3px 3px 3px rgba(0,0,0,.2),0px 0px 6px rgba(0,0,0,.2);
+  -ms-box-shadow:3px 3px 3px rgba(0,0,0,.2),0px 0px 6px rgba(0,0,0,.2);
+  -o-box-shadow:3px 3px 3px rgba(0,0,0,.2),0px 0px 6px rgba(0,0,0,.2);
+  box-shadow:3px 3px 3px rgba(0,0,0,.2),0px 0px 6px rgba(0,0,0,.2);
+&:before {
+    content:'';
+    display:block;
+    position:absolute;
+    z-index:1;
+    top:0;
+    left:140px;
+    height:100%;
+    width:1px;
+    background:#db4034;
+  }
+}
+.notes_header {
+    height:60px;
+    width:100%;
+    background:white;
+    position:absolute;
+    top:0;
+    left:0;
+    h3 {
+      font-size:40px;
+      line-height:40px;
+      padding:30px 0 0 160px;
+    }
+  }
+
+.notes {
+  position: absolute;
+  top: 108px;
+  left: 110px;
+  font-size:20px;
+  line-height:56px;
+  list-style: none;
+  li {
+    padding: 0;
+  }
+}
+
+.btn {
+  margin: 0 0 10px 10px;
+}
+
 .exclaim {
-  font-size: 2.3em;
+  font-size: 1.5em;
   color: red;
   display: inline;
-  float: left;
+  padding-right:3px;
 }
 
 .complete_star {

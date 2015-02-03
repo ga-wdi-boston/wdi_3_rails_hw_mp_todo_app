@@ -1,41 +1,44 @@
-<p id="notice"><%= notice %></p>
+<div class='container-fluid'>
+  <div class="row">
+    <div class="col-md-5 col-md-offset-1">
 
-<h2>Task: <%=@task.subject %> </h2>
-<section class='show_task'>
-  <p>
-    <strong>Description:</strong>
-    <%= @task.description %>
-  </p>
+      <p id="notice"><%= notice %></p>
 
-  <p>
-    <strong>Complete:</strong>
+      <h2>Task: <%=@task.subject %> </h2>
+      <p>
+        <strong>Description:</strong>
+        <%= @task.description %>
+      </p>
+
+      <p>
+        <strong>Complete:</strong>
     <%= @task.complete %>
-  </p>
+      </p>
 
-  <p>
-    <strong>Due date:</strong>
-    <%= @task.due_date %>
-  </p>
+      <p>
+        <strong>Due date:</strong>
+        <%= @task.due_date %>
+      </p>
 
-  <p>
-    <strong>Priority:</strong>
-    <%= @task.priority %>
-  </p>
-
-  <div class='notes'>
-  <h3>Task Notes:</h3>
-  <%= render @task.notes %>
-
-  <h3>Post a Note:</h3>
-  <%= render 'notes/form' %>
+      <p>
+        <strong>Priority:</strong>
+        <%= @task.priority %>
+      </p>
+    </div>
+   <div class="col-md-6">
+      <%= render 'notes/form' %>
+    </div>
   </div>
 
-<ol class="breadcrumb">
-  <li><%= link_to 'Home', root_path %></li>
-  <li><%= link_to 'Projects', projects_path %></li>
-  <li><%= link_to 'Groups', project_groups_path(@group.project_id) %></li>
-  <li><%= link_to 'Tasks', group_tasks_path(@group) %></li>
-  <li><%= link_to 'Create New Task', new_group_task_path(@group) %></li>
-</ol>
+    <div id='paper'>
+      <div class='notes_header'><h3 >Notes</h3></div>   <ul class='notes'><li><%= render @task.notes %></li></ul>
+    </div>
 
-</section>
+  <ol class="breadcrumb">
+    <li><%= link_to 'Home', root_path %></li>
+    <li><%= link_to 'Projects', projects_path %></li>
+    <li><%= link_to 'Groups', project_groups_path(@group.project_id) %></li>
+    <li><%= link_to 'Tasks', group_tasks_path(@group) %></li>
+    <li><%= link_to 'Create New Task', new_group_task_path(@group) %></li>
+  </ol>
+
