@@ -16,12 +16,14 @@ class ListsController < ApplicationController
   end
 
   def edit
+    #@project = Project.find(params[:project_id])
     @list = List.find(params[:id])
   end
 
   def update
-    @project = Project.find(params[:project_id])
-    @list = @project.lists.new(lists_params)
+    #@project = Project.find(params[:project_id])
+    @list = List.new(lists_params)
+    redirect_to project_path(@project)
   end
 
   def destroy

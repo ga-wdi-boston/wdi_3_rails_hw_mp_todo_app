@@ -1,6 +1,6 @@
 %p
-  = form_for([@project, @project.lists.build]) do |f|
+  = form_for([@project, @list]) do |f|
     %p
-      = f.label :new_list
+      = f.label :list_name
       = f.text_field :name, autofocus: true
-    = f.submit 'Save', class: 'btn btn-primary' 
+      = f.submit 'Save', class: 'btn btn-primary'
