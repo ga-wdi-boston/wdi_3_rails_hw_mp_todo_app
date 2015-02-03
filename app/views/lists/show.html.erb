@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<div class='col-sm-6 col-xs-8 col-xs-offset-2 col-sm-offset-0 well well-lg text-center'>
+  <h1><%= @list.name %></h1>
+  <h2>Tasks</h2>
+    <%= link_to 'Back to all lists', lists_path %>
+</div>
+
+<div class='col-sm-4 col-xs-8 col-xs-offset-2'>
+<%= render @list.tasks.order(:id) %>
+<%= render 'tasks/form' %>
+

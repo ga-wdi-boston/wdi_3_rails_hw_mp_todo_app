@@ -7,8 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <nav class='navbar navbar-default navbar-static-top'>
+    <div class='container'>
+      <div class='navbar-header'>
+        <%= link_to "YuToDo", root_path, class: 'navbar-brand glyphicon glyphicon-check'%>
+        <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
+        <span class='sr-only'>Toggle Navigation</span>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+          <span class='icon-bar'></span>
+        </button>
+      </div>
+      <ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
+        <li><%= link_to "Lists", root_path%></li>
+        <li class='nav-divider'></li>
+        <li><%= link_to "Tasks", tasks_path%></li>
+        <li class='nav-divider'></li>
+        <li><%= link_to "Notes", notes_path%></li>
+      </ul>
+    </div>
+  </nav>
+  <div class='container'>
+    <%= yield %>
+  </div>
 </body>
 </html>
