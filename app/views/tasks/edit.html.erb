@@ -15,6 +15,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to 'list', list_path(@task.group.list.id), :class => "navbar-nav" %></li>
+        <li><%= link_to 'group', group_path(@task.group.id) %></li>
         <li class="active"><a href="">task</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -55,3 +56,4 @@
 <h1>Edit Task</h1>
 
 <%= render 'form' %>
+
