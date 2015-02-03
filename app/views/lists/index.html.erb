@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Welcome to To-Do!</h1>
+
+  <section>
+    <% @lists.each do |list| %>
+      <h2><%= link_to list.name, list %></h2>
+      <% list.tasks.each do |task| %>
+        <ul>
+          <li><%= link_to task.name, task_path(task) %></li>
+        </ul>
+      <% end %>
+    <% end %>
+  </section>
+
+<%= link_to 'New List', new_list_path %>
+<%= link_to 'New Task', new_task_path %>

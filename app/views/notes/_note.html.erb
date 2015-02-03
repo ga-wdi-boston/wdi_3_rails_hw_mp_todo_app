@@ -1,0 +1,9 @@
+<h2>Notes:</h2>
+<p>
+  <%= note.note %>
+</p>
+
+<p>
+  <%= link_to 'Destroy Note', [note.task, note], method: :delete,
+              data: { confirm: 'Are you sure?'} %>
+</p>
