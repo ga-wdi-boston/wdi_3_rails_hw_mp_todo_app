@@ -1,20 +1,11 @@
 class NotesController < ApplicationController
-  before_action :set_note, only: [:edit, :update, :destroy]
-  before_action :set_task, only: [:index, :create, :new]
+  before_action :set_note, only: [:update, :destroy]
+  before_action :set_task, only: [:create]
 
-  # GET /notes
-  # GET /notes.json
-  def index
-    @notes = @task.notes
-  end
 
   # GET /notes/new
   def new
     @note = Note.new
-  end
-
-  # GET /notes/1/edit
-  def edit
   end
 
   # POST /notes
@@ -33,26 +24,12 @@ class NotesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /notes/1
-  # PATCH/PUT /notes/1.json
-  def update
-    respond_to do |format|
-      if @note.update(note_params)
-        format.html { redirect_to @note, notice: 'Note was successfully updated.' }
-        format.json { render :show, status: :ok, location: @note }
-      else
-        format.html { render :edit }
-        format.json { render json: @note.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   # DELETE /notes/1
   # DELETE /notes/1.json
   def destroy
     @note.destroy
     respond_to do |format|
-      format.html { redirect_to task_notes_path(@note.task_id), notice: 'Note was successfully destroyed.' }
+      format.html { redirect_to task_path(@note.task_id), notice: 'Note was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

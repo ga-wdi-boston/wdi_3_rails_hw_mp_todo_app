@@ -14,10 +14,10 @@ resources :groups, only: [:show, :edit, :update, :destroy] do
 end
 
 resources :tasks, only: [:show, :edit, :update, :destroy] do
-  resources :notes, only: [:index, :new, :create]
+  resources :notes, only: [ :new, :create]
 end
 
-resources :notes, only:[ :edit, :update, :destroy]
+resources :notes, only:[ :destroy]
 
 
   # You can have the root of your site routed with "root"
