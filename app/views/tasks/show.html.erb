@@ -1,0 +1,39 @@
+
+<div class="nav navbar">
+  <div class="container">
+    <ul class="nav nav-pills pull-left">
+      <li><%= link_to 'All Lists', lists_path %></li>
+      <li><%= link_to 'Back to List', list_path(@list) %></li>
+    </ul>
+    <ul class="nav nav-pills pull-right">
+      <li><%= link_to 'Edit Task', edit_list_task_path(@list, @task) %></li>
+      <li><%= link_to 'New Note', new_list_task_note_path(@list, @task) %></li>
+    </ul>
+  </div>
+</div>
+
+<h1>
+  <%= @task.name.upcase %>
+</h1>
+<div id="check"> <%= render 'check' %> <div>
+<h2>
+  List:
+  <%= List.find(@task.list_id).name %>
+</h2>
+
+
+
+
+
+<h2>Notes</h2>
+<p id="notice"><%= notice %></p>
+
+<% @task.notes.each do |note| %>
+
+  <div class="panel col-xs-3 col-xs-offset-1">
+      <h3><%= note.note.capitalize %></h3>
+        <div class='btn btn-default'><%= link_to 'Edit', edit_list_task_note_path(note.task.list, note.task, note) %></div>
+        <div class='btn btn-default'><%= link_to 'Destroy', list_task_note_path(note.task.list, note.task, note), method: :delete, data: { confirm: 'Are you sure?' } %></div>
+    </div>
+<% end %>
+

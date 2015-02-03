@@ -1,0 +1,15 @@
+
+<div class="nav navbar">
+  <div class="container">
+    <ul class="nav nav-pills pull-left">
+      <li><%= link_to 'All Lists', lists_path %></li>
+      <li><%= link_to 'Back to List', list_path(@list) %></li>
+    </ul>
+
+  </div>
+</div>
+
+
+<h1>Editing Task</h1>
+
+<%= render 'form' %>
