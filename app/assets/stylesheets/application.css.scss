@@ -54,9 +54,6 @@ table ul li {
   display: inline;
 }
 
-.breadcrumb{
-  margin-top:20px;
-}
 
 .center {
   text-align: center;
@@ -90,6 +87,12 @@ table ul li {
   color: #777;
 }
 
+
+.container #welcome {
+  height: 100px;
+  margin-left:90px;
+  font-size: .5em;
+}
 .welcome ul {
   list-style-type: none;
   text-align: center;
@@ -99,29 +102,36 @@ table ul li {
 .welcome li {
   padding: 5px;
 }
-
-.container #prjoect{
-  float:left;
-  height: 100px;
-  margin: 30px;
-  font-size: .5em;
+ .welcome .btn-default {
+  width: 250px;
+  height: 30px;
 }
-
-.container #welcome {
-  height: 100px;
-  margin-left:90px;
-  font-size: .5em;
+ .welcome .btn-default a {
+  color: #777;
 }
 ul.project_form {
   display: flex;
   list-style:none;
-  margin:20px 0 30px 0px;
+  margin:5px 0 30px 0px;
   font-size:1.0em;
   height:30px;
 }
 
+.container #project{
+  float:left;
+  height: 50px;
+  width: 100%;
+  margin: 30px 0 50px 0;
+  font-size: 1em;
+  background-color: rgba(155,194,207,0.2);
+}
+
+.breadcrumb {
+  margin-top:3px;
+}
+
 .field_p, .actions_p {
-padding: 5px;
+padding: 8px 10px 0 0;
 }
 
  .btn {
@@ -136,13 +146,6 @@ ol .btn {
   color: white;
 }
 
- .welcome .btn-default {
-  width: 250px;
-  height: 30px;
-}
- .welcome .btn-default a {
-  color: #777;
-}
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
