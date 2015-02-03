@@ -1,9 +1,21 @@
 class TasksController < ApplicationController
 
+  def show
+    @list = List.find(params[:list_id])
+    @task = @list.tasks.find(params[:id])
+  end
+
   def create
     @list = List.find(params[:list_id])
     @task = @list.tasks.create!(tasks_params)
-    redirect_to list_path(@list)
+
+    if @task.save
+      redirect_to list_tasks_path(@list)
+    else
+      render :new
+    end
+
+    #redirect_to list_path(@list)
   end
 
   def new
