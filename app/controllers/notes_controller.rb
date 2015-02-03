@@ -18,6 +18,15 @@ class NotesController < ApplicationController
     end
   end
 
+ def destroy
+    @list = List.find(params[:list_id])
+    @task = Task.find(params[:task_id])
+    @note = @task.notes.find(params[:id])
+    @note.destroy
+
+    redirect_to list_task_path(@list, @task, @note_id)
+  end
+
   private
 
   def note_params
