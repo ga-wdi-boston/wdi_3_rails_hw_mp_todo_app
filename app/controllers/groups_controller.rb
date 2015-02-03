@@ -26,13 +26,11 @@ class GroupsController < ApplicationController
   # POST /groups
   # POST /groups.json
   def create
-      # @group = @project.groups.create(group_params)
-      # redirect_to project_path(@project)
     @group = @project.groups.new(group_params)
 
     respond_to do |format|
       if @group.save
-        format.html { redirect_to @group, notice: 'Group was successfully created.' }
+        format.html { redirect_to projects_path, notice: 'Group was successfully created.' }
         format.json { render :show, status: :created, location: @group }
       else
         format.html { render :new }

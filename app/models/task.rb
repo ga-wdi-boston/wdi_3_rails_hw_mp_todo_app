@@ -5,6 +5,9 @@ class Task < ActiveRecord::Base
   validates :subject, presence: true,
                    length: { minimum: 3}
 
+  LEVEL = %w{ Low Medium High }
+  validates :priority, inclusion: {in: LEVEL, message: 'is Invalid'}
+
   validates_date :due_date
 
 end
