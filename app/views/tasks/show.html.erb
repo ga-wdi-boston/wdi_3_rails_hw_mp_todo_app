@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Task: <%= @task.action %></h1>
+
+<p>
+  <strong>Done?:</strong>
+  <%= @task.done? %>
+</p>
+
+<p id="notice"><%= notice %></p>
+
+<h2>Notes about <%= @task.action %>:</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Message</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @task.notes.each do |note| %>
+      <tr>
+        <td><%= note.message %></td>
+        <td><%= link_to 'Edit', edit_note_path(note) %></td>
+        <td><%= link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h3>Add a New Note:</h3>
+
+<%= form_for [@task, Note.new] do |f| %>
+
+  <div class="field">
+    <%= f.label :message %><br>
+    <%= f.text_field :message %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', list_tasks_path(@task.list_id) %> |
+<%= link_to 'Home', lists_path %>
