@@ -1,0 +1,51 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+<%= link_to 'Projects', lists_path, :class => "navbar-brand" %>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">list <span class="sr-only">(current)</span></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<p><strong>List: <%= @list.name %></strong></p>
+
+<table class="table">
+<tr>
+<td><strong>Task</strong></td>
+<td><strong>Completed?</strong></td>
+<td><strong>Group name</strong></td>
+</table>
+
+    <% @list.groups.each do |group| %>
+
+<table class="table">
+<tr>
+        <% group.tasks.each do |task| %>
+        <td><%= link_to task.name, task_path(task) %></td>
+        <td><% if task.completed? != true %><%= link_to 'false', edit_task_path(task.group.id) %>
+        <% else %>
+        <%= link_to task.completed?, edit_task_path(task.group.id) %>
+        <% end %>
+        </td>
+        <td><%= link_to task.group.name, group_path(task.group.id) %></td>
+        </tr>
+        <% end %>
+    </table>
+    <% end %>
+
+<%= link_to 'edit list name', edit_list_path(@list) %> | <%= link_to 'add group', new_list_group_path(@list) %> | <%= link_to 'add task', new_group_task_path(@list.groups) %>

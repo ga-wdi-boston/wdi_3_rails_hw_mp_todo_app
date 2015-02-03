@@ -1,0 +1,73 @@
+// Place all the styles related to the Lists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// body { @include container(80em); }
+// nav { @include span(25%); }
+
+// $susy: (
+//   flow: ltr,
+//   math: fluid,
+//   output: float,
+//   gutter-position: after,
+//   container: auto,
+//   container-position: center,
+//   columns: 4,
+//   gutters: .25,
+//   column-width: false,
+//   global-box-sizing: content-box,
+//   last-flow: to,
+//   debug: (
+//     image: hide,
+//     color: rgba(#66f, .25),
+//     output: background,
+//     toggle: top right,
+//   ),
+//   use-custom: (
+//     background-image: true,
+//     background-options: false,
+//     box-sizing: true,
+//     clearfix: false,
+//     rem: true,
+//   )
+// );
+
+body {
+  font-size: 18px;
+}
+
+h1 {
+  text-align: center;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+tr th {
+  text-decoration: none;
+  text-align: center;
+  padding-bottom: 10px;
+  font-size: 22px;
+}
+
+td a {
+  // padding: 10px 10px 10px 10px;
+  text-transform: lowercase;
+}
+
+tbody tr td {
+  padding: 10px 10px 10px 10px;
+  font-size: 20px;
+}
+
+table tr td {
+  width: 33%;
+}
+
+thead {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
