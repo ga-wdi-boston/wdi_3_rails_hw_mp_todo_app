@@ -6,6 +6,7 @@ class GroupsController < ApplicationController
   # GET /groups.json
   def index
     @groups = @project.groups
+    @group = Group.new
   end
 
   # GET /groups/1

@@ -31,7 +31,7 @@
               <% end %>
               </li>
             </ul></td>
-        <td><div class='btn btn-primary btn-xs'><%= link_to 'Create Group', new_project_group_path(project.id) %></td></td>
+        <td><div class='btn btn-primary btn-xs'><%= link_to 'Add Group', new_project_group_path(project.id) %></td></td>
         <td><div class='btn btn-info btn-xs'><%= link_to 'Edit Project', edit_project_path(project) %></div></td>
         <td><div class='btn btn-warning btn-xs'><%= link_to 'Erase Project', project, method: :delete, data: { confirm: 'Are you sure?' } %></div></td>
       </tr>

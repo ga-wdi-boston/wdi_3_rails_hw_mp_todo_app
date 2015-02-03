@@ -29,9 +29,9 @@
     <%= f.label :due_date %><br>
     <%= f.date_select :due_date %>
   </div>
+
   <div class="field">
-    <%= f.label :priority %><br>
-    <%= f.text_field :priority %>
+    <%= f.select :priority, %w{ Low Medium High }, :prompt=>'Select Priority Level', :size=>50 %><br>
   </div>
 
   <div class="actions">

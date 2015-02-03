@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Project Groups/Divisions</h1>
+<h1><%=@project.title%> Groups/Divisions</h1>
 
 <table>
   <thead>
@@ -28,11 +28,16 @@
   </tbody>
 </table>
 
-<br>
 
-<ol class="breadcrumb">
-  <li><%= link_to 'Home', root_path %></li>
-  <li><%= link_to 'Projects', projects_path %></li>
-  <li>Groups</li>
-  <li><div class='btn btn-primary btn-xs'><%= link_to 'Create New Group', new_project_group_path %></div></li>
-</ol>
+ <div class='container' id='project'>
+  <div class=row>
+    <div class='cols-md-12'>
+      <%=render 'form'%>
+      <ol class="breadcrumb">
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Projects', projects_path %></li>
+        <li>Groups</li>
+      </ol>
+    </div>
+  </div>
+</div>
