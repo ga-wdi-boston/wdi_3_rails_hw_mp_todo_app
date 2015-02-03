@@ -24,9 +24,8 @@ class NotesController < ApplicationController
   # POST /notes
   # POST /notes.json
   def create
-    # @task = Task.find(params[:task_id])
-    @list = List.find(params[:task_id])
-    @note = @list.notes.create(note_params)
+    @task = Task.find(params[:task_id])
+    @note = @task.notes.create(note_params)
     redirect_to task_path(@task)
   end
 

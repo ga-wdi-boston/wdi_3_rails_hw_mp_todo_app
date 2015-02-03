@@ -15,9 +15,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to 'list', list_path(@group.list.id), :class => "navbar-nav" %></li>
-        <li><%= link_to 'list/groups', list_groups_path(@group), :class => "navbar-nav" %></li>
-        <li class="active"><a href="#">list/groups/tasks</a></li>
-      </ul>
+        <li class="active"><%= link_to 'group', list_groups_path(@group), :class => "navbar-nav" %></li>      </ul>
       <ul class="nav navbar-nav navbar-right">
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -37,17 +35,14 @@
 <table class="table">
 <% @group.tasks.each do |task| %>
    <tr>
-   <td><strong>task: </strong><%= task.name %></td>
+   <td><%= task.name %></td>
    <td> <strong>completed?</strong> <%= task.completed? %></td>
-   <td> <strong>group: <% if task.group != nil %></strong></td>
-   <td><%= task.group.name %></td>
+   <td></td>
    <td> <%= link_to 'Show', task %></td>
    <td> <%= link_to 'Edit', edit_task_path(task) %></td>
    <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            <% else %>
-            <% end %>
 <% end %>
 </tr>
 </table>
 
-<%= link_to 'new task', new_group_task_path(@group) %>
+<%= link_to 'new task', new_group_task_path(@group) %> | <%=link_to 'edit group', edit_group_path(@group) %>

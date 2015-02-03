@@ -22,19 +22,30 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-  <p><strong>List Name: <%= @list.name %></strong></p>
+<p><strong>List: <%= @list.name %></strong></p>
+
+<table class="table">
+<tr>
+<td><strong>Task</strong></td>
+<td><strong>Completed?</strong></td>
+<td><strong>Group name</strong></td>
+</table>
 
     <% @list.groups.each do |group| %>
 
 <table class="table">
 <tr>
         <% group.tasks.each do |task| %>
-        <td><%= task.name %></td>
-        <td><%= task.completed? %></td>
-        <td><%= link_to task.group.name, group_tasks_path(task.group.id) %></td>
+        <td><%= link_to task.name, task_path(task) %></td>
+        <td><% if task.completed? != true %><%= link_to 'false', edit_task_path(task.group.id) %>
+        <% else %>
+        <%= link_to task.completed?, edit_task_path(task.group.id) %>
+        <% end %>
+        </td>
+        <td><%= link_to task.group.name, group_path(task.group.id) %></td>
         </tr>
         <% end %>
     </table>
     <% end %>
 
-<%= link_to 'edit list name', edit_list_path(@list) %>
+<%= link_to 'edit list name', edit_list_path(@list) %> | <%= link_to 'add group', new_list_group_path(@list) %> | <%= link_to 'add task', new_group_task_path(@list.groups) %>

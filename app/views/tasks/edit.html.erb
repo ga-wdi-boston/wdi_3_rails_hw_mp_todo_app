@@ -1,5 +1,57 @@
-<h1>Editing Task</h1>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+<%= link_to 'Projects', lists_path, :class => "navbar-brand" %>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><%= link_to 'list', list_path(@task.group.list.id), :class => "navbar-nav" %></li>
+        <li class="active"><a href="">task</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<table class="table">
+  <tr>
+  <td><strong>Name:</strong>
+  <%= @task.name %></td>
+  <td><strong>Completed?:</strong>
+  <%= @task.completed? %></td>
+<td>  <strong>Group:</strong>
+  <% if @task.group != nil %>
+  <%= @task.group.name %>
+  <% end %></td>
+  </tr>
+</table>
+<p>
+<strong>Notes:</strong>
+</p>
+
+<% @task.notes.each do |note| %>
+<table class="table">
+
+
+  <tr>
+  <% if note.note != nil %>
+  <td><li><%= note.note %></li></td>
+  <% end %>
+  </tr>
+  </table>
+
+  <% end %>
+
+<h1>Edit Task</h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @task %>

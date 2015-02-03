@@ -15,8 +15,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to 'list', list_path(@task.group.list.id), :class => "navbar-nav" %></li>
-        <li><%= link_to 'list/groups', list_groups_path(@task.group.id), :class => "navbar-nav" %></li>
-        <li class="active"><%= link_to 'list/groups/tasks', group_tasks_path(@task), :class => "navbar-nav" %></li>
+        <li class="active"><a href="">task</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
       </ul>
@@ -24,23 +23,33 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<p>
-  <strong>Name:</strong>
-  <%= @task.name %>
-</p>
-
-<p>
-  <strong>Completed?:</strong>
-  <%= @task.completed? %>
-</p>
-
-<p>
-  <strong>Group:</strong>
+<table class="table">
+  <tr>
+  <td><strong>Name:</strong>
+  <%= @task.name %></td>
+  <td><strong>Completed?:</strong>
+  <%= @task.completed? %></td>
+<td>  <strong>Group:</strong>
   <% if @task.group != nil %>
   <%= @task.group.name %>
-  <% end %>
+  <% end %></td>
+  </tr>
+</table>
+<p>
+<strong>Notes:</strong>
 </p>
-  <strong>Notes:</strong>%
-  <%= render 'notes/form' %>
 
-<%= link_to 'edit', edit_task_path(@task) %>
+<% @task.notes.each do |note| %>
+<table class="table">
+
+
+  <tr>
+  <% if note.note != nil %>
+  <td><li><%= note.note %></li></td>
+  <% end %>
+  </tr>
+  </table>
+
+  <% end %>
+
+  <%= render 'notes/form' %>
