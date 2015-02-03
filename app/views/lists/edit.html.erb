@@ -12,6 +12,11 @@
       <i class="fa fa-step-backward fa-lg"></i> Back
     <% end %>
   </div>
+  <div class="button_slider">
+      <%= button_to @list, class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="fa fa-trash-o fa-lg"></i> Delete
+      <% end %>
+    </div>
 </div>
 
 <%= render 'form' %>
