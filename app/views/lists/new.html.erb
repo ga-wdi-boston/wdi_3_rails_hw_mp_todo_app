@@ -2,22 +2,17 @@
 
 <h1>New List</h1>
 <div class="byline">
-<div class="button_slider">
-  <%= button_to projects_url, class: "btn btn-primary", method: :get do %>
-    <i class="fa fa-home fa-lg"></i> Home
-  <% end %>
-</div>
-<div class="button_slider">
-  <%= button_to project_path(@project.id), method: :get, class: "btn btn-info" do %>
-    <i class="fa fa-step-backward fa-lg"></i> Back
-  <% end %>
-</div>
-
-
+  <div class="button_slider">
+    <%= button_to projects_url, class: "btn btn-primary", method: :get do %>
+      <i class="fa fa-home fa-lg"></i> Home
+    <% end %>
+  </div>
+  <div class="button_slider">
+    <%= button_to project_path(@project.id), method: :get, class: "btn btn-info" do %>
+      <i class="fa fa-step-backward fa-lg"></i> Back
+    <% end %>
+  </div>
 </div>
 
 <%= render 'form' %>
-
-
-
 <%= render 'shared/floor' %>
