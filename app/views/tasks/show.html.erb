@@ -6,8 +6,8 @@
 </p>
 
 <p>
-  <strong>List:</strong>
-  <%= @task.list %>
+  <strong>In List:</strong>
+  <%= link_to @task.list.name, @task.list %>
 </p>
 
 <p>
@@ -15,5 +15,12 @@
   <%= @task.completed? %>
 </p>
 
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', list_path(@task.list.id) %>
+<div class='notes'>
+<%= render @task.notes %>
+</div>
+
+<h4>New Note</h4>
+<%= render 'notes/form' %>
+
+<%= link_to 'Edit', edit_task_path(@task) %> | <%= link_to "Return to List", @task.list %>
+

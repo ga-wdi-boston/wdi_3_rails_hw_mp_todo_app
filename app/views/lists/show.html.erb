@@ -5,6 +5,19 @@
   <%= @list.name %>
 </p>
 
+<div class='tasks'>
+  <h4>Completed Tasks</h4>
+  <div class="completed-tasks">
+    <%= render @list.completed_tasks %>
+  </div>
+
+  <h4>Pending Tasks</h4>
+  <div class="completed-tasks">
+    <%= render @list.pending_tasks %>
+  </div>
+</div>
+
+<h4>Create New Task</h4>
 <%= render 'tasks/form' %>
 
 <%= link_to 'Edit', edit_list_path(@list) %> |
