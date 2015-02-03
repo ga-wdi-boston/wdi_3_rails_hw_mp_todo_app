@@ -32,6 +32,15 @@ class ListsController < ApplicationController
     redirect_to project_url
   end
 
+  def destroy
+    @list.destroy
+    respond_to do |format|
+      format.html { redirect_to project_url(@list.project_id), notice: 'Project was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+
   private
 
   def set_list

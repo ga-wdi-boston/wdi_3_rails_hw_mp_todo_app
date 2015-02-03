@@ -12,10 +12,38 @@
  *
  */
 
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.col-centered{
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+.col-centered {
 float: none;
 margin: 0 auto;
+}
+
+body {
+background-color: black;
+}
+
+p {
+color: white;
+}
+
+h1 {
+color:white;
+}
+
+.button_slider {
+display: inline-block;
+}
+
+h3 {
+color:white;
+}
+
+a {
+color: red;
 }
