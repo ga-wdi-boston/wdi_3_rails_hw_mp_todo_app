@@ -1,16 +1,11 @@
 <p>
-  <strong>Task:</strong>
-  <%= @task.name %> |
-  <% if @task.complete %>
-  <%= "Status: Completed" %>
-  <% else %>
-  <%= "Status: Not Completed" %>
+  <h2>Task: <%= @task.name %> |
+  <% if @task.complete %><%= "Status: Completed" %></h2>
+  <% else %><%= "Status: Not Completed" %>
   <% end %>
-</p>
-
+  </h2>
 
 <%= render @task.notes %>
-<%#= render partial: "notes/note", collection: @task.notes %>
 <%= render 'notes/form' %>
-
+<br>
 <%= link_to 'Back To Lists', lists_path %>

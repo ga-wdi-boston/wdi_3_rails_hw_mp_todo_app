@@ -1,29 +1,37 @@
-<p>
-  <strong>List of Tasks for:</strong>
-   <%= @list.title%>
- </p>
+<h2>List of Tasks for: <%= @list.title %></h2>
 
 <table>
-  <thead>
-    <tr>
-      <th>Tasks</th>
-      <th colspan="1"></th>
-    </tr>
-  </thead>
+  <% incomplete_tasks = Array.new %>
+  <% completed_tasks = Array.new %>
+
+  <% @tasks.each do |task| %>
+  <% if task.complete %>
+  <% completed_tasks.push(task) %>
+  <% else %>
+  <% incomplete_tasks.push(task) %>
+  <% end %>
 
   <tbody>
-    <% @tasks.each do |task| %>
+
+    <% completed_tasks.each do |task| %>
       <tr>
         <td><%= link_to task.name, list_task_path(@list, task) %></td>
-          <% if task.complete %>
-          <td><%= "  | Status: Completed" %></td>
-          <% else %>
-          <td><%= "  | Status: Not Completed" %></td>
-          <% end %>
+        <td><%= "  | Status: Completed" %></td>
         <td><%= link_to 'Edit', edit_list_task_path(@list, task) %></td>
         <td><%= link_to 'Destroy', list_task_path(@list, task), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% completed_tasks.clear %>
       </tr>
     <% end %>
+    <% incomplete_tasks.each do |task| %>
+      <tr>
+        <td><%= link_to task.name, list_task_path(@list, task) %></td>
+        <td><%= "  | Status: Not Completed" %></td>
+        <td><%= link_to 'Edit', edit_list_task_path(@list, task) %></td>
+        <td><%= link_to 'Destroy', list_task_path(@list, task), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% incomplete_tasks.clear %>
+      </tr>
+    <% end %>
+  <% end %>
   </tbody>
 </table>
 

@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :update, :destroy]
+
   def show
     @note = @task.notes.new
   end
@@ -46,13 +47,14 @@ class TasksController < ApplicationController
     end
   end
 
+  private
   def find_task
     @list = List.find(params[:list_id])
     @task = @list.tasks.find(params[:id])
   end
 
   def tasks_params
-      params.require(:task).permit(:name, :complete)
+    params.require(:task).permit(:name, :complete)
   end
 
 end
