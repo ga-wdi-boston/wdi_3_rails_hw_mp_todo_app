@@ -16,8 +16,8 @@
     <%= f.text_field :action %>
   </div>
   <div class="field">
-    <%= f.label :done? %><br>
-    <%= f.check_box :done? %>
+    <%= f.label :done %><br>
+    <%= f.check_box( "done", {}, "true", "false") %>
   </div>
   <div class="actions">
     <%= f.submit %>
