@@ -20,7 +20,7 @@ class NotesController < ApplicationController
     @task = Task.find(params[:task_id])
     @note = @task.notes.find(params[:id])
     @note.destroy
-    redirect_to task_path(@task)
+    redirect_to list_task_path(@task.list_id, @task.id)
   end
 
   private
