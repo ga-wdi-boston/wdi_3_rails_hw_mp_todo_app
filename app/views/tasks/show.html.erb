@@ -1,4 +1,4 @@
-<div class="col-lg-9 col-centered">
+<%= render 'shared/lid' %>
   <p id="notice"><%= notice %></p>
   <h1><%= @task.name %></h1>
   <%= form_for [@task] do |f| %>
@@ -12,4 +12,4 @@
   <%= render 'notes/form' %>
 <%= link_to 'Back', list_path(@task.list_id) %>
 <%= link_to 'Destroy', @task, method: :delete, data: { confirm: 'Are you sure?' } %>
-</div>
+<%= render 'shared/floor' %>

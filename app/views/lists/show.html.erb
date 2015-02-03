@@ -1,27 +1,45 @@
-  <div class="col-lg-9 col-centered">
-
-<p id="notice"><%= notice %></p>
-<h1><%= @list.name %></h1>
-<p><%= @list.description %></p>
-<% @list.tasks.each do |task| %>
-  <table>
-    <tr>
-      <td><h3><%= link_to task.name, task %></h3></td>
-      <%= form_for [task] do |f| %>
-      <td><p><%= f.check_box( "completed", {}, "true", "false") %></p></td>
-      <td><%= f.submit %></td>
-    </tr>
-  </table>
-  <% end %>
-  <% task.notes.each do |note| %>
-    <p><%= note.note %></p>
+<%= render 'shared/lid' %>
+    <p id="notice"><%= notice %></p>
+    <h1><%= @list.name %></h1>
+    <p><%= @list.description %></p>
+    <% @list.tasks.each do |task| %>
+      <table>
+        <tr>
+          <td><h3><%= link_to task.name, task %></h3></td>
+          <%= form_for [task] do |f| %>
+            <td><p><%= f.check_box( "completed", {}, "true", "false") %></p></td>
+            <td><%= f.submit %></td>
+          <% end %>
+        </tr>
+      </table>
+      <% task.notes.each do |note| %>
+        <p><%= note.note %></p>
+      <% end %>
     <% end %>
+    <div class="button_slider">
+      <%= button_to projects_url, class: "btn btn-primary", method: :get do %>
+        <i class="fa fa-home fa-lg"></i> Home
+      <% end %>
+    </div>
+    <div class="button_slider">
+    <%= button_to :back, method: :get, class: "btn btn-info" do %>
+      <i class="fa fa-step-backward fa-lg"></i> Back
+    <% end %>
+    </div>
+    <div class="button_slider">
+      <%= button_to edit_list_path(@list), class: "btn btn-warning", method: :get do %>
+        <i class="fa fa-pencil-square-o fa-lg"></i> Edit List
+      <% end %>
+    </div>
+    <div class="button_slider">
+      <%= button_to @list, class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="fa fa-trash-o fa-lg"></i> Delete
+      <% end %>
+    </div>
+    <div class="button_slider">
+      <%= button_to new_list_task_path(@list.id), class: "btn btn-success", method: :get do %>
+        <i class="fa fa-pencil fa-lg"></i> Create New
+      <% end %>
+  </div>
+<%= render 'shared/floor' %>
 
-<% end %>
-<%= link_to 'Edit', edit_list_path(@list) %>
-<%= link_to 'Back', project_path(@list.project_id) %>
-<%= link_to 'New Task, Chief?', new_list_task_path(@list.id) %>
-<%= button_to @list, class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } do %>
-  <i class="fa fa-trash-o fa-lg"></i> Delete
-<% end %>
-</div>

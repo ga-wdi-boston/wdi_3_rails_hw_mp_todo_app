@@ -24,26 +24,21 @@ float: none;
 margin: 0 auto;
 }
 
-body {
-background-color: black;
+#dfp {
+vertical-align:middle;
 }
-
-p {
-color: white;
-}
-
-h1 {
-color:white;
-}
-
 .button_slider {
 display: inline-block;
 }
 
-h3 {
-color:white;
+.text-center {
+margin-top:45%;
+margin-bottom: 55%;
+font-size: 50px;
+
 }
 
-a {
-color: red;
+.col-md-5 {
+background-color: black;
+color: white;
 }
