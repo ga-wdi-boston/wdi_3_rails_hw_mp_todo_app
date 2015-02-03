@@ -4,8 +4,7 @@ class NotesController < ApplicationController
   # GET /notes
   # GET /notes.json
   def index
-    @task = Task.find(params[:id])
-    @notes = @task.notes
+    @notes = Note.all
   end
 
   # GET /notes/1
@@ -25,11 +24,11 @@ class NotesController < ApplicationController
   # POST /notes
   # POST /notes.json
   def create
-    @note = Task.find(params[:task_id]).notes.new(note_params)
+    @note = Note.new(note_params)
 
     respond_to do |format|
       if @note.save
-        format.html { redirect_to task_url(@note.task_id), notice: 'Note was successfully created.' }
+        format.html { redirect_to @note, notice: 'Note was successfully created.' }
         format.json { render :show, status: :created, location: @note }
       else
         format.html { render :new }
@@ -43,7 +42,7 @@ class NotesController < ApplicationController
   def update
     respond_to do |format|
       if @note.update(note_params)
-        format.html { redirect_to task_url(@note.task_id), notice: 'Note was successfully updated.' }
+        format.html { redirect_to @note, notice: 'Note was successfully updated.' }
         format.json { render :show, status: :ok, location: @note }
       else
         format.html { render :edit }
@@ -57,7 +56,7 @@ class NotesController < ApplicationController
   def destroy
     @note.destroy
     respond_to do |format|
-      format.html { redirect_to task_url(@note.task_id), notice: 'Note was successfully destroyed.' }
+      format.html { redirect_to notes_url, notice: 'Note was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

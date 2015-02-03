@@ -1,27 +1,19 @@
 class TasksController < ApplicationController
- before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   # GET /tasks
   # GET /tasks.json
   def index
-    # @list = List.find(params[:list_id])
-    @list = List.find(params[:id])
-    @tasks = @list.tasks
+    @tasks = Task.all
   end
 
   # GET /tasks/1
   # GET /tasks/1.json
   def show
-    # @list = List.find(params[:list_id])
-    # @list = List.find(params[:id])
-    @task = Task.find(params[:id])
-    @notes = @task.notes
-    @note = Note.new
   end
 
   # GET /tasks/new
   def new
-    @list = List.find(params[:list_id])
     @task = Task.new
   end
 
@@ -50,7 +42,7 @@ class TasksController < ApplicationController
   def update
     respond_to do |format|
       if @task.update(task_params)
-        format.html { redirect_to list_path(@task.list), notice: 'Task was successfully updated.' }
+        format.html { redirect_to @task, notice: 'Task was successfully updated.' }
         format.json { render :show, status: :ok, location: @task }
       else
         format.html { render :edit }
@@ -64,7 +56,7 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy
     respond_to do |format|
-      format.html { redirect_to list_path(@task.list), notice: 'Task was successfully destroyed.' }
+      format.html { redirect_to tasks_url, notice: 'Task was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
