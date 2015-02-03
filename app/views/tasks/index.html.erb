@@ -33,12 +33,18 @@
   </tbody>
 </table>
 
-<ol class="breadcrumb">
-  <li><%= link_to 'Home', root_path %></li>
-  <li><%= link_to 'Projects', projects_path %></li>
-  <li><%= link_to 'Groups', project_groups_path(@group.project_id) %></li>
-  <li>Tasks</li>
-  <li><div class='btn btn-primary btn-xs'><%= link_to 'Create New Task', new_group_task_path %></div></li>
-</ol>
+<div class='container' id='project'>
+  <div class=row>
+    <div class='cols-md-12'>
+      <%=render 'form'%> </div>
+      <div class='cols-md-12'>
+      <ol class="breadcrumb">
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Projects', projects_path %></li>
+        <li><%= link_to 'Groups', project_groups_path(@group.project_id) %></li>
+        <li>Tasks</li>
+      </ol>
+  </div>
+</div>
 
 

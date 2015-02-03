@@ -21,8 +21,8 @@
         <td><%= group.leads %></td>
         <td><%= group.project.title %></td>
         <td><%= link_to 'Tasks', group_tasks_path(group.id) %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><div class='btn btn-info btn-xs'><%= link_to 'Edit Group', edit_group_path(group) %></div></td>
+        <td><div class='btn btn-warning btn-xs'><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></div></td>
       </tr>
     <% end %>
   </tbody>

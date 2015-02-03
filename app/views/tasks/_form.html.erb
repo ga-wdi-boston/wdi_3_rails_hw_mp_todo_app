@@ -11,30 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :subject %><br>
-    <%= f.text_field :subject %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
+  <ul class='project_form'>
+    <li class="field_p" >
+    <%= f.text_field :subject, placeholder: :subject %>
+    </li>
+    <li class="field_p">
+      <%= f.text_field :description, placeholder: :description %>
+    </li>
 
-  <div class="field">
-    <%= f.label :complete %><br>
-    <%= f.check_box :complete %>
-  </div>
 
-  <div class="field">
-    <%= f.label :due_date %><br>
-    <%= f.date_select :due_date %>
-  </div>
+    <li class="field_p">
+      <%= f.text_field :due_date, placeholder: "Due Date YYYY-MM-DD", :size =>30 %>
+    </li>
 
-  <div class="field">
-    <%= f.select :priority, %w{ Low Medium High }, :prompt=>'Select Priority Level', :size=>50 %><br>
-  </div>
+    <li class="field_p">
+      <%= f.select :priority, %w{ Low Medium High }, :prompt=>'Select Priority Level', :size=>50 %><br>
+    </li>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <li class="field_p">
+      Complete?
+      <%= f.check_box :complete %>
+    </li>
+
+    <li class="actions_p">
+      <%= f.submit "Save Task", class: 'btn btn-primary btn-sm' %>
+    </li>
+  <ul>
 <% end %>
