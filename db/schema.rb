@@ -28,10 +28,10 @@ ActiveRecord::Schema.define(version: 20150201013006) do
 
   create_table "notes", force: :cascade do |t|
     t.text     "body"
-    t.boolean  "important"
+    t.boolean  "important",  default: false
     t.integer  "task_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "notes", ["task_id"], name: "index_notes_on_task_id", using: :btree
@@ -50,10 +50,10 @@ ActiveRecord::Schema.define(version: 20150201013006) do
     t.text     "description"
     t.date     "due_date"
     t.string   "priority"
-    t.boolean  "complete"
+    t.boolean  "complete",    default: false
     t.integer  "group_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_index "tasks", ["group_id"], name: "index_tasks_on_group_id", using: :btree

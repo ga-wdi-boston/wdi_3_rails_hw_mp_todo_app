@@ -5,7 +5,7 @@ class CreateTasks < ActiveRecord::Migration
       t.text :description
       t.date :due_date
       t.string :priority
-      t.boolean :complete
+      t.boolean :complete, default: :false
       t.belongs_to :group, index: true
 
       t.timestamps null: false
