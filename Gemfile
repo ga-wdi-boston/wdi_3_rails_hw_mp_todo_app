@@ -15,6 +15,7 @@ group :development, :test do
 
   gem 'byebug'
   gem 'date_validator'
+  gem 'validates_timeliness', '~> 3.0'
   gem 'web-console', '~> 2.0'
 
   gem 'spring'
