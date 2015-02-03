@@ -5,5 +5,12 @@
   <%= @list.title %>
 </p>
 
+<div id="task_wrapper">
+  <%= render @list.tasks %>
+  <div id="form">
+    <%= render "tasks/form" %>
+  </div>
+</div>
+
 <%= link_to 'Edit', edit_list_path(@list) %> |
 <%= link_to 'Back', lists_path %>
