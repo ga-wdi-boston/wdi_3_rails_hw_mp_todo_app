@@ -8,5 +8,9 @@
     <div class='panel'>
       <%= link_to list.name, list %>
     </div>
+      <ul class='nav nav-pills'>
+        <li><%= link_to 'Edit', edit_list_path(list) %></li>
+        <li><%= link_to 'Remove', list_path(list), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+      </ul>
 <% end %>
 </div>
