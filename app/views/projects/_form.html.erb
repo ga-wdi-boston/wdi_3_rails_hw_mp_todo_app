@@ -11,28 +11,25 @@
     </div>
   <% end %>
 <ul class='project_form'>
-  <li class="field">
-  <%= f.label :title %>
-    <%= f.text_field :title, placeholder: :title %>
+  <li class="field_p" >
+    <%= f.text_field :title, placeholder: :title, :size =>20 %>
   </li>
 
-  <li class="field">
-  <%= f.label :leads %>
-    <%= f.text_field :leads, placeholder: :leads %>
-  </li>
-
-    <li class="field">
-    <%= f.label :status %>
-    <%= f.select :status, %w{ Not-Started In-Process Completed}, :prompt=>'Select Status'%>
+  <li class="field_p">
+    <%= f.text_field :leads, placeholder: :leads, :size =>20 %>
   </li>
 
 
-  <li class="field">
-    <%= f.label :due_date %>
-    <%= f.date_select :due_date %>
+  <li class="field_p  ">
+    <%= f.text_field :due_date, placeholder: "Due Date YYYY-MM-DD", :size =>30 %>
   </li>
+
+  <li class="field_p">
+    <%= f.select :status, %w{ Not-Started In-Process Completed}, :prompt=>'Select Status', :size =>30%>
+  </li>
+
   <li class="actions_p">
-    <%= f.submit class: 'btn btn-primary btn-sm' %>
+    <%= f.submit "Save Project", class: 'btn btn-primary btn-sm' %>
   </li>
   </ul>
 <% end %>

@@ -1,7 +1,9 @@
 <div class='welcome'> <h1>Welcome to the Project Organizer</h1>
+  <ul>
+   <li><div class='btn btn-default btn-lg'><%= link_to "Go to Current Projects", projects_path %></div></li>
+    <li><div class='container' id='welcome'><%=render 'projects/form'%>
+    </div></li>
 
-<ul>
-  <li><%= link_to "Go to Existing Projects", projects_path %></li>
-  <li><%= link_to "Add a New Project", new_project_path %> </li>
-</ul>
+  </ul>
+</div>
 

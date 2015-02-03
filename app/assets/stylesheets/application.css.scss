@@ -93,20 +93,35 @@ table ul li {
 .welcome ul {
   list-style-type: none;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 2.0em;
 }
 
 .welcome li {
   padding: 5px;
 }
 
-.project_form {
+.container #prjoect{
+  float:left;
+  height: 100px;
+  margin: 30px;
+  font-size: .5em;
+}
+
+.container #welcome {
+  height: 100px;
+  margin-left:90px;
+  font-size: .5em;
+}
+ul.project_form {
+  display: flex;
   list-style:none;
-  margin-top: 20px;
+  margin:20px 0 30px 0px;
+  font-size:1.0em;
+  height:30px;
 }
 
 .field_p, .actions_p {
-margin: 10px 0 10px 0;
+padding: 5px;
 }
 
  .btn {
@@ -116,8 +131,17 @@ margin: 10px 0 10px 0;
 ol .btn {
   margin-top: 3px;
 }
- .btn a{
+
+ .btn a {
   color: white;
+}
+
+ .welcome .btn-default {
+  width: 250px;
+  height: 30px;
+}
+ .welcome .btn-default a {
+  color: #777;
 }
 /* typography */
 
@@ -268,10 +292,6 @@ p {
   }
 }
 
-.btn {
-  margin: 0 0 10px 10px;
-}
-
 .exclaim {
   font-size: 1.5em;
   color: red;
@@ -294,6 +314,7 @@ p {
 /* footer */
 
 footer {
+  position: absolute;
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
