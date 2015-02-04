@@ -1,0 +1,6 @@
+%p
+  = form_for([@task, @note]) do |f|
+    %p
+      = f.label :comment
+      = f.text_field :comment, autofocus: true
+      = f.submit 'Save', class: 'btn btn-primary'

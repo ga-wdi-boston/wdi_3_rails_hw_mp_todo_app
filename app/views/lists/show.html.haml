@@ -1,0 +1,9 @@
+.text-center
+  %p
+    %strong List:
+    = @list.name
+  %p
+    %strong Tasks
+    = render @list.tasks
+    %strong New Task
+    = render 'tasks/form'
