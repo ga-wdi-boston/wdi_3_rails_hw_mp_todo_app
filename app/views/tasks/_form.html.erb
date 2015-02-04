@@ -17,12 +17,12 @@
   </div>
   <div class="field">
     <%= f.label :list_id %><br>
-    <%= f.select :list_id, options_from_collection_for_select(List.all, 'id', 'name') %>
+    <%= f.select :list_id, options_from_collection_for_select(List.all, 'id', 'name', 1) %>
   </div>
   <br>
   <div class="field">
   <%= f.label :completed %>
-  <%= f.check_box :completed %>
+  <%= f.check_box :completed, options = {},checked_value = true, unchecked_value = false %>
   </div>
   <div class="actions">
     <%= f.submit %>

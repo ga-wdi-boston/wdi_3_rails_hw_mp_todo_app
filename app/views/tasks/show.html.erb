@@ -27,8 +27,8 @@
   <tr>
   <td><strong>Name:</strong>
   <%= @task.name %></td>
-  <td><strong>Completed?:</strong>
-  <%= @task.completed? %></td>
+  <td><strong>Completed?:</strong></td>
+  <td><%= @task.completed %></td>
   </tr>
 </table>
 <p>
@@ -44,4 +44,4 @@
   </tr>
   </table>
   <% end %>
-    <%= render 'notes/form' %>
+  <%= render 'notes/form' %>

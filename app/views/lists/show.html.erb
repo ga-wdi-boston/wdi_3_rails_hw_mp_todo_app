@@ -26,15 +26,17 @@
 
 <table class="table">
 <tr>
-<td><strong>Task</strong></td>
+<td><strong>Tasks</strong></td>
 <td><strong>Completed?</strong></td>
+<td><strong>Created</strong></td>
 <% @list.tasks.each do |task| %>
 </tr>
 <tr>
-<td><%= task.name %></td>
+<td><%= link_to task.name, edit_task_path(task) %></td>
 <td><%= task.completed %></td>
+<td><%= task.created_at %></td>
 </tr>
 <% end %>
 </table>
 
-<%= link_to 'edit list name', edit_list_path(@list) %>  | <%= link_to 'add task', new_list_task_path(@list) %>
+<%= link_to 'edit list name', edit_list_path(@list) %>  | <%= link_to 'add task', new_list_task_path(@list.id) %>
