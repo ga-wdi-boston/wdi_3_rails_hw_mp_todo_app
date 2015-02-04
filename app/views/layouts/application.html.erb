@@ -7,8 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-7 ">
+          <div class="col-md-9 col-centered">
+            <%= yield %>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="full-height">
+            <p class="text-center"><strong>DON'T FUCKING PROCRASTINATE</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
