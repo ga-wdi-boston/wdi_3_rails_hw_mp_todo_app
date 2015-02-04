@@ -54,100 +54,14 @@ table ul li {
   display: inline;
 }
 
-
-.center {
-  text-align: center;
-}
-
-.center h1 {
-  margin-bottom: 10px;
-}
-
-.navbar {
-  border: none;
-    background-image: linear-gradient(
-    rgba(155,194,207,0.8), white
-    );
-  width: 100%;
-  position: absolute;
-  top: 0;
-}
-.navbar a {
-  color: #777;
-  font-size: 1.3em;
-  margin-top: 13px;
-}
-.navbar h2 {
-  float: left;
-  font-size: 1.7em;
-  letter-spacing: -1px;
-  text-transform: uppercase;
-  text-align: left;
-  padding-top: 9px;
-  color: #777;
-}
-
-
-.container #welcome {
-  height: 100px;
-  margin-left:90px;
-  font-size: .5em;
-}
-.welcome ul {
-  list-style-type: none;
-  text-align: center;
-  font-size: 2.0em;
-}
-
 table .btn-default a {
   color: #777;
 }
-.welcome li {
-  padding: 5px;
-}
- .welcome .btn-default {
-  width: 250px;
-  height: 30px;
-}
- .welcome .btn-default a {
-  color: #777;
-}
 
-ul.project_form {
-  display: flex;
-  list-style:none;
-  margin:5px 0 30px 0px;
-  font-size:1.0em;
-  height:30px;
-}
-
-.container #project{
-  float:left;
-  height: 50px;
-  width: 100%;
-  margin: 30px 0 50px 0;
-  font-size: 1em;
-  background-color: rgba(155,194,207,0.2);
-}
-
-.breadcrumb {
-  margin-top:3px;
-}
-
-.field_p, .actions_p {
-padding: 8px 10px 0 0;
-}
-
- .btn {
-  padding: 1px 2px 1px 2px;
-}
-
-ol .btn {
-  margin-top: 3px;
-}
-
- .btn a {
-  color: white;
+p {
+  font-size: 1.1em;
+  line-height: 1.5em;
+  padding-left: 20px;
 }
 
 /* typography */
@@ -182,6 +96,98 @@ h3 {
   color: black;
 }
 
+.btn {
+  padding: 1px 2px 1px 2px;
+}
+
+.btn a {
+  color: white;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+.navbar {
+  border: none;
+    background-image: linear-gradient(
+    rgba(155,194,207,0.8), white
+    );
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.navbar a {
+  color: #777;
+  font-size: 1.3em;
+  margin-top: 13px;
+}
+
+.navbar h2 {
+  float: left;
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  text-align: left;
+  padding-top: 9px;
+  color: #777;
+}
+
+.container #welcome {
+  height: 100px;
+  margin-left:90px;
+  font-size: .5em;
+}
+
+.welcome ul {
+  list-style-type: none;
+  text-align: center;
+  font-size: 2.0em;
+}
+
+.welcome li {
+  padding: 5px;
+}
+
+ .welcome .btn-default {
+  width: 250px;
+  height: 30px;
+}
+
+ .welcome .btn-default a {
+  color: #777;
+}
+
+ul.project_form {
+  display: flex;
+  list-style:none;
+  margin:5px 0 30px 0px;
+  font-size:1.0em;
+  height:30px;
+}
+
+.container #project{
+  float:left;
+  height: 50px;
+  width: 100%;
+  margin: 30px 0 50px 0;
+  font-size: 1em;
+  background-color: rgba(155,194,207,0.2);
+}
+
+.breadcrumb {
+  margin-top:3px;
+}
+
+.field_p, .actions_p {
+padding: 8px 10px 0 0;
+}
+
 .task_table {
   padding:10;
   width: 100%;
@@ -202,13 +208,6 @@ h3 {
 .page_link li {
   display: inline;
   padding-right: 20px;
-}
-
-p {
-  font-size: 1.1em;
-  line-height: 1.5em;
-  padding-left: 20px;
-
 }
 
 .field_checkbox {
@@ -273,6 +272,7 @@ p {
     background:#db4034;
   }
 }
+
 .notes_header {
     height:60px;
     width:100%;
@@ -299,6 +299,10 @@ p {
   }
 }
 
+#note.btn-warning {
+  margin: 0 0 12px 8px;
+}
+
 .exclaim {
   font-size: 1.5em;
   color: red;
@@ -316,7 +320,6 @@ p {
   padding-top: 15px;
   color: #32CD32;
 }
-
 
 /* footer */
 
