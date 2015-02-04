@@ -1,5 +1,9 @@
 class NotesController < ApplicationController
 
+  def show
+    @note = Note.find(params[:note_id])
+  end
+
   def create
     @task = Task.find(params[:task_id])
     @note = @task.notes.new(note_params)

@@ -2,11 +2,12 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @task = Task.new(list: @list)
   end
 
   def create
     @project = Project.find(params[:project_id])
-    @list = @project.lists.new(lists_params)
+    @list = @project.lists.new(list_params)
 
       if @list.save
         redirect_to project_path(@project)
@@ -22,7 +23,9 @@ class ListsController < ApplicationController
 
   def update
     #@project = Project.find(params[:project_id])
-    @list = List.new(lists_params)
+    @list = List.find(params[:id])
+    @list.update(list_params)
+    @project = @list.project
     redirect_to project_path(@project)
   end
 
@@ -35,7 +38,7 @@ class ListsController < ApplicationController
 
   private
 
-  def lists_params
+  def list_params
     params.require(:list).permit(:name)
   end
 

@@ -1,4 +1,4 @@
 class Note < ActiveRecord::Base
   belongs_to :task
-  validatesm :comment, presence: true
+  validates :comment, presence: true
 end

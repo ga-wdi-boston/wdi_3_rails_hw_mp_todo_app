@@ -1,0 +1,11 @@
+.container
+  %table.table.table-hover.table-bordered
+    %tr
+      %th Comment
+      %th Destroy
+    %tbody
+      %tr
+        %td 
+          = note.comment
+        %td 
+          =link_to 'Destroy Comment', [note.task, note], method: :delete, data: { confirm: 'Are you sure?' }

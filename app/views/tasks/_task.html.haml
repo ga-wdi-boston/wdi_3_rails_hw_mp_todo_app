@@ -1,14 +1,20 @@
-.inline
-  %strong Task Name:
-  = task.name
-  |
-  - if task.done 
-    Completed
-  -else
-    Not Done!
-  |
-  |
-  = link_to 'Destroy Task', [task.list, task], |
-    method: :delete,                           |
-    data: { confirm: 'Are you sure?' }         |
-%br
+.container
+  %table.table.table-hover.table-bordered
+    %tr
+      %th Task Name
+      %th Completion Status
+      %th Edit
+      %th Destroy
+    %tr
+      %td
+        = link_to task.name, task
+      %td
+        - if task.done
+          Completed
+        -else
+          Not Done
+      %td
+        =link_to 'Edit', edit_task_path(task)
+      %td
+        = link_to 'Destroy Task', [task.list, task], method: :delete, data: { confirm: 'Are you sure?' }
+

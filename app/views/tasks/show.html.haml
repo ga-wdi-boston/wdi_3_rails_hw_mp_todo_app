@@ -1,0 +1,9 @@
+.text-center
+  %p
+    %strong Task:
+    = @task.name
+
+  %p
+    %strong Comments
+    = render @task.notes
+    = render 'notes/form'
