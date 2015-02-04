@@ -1,4 +1,4 @@
 class Task < ActiveRecord::Base
-  belongs_to :group
+  belongs_to :list
   has_many :notes
 end

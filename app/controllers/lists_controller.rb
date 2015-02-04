@@ -5,7 +5,7 @@ class ListsController < ApplicationController
   # GET /lists.json
   def index
     @lists = List.all
-    # @list = List.find(params[:list_id])
+    @list = List.find(params[:list_id])
   end
 
   # GET /lists/1

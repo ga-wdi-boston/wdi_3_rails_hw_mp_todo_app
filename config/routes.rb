@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  root to: 'lists#index'
+  root 'lists#index'
   resources :lists, shallow: true do
-    resources :groups do
-      resources :tasks do
-        resources :notes
-      end
+    resources :tasks do
+      resources :notes
     end
   end
 end

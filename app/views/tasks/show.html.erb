@@ -14,8 +14,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to 'list', list_path(@task.group.list.id), :class => "navbar-nav" %></li>
-        <li><%= link_to 'group', group_path(@task.group.id) %></li>
+        <li></li>
         <li class="active"><a href="">task</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -30,10 +29,6 @@
   <%= @task.name %></td>
   <td><strong>Completed?:</strong>
   <%= @task.completed? %></td>
-<td>  <strong>Group:</strong>
-  <% if @task.group != nil %>
-  <%= @task.group.name %>
-  <% end %></td>
   </tr>
 </table>
 <p>
@@ -42,19 +37,11 @@
 
 <% @task.notes.each do |note| %>
 <table class="table">
-
-
   <tr>
   <% if note.note != nil %>
   <td><li><%= note.note %></li></td>
   <% end %>
   </tr>
   </table>
-
   <% end %>
-  <table class="table">
-  <tr>
-  <td><%= render 'form' %></td>
-  <td><%= render 'notes/form' %></td>
-  </tr>
-</table>
+    <%= render 'notes/form' %>

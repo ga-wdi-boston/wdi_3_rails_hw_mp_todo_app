@@ -5,7 +5,6 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @tasks = Task.all
-    @group = Group.find(params[:group_id])
   end
 
   # GET /tasks/1
@@ -17,16 +16,13 @@ class TasksController < ApplicationController
 
   # GET /tasks/new
   def new
-    @task = Task.new
-    # @list = List.find(params[:list_id])
-    @group = Group.find(params[:group_id])
-
+    @list = List.find(params[:list_id])
+    @task = @list.tasks.new # <---| THIS THIS THIS THIS
   end
 
   # GET /tasks/1/edit
   def edit
     @task = Task.find(params[:id])
-    @group = @task.groups
   end
 
   # POST /tasks
@@ -77,6 +73,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :completed?, :group_id)
+      params.require(:task).permit(:name, :completed?)
     end
 end
