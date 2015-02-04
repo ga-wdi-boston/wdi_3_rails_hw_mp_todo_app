@@ -2,7 +2,7 @@ class CreateTasks < ActiveRecord::Migration
   def change
     create_table :tasks do |t|
       t.text :name
-      t.boolean :completed
+      t.boolean :completed, null: false
       t.references :list, index: true
 
       t.timestamps null: false
