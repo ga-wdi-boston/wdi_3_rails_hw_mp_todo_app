@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   root 'projects#index'
+  shallow do
   resources :projects do
-    resources :lists
-  end
-  resources :lists do
-    resources :tasks
-  end
-  resources :tasks do
-    resources :notes
+    resources :lists do
+      resources :tasks do
+        resources :notes
+        end
+      end
+    end
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
