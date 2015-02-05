@@ -1,0 +1,9 @@
+    <%= form_for [@list, @task, @note] do |f| %>
+
+    <p>
+      <%= f.label 'Note' %>
+      <%= f.text_area :comment, :autofocus=>true %>
+    </p>
+
+    <%= f.submit %>
+    <% end %>

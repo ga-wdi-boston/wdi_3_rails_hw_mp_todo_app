@@ -1,0 +1,13 @@
+ <h2><%= pluralize(@notes.count, 'note') %></h2>
+
+   <ul>
+    <% @task.notes.each do |note| %>
+    <li><%= note.comment %></li>  <%= link_to 'Destroy', list_task_note_path(note.task.list, note.task, note), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+   </ul>
+
+
+
+<%= link_to 'New Note', new_list_task_note_path(@list, @task, @note)  %>
+<%= link_to 'Back', list_task_path(@list, @task) %>
+

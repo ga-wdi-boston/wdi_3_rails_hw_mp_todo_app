@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<div class="navbar">
+  <ul class ="nav nav-pills">
+    <li><%= link_to 'Back to Lists', lists_path %></li>
+    <li><%= link_to 'Edit List', edit_list_path(@list) %></li>
+    <li><%= link_to 'New Task', new_list_task_path(@list, @task)%></li>
+  </ul>
+</div>
+
+<h2 class='header'><%= @list.name %><h2>
+<h3 class='header'> All Tasks for <%= @list.name %></h3>
+<% @list.tasks.each do |task| %>
+  <div class='panel col-xs-3 col-xs-offset-2'><h4><%= link_to task.name.capitalize, list_task_path(@list, task) %></h4>
+    <div type="submit" class="btn btn-default"><%= link_to 'Edit', edit_list_task_path(@list, task) %></div>
+    <div type="submit" class="btn btn-default"><%= link_to 'Destroy', list_task_path(@list, task), method: :delete, data: { confirm: 'Are you sure?' } %></div>
+  </div>
+<% end %>
