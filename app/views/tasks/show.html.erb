@@ -1,0 +1,11 @@
+<p>
+  <h2>Task: <%= @task.name %> |
+  <% if @task.complete %><%= "Status: Completed" %></h2>
+  <% else %><%= "Status: Not Completed" %>
+  <% end %>
+  </h2>
+
+<%= render @task.notes %>
+<%= render 'notes/form' %>
+<br>
+<%= link_to 'Back To Lists', lists_path %>
