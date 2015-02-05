@@ -1,10 +1,8 @@
 
-
+  <div class="text-wrap">
     <p id="notice"><%= notice %></p>
-
     <h1><%= @list.name %></h1>
     <h4 ><%= @list.description %></h4>
-
     <div class="byline">
       <div class="button_slider">
         <%= button_to projects_url, class: "btn btn-primary", method: :get do %>
@@ -27,7 +25,8 @@
         <% end %>
       </div>
     </div>
-
+  </div>
+   <div class="text-wrap">
     <% @list.tasks.each do |task| %>
       <h2><%= link_to task.name, task %></h2>
       <%= bootstrap_form_for [task] do |f| %>
@@ -44,6 +43,7 @@
         </ul>
       <% end %>
     <% end %>
+  </div>
     <br>
 
 <%= render 'tasks/form' %>
