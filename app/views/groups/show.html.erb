@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @group.title %>
+</p>
+
+
+<p>
+  <strong>Leads:</strong>
+  <%= @group.leads %>
+</p>
+
+<p>
+  <strong>Project Title:</strong>
+  <%= @group.project.title %>
+</p>
+
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', root_path %></li>
+  <li><%= link_to 'Projects', projects_path %></li>
+  <li>Groups</li>
+</ol>

@@ -1,0 +1,10 @@
+
+
+  <div class="exclaim" ><%= "!" if note.important %></div>
+  <%= note.body %><% if note.body %><div id="note" class='btn btn-warning btn-xs'> <%= link_to 'Erase', note, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div><%end%><br>
+
+
+
+
+

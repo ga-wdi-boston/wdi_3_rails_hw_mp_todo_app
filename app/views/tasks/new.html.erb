@@ -1,0 +1,10 @@
+<h2>New Task</h2>
+
+<%= render 'form' %>
+
+<ol class="breadcrumb">
+  <li><%= link_to 'Home', root_path %></li>
+  <li><%= link_to 'Projects', projects_path %></li>
+  <li><%= link_to 'Groups', project_groups_path(@group.project_id) %></li>
+  <li>Tasks</li>
+</ol>

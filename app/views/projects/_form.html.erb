@@ -1,0 +1,35 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<ul class='project_form'>
+  <li class="field_p" >
+    <%= f.text_field :title, placeholder: :title, :size =>20 %>
+  </li>
+
+  <li class="field_p">
+    <%= f.text_field :leads, placeholder: :leads, :size =>20 %>
+  </li>
+
+
+  <li class="field_p  ">
+    <%= f.text_field :due_date, placeholder: "Due Date YYYY-MM-DD", :size =>30 %>
+  </li>
+
+  <li class="field_p">
+    <%= f.select :status, %w{ Not-Started In-Progress Completed}, :prompt=>'Select Status', :size =>30%>
+  </li>
+
+  <li class="actions_p">
+    <%= f.submit "Save Project", class: 'btn btn-primary btn-sm' %>
+  </li>
+  </ul>
+<% end %>

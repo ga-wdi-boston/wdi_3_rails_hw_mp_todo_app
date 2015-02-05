@@ -1,0 +1,14 @@
+<div class='form_note'>
+<%= form_for([@task, @task.notes.build]) do |f| %>
+
+  <div class="field_note">
+    <%= f.label :body, 'Type a New Note' %><br>
+    <%= f.text_area :body, cols:60, rows:4 %>
+  </div>
+  <div class="field_exclaim">
+    <%= f.label :important %>
+    <%= f.check_box :important, :class=>"field_checkbox" %>
+  <%= f.submit class: 'btn btn-primary btn-sm' %>
+  </div>
+<% end %>
+</div>

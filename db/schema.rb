@@ -11,9 +11,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150201013006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "groups", force: :cascade do |t|
+    t.string   "title"
+    t.string   "leads"
+    t.integer  "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "groups", ["project_id"], name: "index_groups_on_project_id", using: :btree
+
+  create_table "notes", force: :cascade do |t|
+    t.text     "body"
+    t.boolean  "important",  default: false
+    t.integer  "task_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "notes", ["task_id"], name: "index_notes_on_task_id", using: :btree
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "title"
+    t.date     "due_date"
+    t.string   "status"
+    t.string   "leads"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string   "subject"
+    t.text     "description"
+    t.date     "due_date"
+    t.string   "priority"
+    t.boolean  "complete",    default: false
+    t.integer  "group_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "tasks", ["group_id"], name: "index_tasks_on_group_id", using: :btree
+
+  add_foreign_key "groups", "projects"
+  add_foreign_key "notes", "tasks"
+  add_foreign_key "tasks", "groups"
 end

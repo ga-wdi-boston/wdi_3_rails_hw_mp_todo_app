@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @group.title %> Group Tasks</h1>
+
+<table class="task_table">
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Description</th>
+      <th>Complete</th>
+      <th>Due date</th>
+      <th>Priority</th>
+      <th>Notes</th>
+      <th>Edit Task</th>
+      <th>Delete Task</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.subject %></td>
+        <td><%= task.description %></td>
+        <td><div class="complete_star">
+    <%= "*" if task.complete %></div></td>
+        <td><%= task.due_date %></td>
+        <td><%= task.priority %></td>
+        <td><div class='btn btn-default btn-xs'><%= link_to 'View Notes', task_path(task) %></div></td>
+        <td><div class='btn btn-info btn-xs'><%= link_to 'Edit Task', edit_task_path(task) %></div></td>
+        <td><div class='btn btn-warning btn-xs'><%= link_to 'Destroy Task', task, method: :delete, data: { confirm: 'Are you sure?' } %></div></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class='container' id='project'>
+  <div class=row>
+    <div class='cols-md-12'>
+      <%=render 'form'%> </div>
+      <div class='cols-md-12'>
+      <ol class="breadcrumb">
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Projects', projects_path %></li>
+        <li><%= link_to 'Groups', project_groups_path(@group.project_id) %></li>
+        <li>Tasks</li>
+      </ol>
+  </div>
+</div>
+
+

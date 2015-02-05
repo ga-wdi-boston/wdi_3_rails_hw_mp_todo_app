@@ -1,0 +1,39 @@
+<%= form_for([ @group, @task]) do |f| %>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% @task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <ul class='project_form'>
+    <li class="field_p" >
+    <%= f.text_field :subject, placeholder: :subject %>
+    </li>
+    <li class="field_p">
+      <%= f.text_field :description, placeholder: :description %>
+    </li>
+
+    <li class="field_p">
+      <%= f.text_field :due_date, placeholder: "Due Date YYYY-MM-DD", :size =>30 %>
+    </li>
+
+    <li class="field_p">
+      <%= f.select :priority, %w{ Low Medium High }, :prompt=>'Select Priority Level', :size=>50 %><br>
+    </li>
+
+    <li class="field_p">
+      Complete?
+      <%= f.check_box :complete %>
+    </li>
+
+    <li class="actions_p">
+      <%= f.submit "Save Task", class: 'btn btn-primary btn-sm' %>
+    </li>
+  <ul>
+<% end %>

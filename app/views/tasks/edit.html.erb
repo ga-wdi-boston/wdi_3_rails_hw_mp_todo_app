@@ -1,0 +1,18 @@
+<h2>Editing Task</h2>
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-12'>
+      <%= render 'form' %>
+    </div>
+    <div class='col-md-12'>
+      <ol class="breadcrumb">
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Projects', projects_path %></li>
+        <li><%= link_to 'Groups', project_groups_path(Group.find(@task.group_id).project_id) %></li>
+        <li><%= link_to 'Tasks', group_tasks_path(@task.group_id) %></li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+

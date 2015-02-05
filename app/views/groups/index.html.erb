@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%=@project.title%> Groups/Divisions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Leads</th>
+      <th>Group Tasks</th>
+      <th>Edit Group</th>
+      <th>Delete Group</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @groups.each do |group| %>
+      <tr>
+        <td><%= group.title %></td>
+        <td><%= group.leads %></td>
+        <td><div class='btn btn-default btn-xs'><%= link_to 'View Tasks', group_tasks_path(group.id) %></div></td>
+        <td><div class='btn btn-info btn-xs'><%= link_to 'Edit Group', edit_group_path(group) %></div></td>
+        <td><div class='btn btn-warning btn-xs'><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></div></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+ <div class='container' id='project'>
+  <div class=row>
+    <div class='cols-md-12'>
+      <%=render 'form'%>
+      <ol class="breadcrumb">
+        <li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Projects', projects_path %></li>
+        <li>Groups</li>
+      </ol>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class='container-fluid'>
+  <div class="row">
+    <div class="col-md-5 col-md-offset-1">
+
+      <p id="notice"><%= notice %></p>
+
+      <h2>Task: <%=@task.subject %> </h2>
+      <p>
+        <strong>Description:</strong>
+        <%= @task.description %>
+      </p>
+
+      <p>
+        <strong>Complete:</strong>
+    <%= @task.complete %>
+      </p>
+
+      <p>
+        <strong>Due date:</strong>
+        <%= @task.due_date %>
+      </p>
+
+      <p>
+        <strong>Priority:</strong>
+        <%= @task.priority %>
+      </p>
+    </div>
+   <div class="col-md-6">
+      <%= render 'notes/form' %>
+    </div>
+  </div>
+
+    <div id='paper'>
+      <div class='notes_header'><h3 >Notes</h3>
+      <div class='credit_note'><a href="http://codepen.io/designcouch/pen/vlpiC"><span class="glyphicon glyphicon-link"></span>Paper Background Credit</a></div></div>   <ul class='notes'><li><%= render @task.notes %></li></ul>
+    </div>
+
+  <ol class="breadcrumb">
+    <li><%= link_to 'Home', root_path %></li>
+    <li><%= link_to 'Projects', projects_path %></li>
+    <li><%= link_to 'Groups', project_groups_path(@group.project_id) %></li>
+    <li><%= link_to 'Tasks', group_tasks_path(@group) %></li>
+    <li><%= link_to 'Create New Task', new_group_task_path(@group) %></li>
+  </ol>
+

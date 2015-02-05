@@ -1,0 +1,25 @@
+<%= form_for([@project, @group]) do |f| %>
+  <% if @group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+      <ul>
+      <% @group.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <ul class='project_form'>
+    <li><div class="field_p">
+      <%= f.text_field :title, placeholder: :title %>
+    </div></li>
+    <li><div class="field_p">
+      <%= f.text_field :leads, placeholder: :leads %>
+    </div></li>
+    <li><div class="actions_p">
+      <%= f.submit "Save Group", class: 'btn btn-primary btn-sm'%>
+    </div></li>
+  </ul>
+<% end %>
