@@ -15,10 +15,7 @@
       <tr>
         <td><%= note.body %></td>
         <td><%= link_to 'edit', edit_list_task_note_path(params[:list_id],note.task.id,note.id) %></td>
-        <!-- <td><%#= link_to 'Remove',list_task_note_path(params[:list_id],note.task.id,note.id),
-                    method: :delete,
-                    data: {confirm: 'Are you sure?'} %></td> -->
-        <td><%#= link_to 'Remove',list_task_note_path(params[:list_id],params[:task_id],note.id),
+         <td><%= link_to 'Remove',list_task_note_path(params[:list_id],note.task.id,note.id),
                     method: :delete,
                     data: {confirm: 'Are you sure?'} %></td>
       </tr>
