@@ -7,6 +7,8 @@
 
 <h1 class='header'> Your Lists </h2>
 <% @lists.each do |list| %>
-  <div class='panel col-xs-3 col-xs-offset-2'><h2><%= link_to list.name, list %></h2><p class='btn btn-default'><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></p></div>
+  <div class='panel col-xs-3 col-xs-offset-2'><h2><%= link_to list.name, list %></h2>
+    <div type="submit" class="btn btn-default"><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+  </div>
 <% end %>
 

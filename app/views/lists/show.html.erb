@@ -11,6 +11,7 @@
 <h3 class='header'> All Tasks for <%= @list.name %></h3>
 <% @list.tasks.each do |task| %>
   <div class='panel col-xs-3 col-xs-offset-2'><h4><%= link_to task.name.capitalize, list_task_path(@list, task) %></h4>
-  <p class='btn btn-default'><%= link_to 'Edit', edit_list_task_path(@list, task) %></p>
-  <p class='btn btn-default'><%= link_to 'Destroy', list_task_path(@list, task), method: :delete, data: { confirm: 'Are you sure?' } %></p></div>
+    <div type="submit" class="btn btn-default"><%= link_to 'Edit', edit_list_task_path(@list, task) %></div>
+    <div type="submit" class="btn btn-default"><%= link_to 'Destroy', list_task_path(@list, task), method: :delete, data: { confirm: 'Are you sure?' } %></div>
+  </div>
 <% end %>

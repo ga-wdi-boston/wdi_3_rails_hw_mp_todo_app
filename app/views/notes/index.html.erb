@@ -2,7 +2,7 @@
 
    <ul>
     <% @task.notes.each do |note| %>
-    <li><%= note.comment %></li> <%= link_to 'Edit', edit_list_task_note_path(note.task.list, note.task, note) %>| <%= link_to 'Destroy', list_task_note_path(note.task.list, note.task, note), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <li><%= note.comment %></li>  <%= link_to 'Destroy', list_task_note_path(note.task.list, note.task, note), method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
    </ul>
 
