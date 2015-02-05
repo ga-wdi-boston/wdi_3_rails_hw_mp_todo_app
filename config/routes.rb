@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :projects do
     resources :lists do
       resources :tasks do
-        resources :notes
+        resources :notes, only: [:new, :create]
         end
       end
     end
