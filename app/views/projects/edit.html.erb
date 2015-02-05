@@ -1,0 +1,23 @@
+
+<h1>Edit Project</h1>
+
+<div class="byline">
+    <div class="button_slider">
+      <%= button_to projects_url, class: "btn btn-primary", method: :get do %>
+        <i class="fa fa-home fa-lg"></i> Home
+      <% end %>
+    </div>
+    <div class="button_slider">
+    <%= button_to projects_url, method: :get, class: "btn btn-info" do %>
+      <i class="fa fa-step-backward fa-lg"></i> Back
+    <% end %>
+    </div>
+    <div class="button_slider">
+      <%= button_to @project, class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="fa fa-trash-o fa-lg"></i> Delete
+      <% end %>
+    </div>
+  </div>
+
+<%= render 'form' %>
+

@@ -1,0 +1,36 @@
+
+
+<p id="notice"><%= notice %></p>
+<h1><%= @project.name %></h1>
+<h4 ><%= @project.description %></h4>
+
+<div class="byline">
+  <div class="button_slider">
+    <%= button_to projects_url, class: "btn btn-primary", method: :get do %>
+      <i class="fa fa-home fa-lg"></i> Home
+    <% end %>
+  </div>
+  <div class="button_slider">
+    <%= button_to projects_url, method: :get, class: "btn btn-info" do %>
+      <i class="fa fa-step-backward fa-lg"></i> Back
+    <% end %>
+  </div>
+  <div class="button_slider">
+    <%= button_to edit_project_path(@project), class: "btn btn-warning", method: :get do %>
+      <i class="fa fa-pencil-square-o fa-lg"></i> Edit Project
+    <% end %>
+  </div>
+  <div class="button_slider">
+    <%= button_to @project, class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } do %>
+      <i class="fa fa-trash-o fa-lg"></i> Delete
+    <% end %>
+  </div>
+</div>
+
+<% @project.lists.each do |list| %>
+  <h2><%= link_to list.name, list %></h2>
+  <p><%= list.description %></p>
+<% end %>
+<br>
+<%= render 'lists/form' %>
+

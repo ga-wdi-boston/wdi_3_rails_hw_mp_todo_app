@@ -1,0 +1,34 @@
+
+  <p id="notice"><%= notice %></p>
+  <h1><%= @task.name %></h1>
+  <div class="byline">
+    <div class="button_slider">
+      <%= button_to projects_url, class: "btn btn-primary", method: :get do %>
+        <i class="fa fa-home fa-lg"></i> Home
+      <% end %>
+    </div>
+    <div class="button_slider">
+    <%= button_to list_path(@task.list_id), method: :get, class: "btn btn-info" do %>
+      <i class="fa fa-step-backward fa-lg"></i> Back
+    <% end %>
+    </div>
+    <div class="button_slider">
+      <%= button_to @task, class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="fa fa-trash-o fa-lg"></i> Delete
+      <% end %>
+    </div>
+  </div>
+  <ul>
+    <% @task.notes.each do |note| %>
+    <li><%= note.note %></li>
+    <% end %>
+  </ul>
+  <%= form_for [@task] do |f| %>
+      <%= f.label :completed %>
+      <%= f.check_box( "completed", {}, "true", "false") %>
+      <%= f.submit "F**KING DONE", class: "btn btn-default" %>
+  <% end %>
+
+  <%= render 'notes/form' %>
+<br>
+

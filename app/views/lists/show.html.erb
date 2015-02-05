@@ -1,0 +1,51 @@
+
+  <div class="text-wrap">
+    <p id="notice"><%= notice %></p>
+    <h1><%= @list.name %></h1>
+    <h4 ><%= @list.description %></h4>
+    <div class="byline">
+      <div class="button_slider">
+        <%= button_to projects_url, class: "btn btn-primary", method: :get do %>
+          <i class="fa fa-home fa-lg"></i> Home
+        <% end %>
+      </div>
+      <div class="button_slider">
+      <%= button_to project_url(@list.project_id), method: :get, class: "btn btn-info" do %>
+        <i class="fa fa-step-backward fa-lg"></i> Back
+      <% end %>
+      </div>
+      <div class="button_slider">
+        <%= button_to edit_list_path(@list), class: "btn btn-warning", method: :get do %>
+          <i class="fa fa-pencil-square-o fa-lg"></i> Edit List
+        <% end %>
+      </div>
+      <div class="button_slider">
+        <%= button_to @list, class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="fa fa-trash-o fa-lg"></i> Delete
+        <% end %>
+      </div>
+    </div>
+  </div>
+   <div class="text-wrap">
+    <% @list.tasks.each do |task| %>
+      <h2><%= link_to task.name, task %></h2>
+      <%= bootstrap_form_for [task] do |f| %>
+        <div class="check_slider">
+          <%= f.check_box( "completed", {}, "true", "false") %>
+        </div>
+        <div class="check_slider">
+          <%= f.submit "F***CKING DONE", class: "btn btn-default" %>
+        </div>
+        <ul>
+          <% task.notes.each do |note| %>
+            <span style="font-weight:bold;"><li><%= note.note %></li></span>
+          <% end %>
+        </ul>
+      <% end %>
+    <% end %>
+  </div>
+    <br>
+
+<%= render 'tasks/form' %>
+>
+

@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  root 'projects#index'
+  shallow do
+  resources :projects do
+    resources :lists do
+      resources :tasks do
+        resources :notes, only: [:new, :create]
+        end
+      end
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
