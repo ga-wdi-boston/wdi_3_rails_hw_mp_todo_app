@@ -1,9 +1,48 @@
 Rails.application.routes.draw do
+  # 1. shallow un-duplicated resources
+  resources :lists, shallow: true do
+    resources :tasks
+  end
+  resources :tasks, only: [] do
+    resources :notes, shallow: true
+  end
+
+  #2
+  # resources :lists, shallow: true do
+  #   resources :tasks
+  #   resources :notes
+  # end
+
+  # 3. shallow duplicated resources
+  # resources :lists, shallow: true do
+  #   resources :tasks
+  # end
+  # resources :tasks, shallow: true do
+  #   resources :notes
+  # end
+
+  # 4. un-shallow duplicated nested resources
+  # resources :lists do
+  #   resources :tasks
+  # end
+  # resources :tasks do
+  #   resources :notes
+  # end
+
+  #5. un-shallow un-duplicated nested resources
+  # resources :lists do
+  #   resources :tasks do
+  #     resources :notes
+  #   end
+  # end
+
+  # get 'welcome/index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+  root 'lists#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

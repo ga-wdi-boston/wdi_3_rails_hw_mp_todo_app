@@ -1,0 +1,15 @@
+<h2>
+  <%= @project.name %> >> Lists
+</h2>
+
+<ul>
+  <% @lists.each do |list| %>
+    <li><%= link_to list.name, project_list_path(@project, list)%> |
+    <%= link_to 'Edit', edit_project_list_path(@project, list) %> |
+    <%= link_to 'Destroy', [@project, list], confirm: 'Are you sure?', method: :delete %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Create New List', new_project_list_path(@project) %>
+<%= link_to 'Back', :back %>

@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    background-image: url('http://beigesavage.com/ga/bg.png');
+}
+h1, h2, h3, ul, li, a{
+  font-family: "Trebuchet MS", Arial, sans-serif;
+}
+

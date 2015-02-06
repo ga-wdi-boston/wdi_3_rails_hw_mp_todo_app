@@ -1,0 +1,22 @@
+<h1>The To Do's App</h1>
+
+<h2>Projects and Lists</h2>
+
+<ul>
+  <% @projects.each do |project| %>
+    <li><%= link_to project.name, project %>
+      <%= link_to 'Edit', edit_project_path(project) %> |
+      <%= link_to 'Delete', project_path(project), method: :delete %>
+      <ul>
+        <% project.lists.each do |list| %>
+          <li>
+            <%= list.name %>
+          </li>
+      <% end %>
+      </ul>
+
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Create New Project', new_project_path %>

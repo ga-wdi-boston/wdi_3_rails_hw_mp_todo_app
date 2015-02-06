@@ -1,0 +1,17 @@
+<h2>
+  <%= @task.name %> >> Notes
+</h2>
+
+<ul>
+  <% @task.notes.each do |note| %>
+    <li><%= note.comment %> |
+    <%= link_to 'Edit', edit_note_path(note)%> |
+      <%= link_to 'Delete', note_path(note), method: :delete %>
+    </li>
+  <% end %>
+</ul>
+
+
+<%= link_to 'Create New Note', new_task_note_path(@task) %> |
+<%= link_to 'Home', root_path %>
+
