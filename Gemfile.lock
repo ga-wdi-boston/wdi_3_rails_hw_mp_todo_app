@@ -1,9 +1,8 @@
 GIT
-  remote: git://github.com/rails-api/active_model_serializers.git
-  revision: 42644544e1776d74f603380c034292467bcd7ad9
+  remote: https://github.com/rails-api/active_model_serializers.git
+  revision: beeb216fab286537389788349c513264325393ef
   specs:
-    active_model_serializers (0.10.0.pre)
-      activemodel (>= 4.0)
+    active_model_serializers (1.0.0.pre.dev)
 
 GEM
   remote: https://rubygems.org/
@@ -248,13 +247,13 @@ GEM
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
     thor (0.19.1)
-    thread_safe (0.3.4)
+    thread_safe (0.3.6)
     tilt (1.4.1)
     timers (4.0.1)
       hitimes
     turbolinks (2.5.3)
       coffee-rails
-    tzinfo (1.2.2)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     uglifier (2.7.0)
       execjs (>= 0.3.0)
